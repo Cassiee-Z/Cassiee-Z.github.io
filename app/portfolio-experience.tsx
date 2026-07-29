@@ -768,7 +768,36 @@ function About({ chooseView }: { chooseView: (view: View) => void }) {
         <div className="vertical-places" aria-hidden="true">
           CONTENT<br />RIGHTS<br />ARTIST<br />RESEARCH<br />LIVE<br />AI MUSIC
         </div>
-        <Image unoptimized src="/images/cassie-headshot.jpg" alt="查文鑫职业头像" width={760} height={980} />
+        <div className="experience-portrait">
+          <div className="experience-portrait__image">
+            <Image
+              unoptimized
+              src="/images/cassie-temple-portrait-v2.jpg"
+              alt="查文鑫在北京天坛的全身彩色照片"
+              fill
+              sizes="(max-width: 760px) 58vw, 30vw"
+            />
+          </div>
+          <div className="portrait-catalog" aria-hidden="true">
+            <span>CATALOG / 16 TRACKS</span>
+            <div>
+              {universePlanes.slice(0, 4).map((plane) => (
+                <Image
+                  key={plane.id}
+                  unoptimized
+                  src={plane.src!}
+                  alt=""
+                  width={54}
+                  height={54}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="portrait-signal" aria-hidden="true">
+            <i />
+            <span>CONTENT × RIGHTS × DATA</span>
+          </div>
+        </div>
         <div className="experience-copy">
           <article><span>2023.12—2024.03</span><h2>江苏省委组织部</h2><p>独立审核上千份材料，参与新媒体文案、脚本与短视频运营。</p></article>
           <article><span>2023.07—2024.03</span><h2>欧拉艺术空间</h2><p>创作者沟通、歌词交易协助与版权风险材料整理。</p></article>
