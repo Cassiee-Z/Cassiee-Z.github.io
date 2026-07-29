@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 type View = "universe" | "projects" | "about" | "contact";
+type EntryPhase = "gate" | "zooming" | "ready";
 type ProjectKey =
   | "catalog"
   | "scouting"
@@ -262,14 +263,38 @@ const tracks = [
   { title: "GOLD ON THE FLOOR", scene: "DANCE POP", src: "/audio/gold-on-floor.mp3" },
 ];
 
-const universeTiles = [
-  { key: "catalog" as ProjectKey, src: "/images/og-cassie-music.jpg", className: "orbit-tile tile-one", label: "16 SONGS" },
-  { key: "event" as ProjectKey, src: "/images/cassie-editorial.jpg", className: "orbit-tile tile-two", label: "LIVE OPS" },
-  { key: "editorial" as ProjectKey, src: "/images/universe/pet-cover.png", className: "orbit-tile tile-three", label: "AI EDITORIAL" },
-  { key: "review" as ProjectKey, src: "/images/cassie-headshot.jpg", className: "orbit-tile tile-four", label: "CONTENT QA" },
-  { key: "editorial" as ProjectKey, src: "/images/universe/pet-preview.png", className: "orbit-tile tile-five", label: "GENERATIVE" },
-  { key: "scouting" as ProjectKey, src: "/images/universe/pet-ui.png", className: "orbit-tile tile-six", label: "DATA SIGNALS" },
-  { key: "copyright" as ProjectKey, src: "/images/universe/cat-photo.jpg", className: "orbit-tile tile-seven", label: "RIGHTS" },
+type UniversePlane = {
+  id: string;
+  title: string;
+  subtitle: string;
+  src?: string;
+  art: string;
+  x: number;
+  y: number;
+  z: number;
+  rx: number;
+  ry: number;
+  size: number;
+  trackIndex?: number;
+};
+
+const universePlanes: UniversePlane[] = [
+  { id: "blue", title: "蓝调夜行", subtitle: "URBAN BLUES", src: "/images/covers/blue-night.jpg", art: "blue", x: -37, y: -26, z: 150, rx: -3, ry: 12, size: 16, trackIndex: 0 },
+  { id: "rain", title: "雨停在旧站台", subtitle: "POP BALLAD", src: "/images/covers/rain-old-platform.jpg", art: "rain", x: 27, y: -28, z: -90, rx: 4, ry: -10, size: 11, trackIndex: 1 },
+  { id: "opera", title: "梨园照山河", subtitle: "CHINESE FUSION", src: "/images/covers/opera-mountains.jpg", art: "opera", x: -13, y: -20, z: 135, rx: -2, ry: 5, size: 13, trackIndex: 2 },
+  { id: "thunder", title: "RUN INTO THE THUNDER", subtitle: "ENGLISH ROCK", src: "/images/covers/run-thunder.jpg", art: "thunder", x: 38, y: 4, z: 100, rx: 2, ry: -13, size: 17, trackIndex: 3 },
+  { id: "gold", title: "GOLD ON THE FLOOR", subtitle: "DANCE POP", art: "gold", x: -31, y: 23, z: -130, rx: -5, ry: 9, size: 12, trackIndex: 4 },
+  { id: "goodnight", title: "未发送的晚安", subtitle: "MIDNIGHT MESSAGE", art: "violet", x: -11, y: -34, z: -340, rx: 8, ry: 4, size: 8 },
+  { id: "store", title: "凌晨四点的便利店", subtitle: "CITY POP", art: "store", x: 42, y: -18, z: -390, rx: -4, ry: -16, size: 8 },
+  { id: "morning", title: "把夜走成清晨", subtitle: "DAWN WALK", art: "dawn", x: -44, y: -4, z: -260, rx: 6, ry: 14, size: 9 },
+  { id: "chapter", title: "百年新章", subtitle: "CEREMONIAL", art: "crimson", x: 20, y: 29, z: -300, rx: -7, ry: -7, size: 9 },
+  { id: "light", title: "逆着光生长", subtitle: "UPLIFTING POP", art: "light", x: 44, y: 28, z: -220, rx: 5, ry: -15, size: 10 },
+  { id: "wind", title: "把名字写进风里", subtitle: "AIRY POP", art: "wind", x: -15, y: 32, z: 70, rx: 4, ry: 3, size: 11 },
+  { id: "moon", title: "月亮没有回信", subtitle: "LUNAR BALLAD", art: "moon", x: 16, y: -39, z: -480, rx: 7, ry: -2, size: 7 },
+  { id: "swing", title: "SWINGING HARD", subtitle: "BRASS & GROOVE", art: "swing", x: -45, y: 36, z: -430, rx: -5, ry: 17, size: 8 },
+  { id: "river", title: "风从长江吹来", subtitle: "RIVER FUSION", art: "river", x: 31, y: 38, z: -470, rx: 5, ry: -9, size: 7 },
+  { id: "glass", title: "玻璃海", subtitle: "AMBIENT POP", art: "glass", x: -25, y: -7, z: -510, rx: -8, ry: 8, size: 7 },
+  { id: "road", title: "仍在路上", subtitle: "FORWARD", art: "road", x: 7, y: 38, z: -180, rx: -4, ry: -2, size: 9 },
 ];
 
 function formatTime(value: number) {
@@ -306,62 +331,280 @@ function WordNavigation({
   );
 }
 
-function SoundGate({ enter }: { enter: (sound: boolean) => void }) {
+function trapDialogFocus(event: React.KeyboardEvent<HTMLElement>) {
+  if (event.key !== "Tab") return;
+  const focusable = Array.from(
+    event.currentTarget.querySelectorAll<HTMLElement>(
+      'button:not([disabled]):not([aria-disabled="true"]), a[href], input:not([disabled]), [tabindex]:not([tabindex="-1"])',
+    ),
+  ).filter((element) => !element.hasAttribute("inert"));
+  if (!focusable.length) return;
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
+}
+
+function useInertialCamera(enabled: boolean) {
+  const cameraRef = useRef<HTMLDivElement>(null);
+  const targetRef = useRef({ yaw: 0, pitch: 0 });
+  const currentRef = useRef({ yaw: 0, pitch: 0 });
+  const suppressClickUntilRef = useRef(0);
+  const dragRef = useRef({
+    active: false,
+    moved: false,
+    pointerId: -1,
+    startX: 0,
+    startY: 0,
+    startYaw: 0,
+    startPitch: 0,
+  });
+
+  useEffect(() => {
+    const camera = cameraRef.current;
+    if (!camera) return;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!enabled || reduceMotion) {
+      camera.style.setProperty("--camera-yaw", "0deg");
+      camera.style.setProperty("--camera-pitch", "0deg");
+      return;
+    }
+
+    let frame = 0;
+    const render = () => {
+      const current = currentRef.current;
+      const target = targetRef.current;
+      current.yaw += (target.yaw - current.yaw) * 0.055;
+      current.pitch += (target.pitch - current.pitch) * 0.055;
+      camera.style.setProperty("--camera-yaw", `${current.yaw.toFixed(3)}deg`);
+      camera.style.setProperty("--camera-pitch", `${current.pitch.toFixed(3)}deg`);
+      camera.style.setProperty("--camera-x", `${(-current.yaw * 2.1).toFixed(2)}px`);
+      camera.style.setProperty("--camera-y", `${(current.pitch * 1.8).toFixed(2)}px`);
+      frame = window.requestAnimationFrame(render);
+    };
+    frame = window.requestAnimationFrame(render);
+    return () => window.cancelAnimationFrame(frame);
+  }, [enabled]);
+
+  const onPointerMove = (event: React.PointerEvent<HTMLElement>) => {
+    if (!enabled) return;
+    if (dragRef.current.active) {
+      const dx = event.clientX - dragRef.current.startX;
+      const dy = event.clientY - dragRef.current.startY;
+      if (!dragRef.current.moved && Math.hypot(dx, dy) < 8) return;
+      if (!dragRef.current.moved) {
+        dragRef.current.moved = true;
+        event.currentTarget.setPointerCapture(event.pointerId);
+      }
+      targetRef.current.yaw = Math.max(-12, Math.min(12, dragRef.current.startYaw + dx * 0.035));
+      targetRef.current.pitch = Math.max(-9, Math.min(9, dragRef.current.startPitch - dy * 0.035));
+      event.preventDefault();
+      return;
+    }
+    if (event.pointerType !== "mouse") return;
+    const box = event.currentTarget.getBoundingClientRect();
+    targetRef.current.yaw = ((event.clientX - box.left) / box.width - 0.5) * 14;
+    targetRef.current.pitch = -((event.clientY - box.top) / box.height - 0.5) * 10;
+  };
+
+  const onPointerDown = (event: React.PointerEvent<HTMLElement>) => {
+    if (!enabled || event.pointerType === "mouse") return;
+    dragRef.current = {
+      active: true,
+      moved: false,
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startY: event.clientY,
+      startYaw: targetRef.current.yaw,
+      startPitch: targetRef.current.pitch,
+    };
+  };
+
+  const onPointerUp = (event: React.PointerEvent<HTMLElement>) => {
+    if (!dragRef.current.active || dragRef.current.pointerId !== event.pointerId) return;
+    if (dragRef.current.moved) suppressClickUntilRef.current = performance.now() + 450;
+    dragRef.current.active = false;
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+  };
+
+  const onPointerLeave = (event: React.PointerEvent<HTMLElement>) => {
+    if (event.pointerType === "mouse" && !dragRef.current.active) {
+      targetRef.current = { yaw: 0, pitch: 0 };
+    }
+  };
+
+  return {
+    cameraRef,
+    handlers: {
+      onPointerMove,
+      onPointerDown,
+      onPointerUp,
+      onPointerCancel: onPointerUp,
+      onLostPointerCapture: onPointerUp,
+      onPointerLeave,
+    },
+    shouldSuppressClick: () => {
+      const suppress = performance.now() < suppressClickUntilRef.current;
+      if (suppress) suppressClickUntilRef.current = 0;
+      return suppress;
+    },
+  };
+}
+
+function SoundGate({
+  phase,
+  enter,
+}: {
+  phase: EntryPhase;
+  enter: (sound: boolean) => void;
+}) {
+  const zooming = phase === "zooming";
   return (
-    <div className="sound-gate" role="dialog" aria-modal="true" aria-label="作品集声音入口">
-      <div className="gate-stars" aria-hidden="true">
-        <i /><i /><i /><i /><i />
+    <div
+      className={`sound-gate ${zooming ? "sound-gate--zooming" : ""}`}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="sound-gate-title"
+      onKeyDown={(event) => {
+        if (event.key === "Escape" && !zooming) {
+          event.preventDefault();
+          enter(false);
+          return;
+        }
+        trapDialogFocus(event);
+      }}
+    >
+      <div className="sound-gate__depth" aria-hidden="true">
+        {universePlanes.filter((plane) => plane.src).slice(0, 4).map((plane, index) => (
+          <span key={plane.id} className={`gate-cover gate-cover--${index + 1}`}>
+            <Image
+              unoptimized
+              src={plane.src!}
+              alt=""
+              fill
+              sizes="100px"
+            />
+          </span>
+        ))}
       </div>
-      <div className="gate-ring">
-        <button onClick={() => enter(true)}>
-          <span>CLICK ANYWHERE</span>
-          <strong>TO TURN ON<br />YOUR SOUND</strong>
-          <small>让音乐被听见，也被正确地运营</small>
-        </button>
-      </div>
-      <button className="enter-muted" onClick={() => enter(false)}>静音进入 · ENTER WITHOUT SOUND</button>
+      <button
+        className="sound-gate__enter"
+        onClick={() => { if (!zooming) enter(true); }}
+        aria-disabled={zooming}
+        aria-label="开启声音并进入音乐宇宙"
+        autoFocus
+      >
+        <span className="gate-word gate-word--1">CLICK</span>
+        <span className="gate-word gate-word--2">ANYWHERE</span>
+        <span className="gate-word gate-word--3">TO</span>
+        <span className="gate-word gate-word--4">TURN</span>
+        <span className="gate-word gate-word--5">ON</span>
+        <span className="gate-word gate-word--6">YOUR</span>
+        <span className="gate-word gate-word--7" id="sound-gate-title">SOUND</span>
+        <small>让音乐被听见，也被正确地运营</small>
+      </button>
+      <button
+        className="enter-muted"
+        onClick={() => { if (!zooming) enter(false); }}
+        aria-disabled={zooming}
+      >
+        静音进入 · ENTER WITHOUT SOUND
+      </button>
     </div>
   );
 }
 
-function Universe({
+function MusicUniverse({
   openProject,
   chooseView,
+  playTrack,
+  activeTrack,
+  playing,
+  interactive,
 }: {
   openProject: (key: ProjectKey) => void;
   chooseView: (view: View) => void;
+  playTrack: (index: number) => void;
+  activeTrack: number;
+  playing: boolean;
+  interactive: boolean;
 }) {
-  const fieldRef = useRef<HTMLElement>(null);
-  const move = (event: React.PointerEvent<HTMLElement>) => {
-    const box = event.currentTarget.getBoundingClientRect();
-    const x = (event.clientX - box.left) / box.width - 0.5;
-    const y = (event.clientY - box.top) / box.height - 0.5;
-    fieldRef.current?.style.setProperty("--mx", `${x * 22}px`);
-    fieldRef.current?.style.setProperty("--my", `${y * 18}px`);
-  };
+  const { cameraRef, handlers, shouldSuppressClick } = useInertialCamera(interactive);
 
   return (
-    <main className="universe" id="main-content" ref={fieldRef} onPointerMove={move}>
-      <div className="universe-grid" aria-hidden="true" />
-      {universeTiles.map((tile, index) => (
-        <button
-          className={tile.className}
-          key={`${tile.key}-${index}`}
-          onClick={() => openProject(tile.key)}
-          aria-label={`打开项目：${projects.find((project) => project.key === tile.key)?.title}`}
-        >
-          <Image unoptimized src={tile.src} alt="" fill sizes="(max-width: 700px) 42vw, 18vw" />
-          <span>{tile.label}</span>
+    <main className="music-universe" id="main-content" tabIndex={-1}>
+      <section
+        className="music-universe__stage"
+        aria-label="可探索的歌曲专辑宇宙"
+        {...handlers}
+      >
+        <div className="music-universe__arrival">
+          <div className="music-universe__camera" ref={cameraRef}>
+            <div className="music-universe__world">
+              <div className="music-universe__haze" aria-hidden="true" />
+              {universePlanes.map((plane, index) => {
+                const isTrack = plane.trackIndex !== undefined;
+                const isPlaying = isTrack && activeTrack === plane.trackIndex && playing;
+                const style = {
+                  "--plane-x": `${plane.x}vw`,
+                  "--plane-y": `${plane.y}vh`,
+                  "--plane-z": `${plane.z}px`,
+                  "--plane-rx": `${plane.rx}deg`,
+                  "--plane-ry": `${plane.ry}deg`,
+                  "--plane-size": `${plane.size}vw`,
+                } as React.CSSProperties;
+                return (
+                  <button
+                    className={`music-plane art-${plane.art} ${isPlaying ? "is-playing" : ""}`}
+                    style={style}
+                    key={plane.id}
+                    onClick={(event) => {
+                      if (shouldSuppressClick()) {
+                        event.preventDefault();
+                        return;
+                      }
+                      if (isTrack) playTrack(plane.trackIndex!);
+                      else openProject("catalog");
+                    }}
+                    aria-label={isTrack ? `播放歌曲：${plane.title}` : `查看曲库项目：${plane.title}`}
+                  >
+                    <span className="music-plane__art">
+                      {plane.src ? (
+                        <Image
+                          unoptimized
+                          src={plane.src}
+                          alt=""
+                          fill
+                          sizes="(max-width: 760px) 34vw, 18vw"
+                        />
+                      ) : (
+                        <span className="generated-cover" aria-hidden="true"><i /><b>{String(index + 1).padStart(2, "0")}</b></span>
+                      )}
+                    </span>
+                    <span className="music-plane__meta">
+                      <strong>{plane.title}</strong>
+                      <small>{plane.subtitle} · {isTrack ? "PLAY" : "CATALOG"}</small>
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+      <div className="music-universe__hud">
+        <button onClick={() => chooseView("projects")} aria-label="打开作品索引">
+          <i>＋</i>
+          <span>MUSIC INDEX</span>
         </button>
-      ))}
-      <div className="universe-intro">
-        <p>WELCOME</p>
-        <h1>
-          TO CASSIE ZHA&apos;S UNIVERSE<br />
-          OF MUSIC CONTENT + RIGHTS<br />
-          AND AI MUSIC OPERATIONS
-        </h1>
-        <small>音乐内容运营 · 版权与创作者合作 · AI 音乐实践</small>
+        <p>MOVE TO EXPLORE · 触摸拖动</p>
       </div>
       <WordNavigation view="universe" chooseView={chooseView} />
     </main>
@@ -607,8 +850,21 @@ function PlayerOverlay({
 }) {
   const track = tracks[trackIndex];
   return (
-    <div className="player-overlay" role="dialog" aria-modal="true" aria-label="音乐播放器">
-      <button className="player-close" onClick={close}>CLOSE ×</button>
+    <div
+      className="player-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="音乐播放器"
+      onKeyDown={(event) => {
+        if (event.key === "Escape") {
+          event.preventDefault();
+          close();
+          return;
+        }
+        trapDialogFocus(event);
+      }}
+    >
+      <button className="player-close" onClick={close} autoFocus>CLOSE ×</button>
       <p className="playing-label">PLAYING NOW</p>
       <button className={`equalizer ${playing ? "is-playing" : ""}`} onClick={toggle} aria-label={playing ? "暂停" : "播放"}>
         <i /><i /><i />
@@ -632,7 +888,7 @@ function PlayerOverlay({
 }
 
 export default function PortfolioExperience() {
-  const [entered, setEntered] = useState(false);
+  const [entryPhase, setEntryPhase] = useState<EntryPhase>("gate");
   const [view, setView] = useState<View>("universe");
   const [activeProject, setActiveProject] = useState<ProjectKey | null>(null);
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -642,11 +898,22 @@ export default function PortfolioExperience() {
   const [current, setCurrent] = useState(0);
   const [duration, setDuration] = useState(0);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const entryTimerRef = useRef<number | null>(null);
+  const entryStartedRef = useRef(false);
+  const trackIndexRef = useRef(0);
+  const playerOpenerRef = useRef<HTMLElement | null>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    document.body.style.overflow = playerOpen || mobileMenu || !entered ? "hidden" : "";
+    document.body.style.overflow = playerOpen || mobileMenu || entryPhase !== "ready" ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
-  }, [playerOpen, mobileMenu, entered]);
+  }, [playerOpen, mobileMenu, entryPhase]);
+
+  useEffect(() => {
+    return () => {
+      if (entryTimerRef.current !== null) window.clearTimeout(entryTimerRef.current);
+    };
+  }, []);
 
   const chooseView = (next: View) => {
     setView(next);
@@ -661,16 +928,36 @@ export default function PortfolioExperience() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const openPlayer = () => {
+    playerOpenerRef.current = document.activeElement instanceof HTMLElement
+      ? document.activeElement
+      : null;
+    setPlayerOpen(true);
+  };
+
+  const closePlayer = () => {
+    setPlayerOpen(false);
+    window.requestAnimationFrame(() => playerOpenerRef.current?.focus());
+  };
+
+  const closeMobileMenu = () => {
+    setMobileMenu(false);
+    window.requestAnimationFrame(() => menuButtonRef.current?.focus());
+  };
+
   const startAudio = async (index: number, open = true) => {
     const audio = audioRef.current;
     if (!audio) return;
-    if (trackIndex !== index) {
+    if (trackIndexRef.current !== index) {
       audio.pause();
       audio.src = tracks[index].src;
       audio.load();
+      trackIndexRef.current = index;
       setTrackIndex(index);
+      setCurrent(0);
+      setDuration(0);
     }
-    if (open) setPlayerOpen(true);
+    if (open) openPlayer();
     try {
       await audio.play();
     } catch {
@@ -678,9 +965,26 @@ export default function PortfolioExperience() {
     }
   };
 
-  const enter = async (withSound: boolean) => {
-    setEntered(true);
-    if (withSound) await startAudio(0, false);
+  const finishEntry = () => {
+    if (entryTimerRef.current !== null) {
+      window.clearTimeout(entryTimerRef.current);
+      entryTimerRef.current = null;
+    }
+    setEntryPhase("ready");
+    window.requestAnimationFrame(() => document.getElementById("main-content")?.focus());
+  };
+
+  const enter = (withSound: boolean) => {
+    if (entryStartedRef.current || entryPhase !== "gate") return;
+    entryStartedRef.current = true;
+    if (withSound) void startAudio(0, false);
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+      finishEntry();
+      return;
+    }
+    setEntryPhase("zooming");
+    entryTimerRef.current = window.setTimeout(finishEntry, 2500);
   };
 
   const toggleAudio = async () => {
@@ -697,7 +1001,9 @@ export default function PortfolioExperience() {
 
   return (
     <>
-      <a className="skip-link" href="#main-content">跳到主要内容</a>
+      {entryPhase === "ready" && !playerOpen && !mobileMenu && (
+        <a className="skip-link" href="#main-content">跳到主要内容</a>
+      )}
       <audio
         ref={audioRef}
         src={tracks[0].src}
@@ -714,16 +1020,25 @@ export default function PortfolioExperience() {
         onEnded={() => { setPlaying(false); setCurrent(0); }}
       />
 
-      {!entered && <SoundGate enter={enter} />}
+      {entryPhase !== "ready" && <SoundGate phase={entryPhase} enter={enter} />}
 
-      <div className={`site-shell ${entered ? "is-visible" : ""}`}>
+      <div
+        className={`site-shell ${entryPhase !== "gate" ? "is-visible" : ""} ${entryPhase === "zooming" ? "is-arriving" : ""}`}
+        aria-hidden={entryPhase !== "ready" || playerOpen || mobileMenu}
+        inert={entryPhase !== "ready" || playerOpen || mobileMenu ? true : undefined}
+      >
         <header className="site-header">
           <Brand onHome={() => chooseView("universe")} />
-          <button className="now-playing" onClick={() => setPlayerOpen(true)}>
+          <button className="now-playing" onClick={openPlayer}>
             <i className={playing ? "is-playing" : ""} />
             {playing ? "PLAYING" : "LISTEN"}
           </button>
-          <button className={`menu-button ${mobileMenu ? "is-open" : ""}`} onClick={() => setMobileMenu((value) => !value)} aria-label="打开导航">
+          <button
+            ref={menuButtonRef}
+            className={`menu-button ${mobileMenu ? "is-open" : ""}`}
+            onClick={() => setMobileMenu(true)}
+            aria-label="打开导航"
+          >
             <i /><i />
           </button>
         </header>
@@ -736,7 +1051,14 @@ export default function PortfolioExperience() {
             playTrack={(index) => startAudio(index)}
           />
         ) : view === "universe" ? (
-          <Universe openProject={openProject} chooseView={chooseView} />
+          <MusicUniverse
+            openProject={openProject}
+            chooseView={chooseView}
+            playTrack={(index) => startAudio(index)}
+            activeTrack={trackIndex}
+            playing={playing}
+            interactive={entryPhase === "ready"}
+          />
         ) : view === "projects" ? (
           <ProjectsIndex openProject={openProject} chooseView={chooseView} />
         ) : view === "about" ? (
@@ -747,7 +1069,19 @@ export default function PortfolioExperience() {
       </div>
 
       {mobileMenu && (
-        <nav className="mobile-menu" aria-label="移动端导航">
+        <nav
+          className="mobile-menu"
+          aria-label="移动端导航"
+          onKeyDown={(event) => {
+            if (event.key === "Escape") {
+              event.preventDefault();
+              closeMobileMenu();
+              return;
+            }
+            trapDialogFocus(event);
+          }}
+        >
+          <button className="mobile-menu__close" onClick={closeMobileMenu} autoFocus>CLOSE ×</button>
           <button onClick={() => chooseView("projects")}><span>01</span>THE WORK</button>
           <button onClick={() => chooseView("about")}><span>02</span>ABOUT ME</button>
           <button onClick={() => chooseView("contact")}><span>03</span>CONTACT</button>
@@ -760,7 +1094,7 @@ export default function PortfolioExperience() {
           playing={playing}
           current={current}
           duration={duration}
-          close={() => setPlayerOpen(false)}
+          close={closePlayer}
           toggle={toggleAudio}
           seek={(value) => {
             if (audioRef.current) audioRef.current.currentTime = value;
