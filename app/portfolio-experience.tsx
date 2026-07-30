@@ -62,6 +62,13 @@ const projects: Project[] = [
           "当前将作品分为夜间城市、情绪叙事、文化融合、运动激励与庆典舞曲五类，下一步补齐平台数据、版本对照和高光片段时间码。",
         ],
       },
+      {
+        label: "04 / VISUAL DISCLOSURE",
+        title: "参考画风与原创场景分开说明。",
+        body: [
+          "曲库封面以用户提供的视觉资料进行二度创作。其中《未发送的晚安》参考用户提供的蓝粉纸感旅行插画画风；人物、夜间列车场景、构图与文字均为重新创作，未直接使用参考图中的角色、产品版式或文案。",
+        ],
+      },
     ],
   },
   {
@@ -279,22 +286,22 @@ type UniversePlane = {
 };
 
 const universePlanes: UniversePlane[] = [
-  { id: "blue", title: "蓝调夜行", subtitle: "URBAN BLUES", src: "/images/covers/blue-night.jpg", art: "blue", x: -37, y: -26, z: 150, rx: -3, ry: 12, size: 16, trackIndex: 0 },
-  { id: "rain", title: "雨停在旧站台", subtitle: "POP BALLAD", src: "/images/covers/rain-old-platform.jpg", art: "rain", x: 27, y: -28, z: -90, rx: 4, ry: -10, size: 11, trackIndex: 1 },
+  { id: "blue", title: "蓝调夜行", subtitle: "URBAN BLUES", src: "/images/covers/blue-night-v3.jpg", art: "blue", x: -37, y: -26, z: 150, rx: -3, ry: 12, size: 16, trackIndex: 0 },
+  { id: "rain", title: "雨停在旧站台", subtitle: "POP BALLAD", src: "/images/covers/rain-old-platform-v3.jpg", art: "rain", x: 27, y: -28, z: -90, rx: 4, ry: -10, size: 11, trackIndex: 1 },
   { id: "opera", title: "梨园照山河", subtitle: "CHINESE FUSION", src: "/images/covers/opera-mountains.jpg", art: "opera", x: -13, y: -20, z: 135, rx: -2, ry: 5, size: 13, trackIndex: 2 },
-  { id: "thunder", title: "RUN INTO THE THUNDER", subtitle: "ENGLISH ROCK", src: "/images/covers/run-thunder.jpg", art: "thunder", x: 38, y: 4, z: 100, rx: 2, ry: -13, size: 17, trackIndex: 3 },
-  { id: "gold", title: "GOLD ON THE FLOOR", subtitle: "DANCE POP", art: "gold", x: -31, y: 23, z: -130, rx: -5, ry: 9, size: 12, trackIndex: 4 },
-  { id: "goodnight", title: "未发送的晚安", subtitle: "MIDNIGHT MESSAGE", art: "violet", x: -11, y: -34, z: -340, rx: 8, ry: 4, size: 8 },
+  { id: "thunder", title: "RUN INTO THE THUNDER", subtitle: "ENGLISH ROCK", src: "/images/covers/run-into-thunder-v3.jpg", art: "thunder", x: 38, y: 4, z: 100, rx: 2, ry: -13, size: 17, trackIndex: 3 },
+  { id: "gold", title: "GOLD ON THE FLOOR", subtitle: "DANCE POP", src: "/images/covers/gold-on-floor-v3.jpg", art: "gold", x: -31, y: 23, z: -130, rx: -5, ry: 9, size: 12, trackIndex: 4 },
+  { id: "goodnight", title: "未发送的晚安", subtitle: "MIDNIGHT MESSAGE", src: "/images/covers/unsent-goodnight-v4.jpg", art: "violet", x: -11, y: -34, z: -340, rx: 8, ry: 4, size: 8 },
   { id: "store", title: "凌晨四点的便利店", subtitle: "CITY POP", art: "store", x: 42, y: -18, z: -390, rx: -4, ry: -16, size: 8 },
-  { id: "morning", title: "把夜走成清晨", subtitle: "DAWN WALK", art: "dawn", x: -44, y: -4, z: -260, rx: 6, ry: 14, size: 9 },
-  { id: "chapter", title: "百年新章", subtitle: "CEREMONIAL", art: "crimson", x: 20, y: 29, z: -300, rx: -7, ry: -7, size: 9 },
-  { id: "light", title: "逆着光生长", subtitle: "UPLIFTING POP", art: "light", x: 44, y: 28, z: -220, rx: 5, ry: -15, size: 10 },
-  { id: "wind", title: "把名字写进风里", subtitle: "AIRY POP", art: "wind", x: -15, y: 32, z: 70, rx: 4, ry: 3, size: 11 },
-  { id: "moon", title: "月亮没有回信", subtitle: "LUNAR BALLAD", art: "moon", x: 16, y: -39, z: -480, rx: 7, ry: -2, size: 7 },
-  { id: "swing", title: "SWINGING HARD", subtitle: "BRASS & GROOVE", art: "swing", x: -45, y: 36, z: -430, rx: -5, ry: 17, size: 8 },
+  { id: "morning", title: "把夜走成清晨", subtitle: "DAWN WALK", src: "/images/covers/night-to-morning-v3.jpg", art: "dawn", x: -44, y: -4, z: -260, rx: 6, ry: 14, size: 9 },
+  { id: "chapter", title: "百年新章", subtitle: "CEREMONIAL", src: "/images/covers/century-new-chapter-v3.jpg", art: "crimson", x: 20, y: 29, z: -300, rx: -7, ry: -7, size: 9 },
+  { id: "light", title: "逆着光生长", subtitle: "UPLIFTING POP", src: "/images/covers/grow-against-light-v3.jpg", art: "light", x: 44, y: 28, z: -220, rx: 5, ry: -15, size: 10 },
+  { id: "wind", title: "把名字写进风里", subtitle: "AIRY POP", src: "/images/covers/name-in-wind-v3.jpg", art: "wind", x: -15, y: 32, z: 70, rx: 4, ry: 3, size: 11 },
+  { id: "moon", title: "月亮没有回信", subtitle: "LUNAR BALLAD", src: "/images/covers/moon-no-reply-v3.jpg", art: "moon", x: 16, y: -39, z: -480, rx: 7, ry: -2, size: 7 },
+  { id: "swing", title: "SWINGING HARD", subtitle: "BRASS & GROOVE", src: "/images/covers/swinging-hard-v3.jpg", art: "swing", x: -45, y: 36, z: -430, rx: -5, ry: 17, size: 8 },
   { id: "river", title: "风从长江吹来", subtitle: "RIVER FUSION", art: "river", x: 31, y: 38, z: -470, rx: 5, ry: -9, size: 7 },
-  { id: "glass", title: "玻璃海", subtitle: "AMBIENT POP", art: "glass", x: -25, y: -7, z: -510, rx: -8, ry: 8, size: 7 },
-  { id: "road", title: "仍在路上", subtitle: "FORWARD", art: "road", x: 7, y: 38, z: -180, rx: -4, ry: -2, size: 9 },
+  { id: "glass", title: "玻璃海", subtitle: "AMBIENT POP", src: "/images/covers/glass-sea-v3.jpg", art: "glass", x: -25, y: -7, z: -510, rx: -8, ry: 8, size: 7 },
+  { id: "road", title: "仍在路上", subtitle: "FORWARD", src: "/images/covers/still-on-road-v3.jpg", art: "road", x: 7, y: 38, z: -180, rx: -4, ry: -2, size: 9 },
 ];
 
 function formatTime(value: number) {
@@ -372,19 +379,28 @@ function useInertialCamera(enabled: boolean) {
     if (!enabled || reduceMotion) {
       camera.style.setProperty("--camera-yaw", "0deg");
       camera.style.setProperty("--camera-pitch", "0deg");
+      camera.style.setProperty("--camera-blur", "0px");
       return;
     }
 
     let frame = 0;
-    const render = () => {
+    const render = (time: number) => {
       const current = currentRef.current;
       const target = targetRef.current;
-      current.yaw += (target.yaw - current.yaw) * 0.055;
-      current.pitch += (target.pitch - current.pitch) * 0.055;
+      const idleYaw = Math.sin(time * 0.00019) * 1.65;
+      const idlePitch = Math.cos(time * 0.00014) * 0.72;
+      const desiredYaw = target.yaw + idleYaw;
+      const desiredPitch = target.pitch + idlePitch;
+      const yawDistance = desiredYaw - current.yaw;
+      const pitchDistance = desiredPitch - current.pitch;
+      current.yaw += yawDistance * 0.055;
+      current.pitch += pitchDistance * 0.055;
+      const motionBlur = Math.min(1.15, Math.hypot(yawDistance, pitchDistance) * 0.085);
       camera.style.setProperty("--camera-yaw", `${current.yaw.toFixed(3)}deg`);
       camera.style.setProperty("--camera-pitch", `${current.pitch.toFixed(3)}deg`);
       camera.style.setProperty("--camera-x", `${(-current.yaw * 2.1).toFixed(2)}px`);
       camera.style.setProperty("--camera-y", `${(current.pitch * 1.8).toFixed(2)}px`);
+      camera.style.setProperty("--camera-blur", `${motionBlur.toFixed(2)}px`);
       frame = window.requestAnimationFrame(render);
     };
     frame = window.requestAnimationFrame(render);
@@ -482,17 +498,33 @@ function SoundGate({
       }}
     >
       <div className="sound-gate__depth" aria-hidden="true">
-        {universePlanes.filter((plane) => plane.src).slice(0, 4).map((plane, index) => (
-          <span key={plane.id} className={`gate-cover gate-cover--${index + 1}`}>
-            <Image
-              unoptimized
-              src={plane.src!}
-              alt=""
-              fill
-              sizes="100px"
-            />
-          </span>
-        ))}
+        {universePlanes.map((plane, index) => {
+          const style = {
+            "--gate-x": `${50 + plane.x * 0.82}%`,
+            "--gate-y": `${50 + plane.y * 0.78}%`,
+            "--gate-z": `${Math.round(plane.z * 0.62 - 120)}px`,
+            "--gate-rx": `${plane.rx}deg`,
+            "--gate-ry": `${plane.ry}deg`,
+            "--gate-size": `${Math.max(4.8, plane.size * 0.56)}vw`,
+            "--gate-order": index,
+          } as React.CSSProperties;
+          return (
+            <span key={plane.id} className={`gate-cover art-${plane.art}`} style={style}>
+              {plane.src ? (
+                <Image
+                  unoptimized
+                  src={plane.src}
+                  alt=""
+                  fill
+                  sizes="(max-width: 760px) 24vw, 10vw"
+                  priority={index < 4}
+                />
+              ) : (
+                <span className="generated-cover" aria-hidden="true"><i /><b>{String(index + 1).padStart(2, "0")}</b></span>
+              )}
+            </span>
+          );
+        })}
       </div>
       <button
         className="sound-gate__enter"
@@ -501,14 +533,12 @@ function SoundGate({
         aria-label="开启声音并进入音乐宇宙"
         autoFocus
       >
-        <span className="gate-word gate-word--1">CLICK</span>
-        <span className="gate-word gate-word--2">ANYWHERE</span>
-        <span className="gate-word gate-word--3">TO</span>
-        <span className="gate-word gate-word--4">TURN</span>
-        <span className="gate-word gate-word--5">ON</span>
-        <span className="gate-word gate-word--6">YOUR</span>
-        <span className="gate-word gate-word--7" id="sound-gate-title">SOUND</span>
-        <small>让音乐被听见，也被正确地运营</small>
+        <span className="sound-gate__kicker">WELCOME TO</span>
+        <span className="sound-gate__title" id="sound-gate-title">
+          CASSIE&apos;S<br />MUSIC UNIVERSE
+        </span>
+        <span className="sound-gate__instruction">CLICK TO ENTER WITH SOUND</span>
+        <small>让音乐被听见，也被正确地运营 · 16 ALBUM COVERS</small>
       </button>
       <button
         className="enter-muted"
@@ -600,6 +630,11 @@ function MusicUniverse({
         </div>
       </section>
       <div className="music-universe__hud">
+        <div className="music-universe__welcome">
+          <span>WELCOME TO</span>
+          <h1>CASSIE&apos;S<br />MUSIC UNIVERSE</h1>
+          <small>16 TRACKS · COMPOSITION × CONTENT × RIGHTS</small>
+        </div>
         <button onClick={() => chooseView("projects")} aria-label="打开作品索引">
           <i>＋</i>
           <span>MUSIC INDEX</span>
