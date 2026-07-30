@@ -652,7 +652,7 @@ function MusicUniverse({
           <i>＋</i>
           <span>MUSIC INDEX</span>
         </button>
-        <p>MOVE TO EXPLORE · 触摸拖动</p>
+        <p>HOVER TO HOLD · CLICK TO LISTEN · 触摸点按播放</p>
       </div>
       <WordNavigation view="universe" chooseView={chooseView} />
     </main>

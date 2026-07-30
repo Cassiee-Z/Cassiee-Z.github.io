@@ -505,7 +505,8 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: .25em;
 }
 .music-plane:hover,
-.music-plane:focus-visible {
+.music-plane:focus-visible,
+.music-plane:active {
   z-index: 4;
   outline: none;
   animation-play-state: paused;
@@ -514,7 +515,7 @@ a { color: inherit; text-decoration: none; }
 .music-plane:focus-visible .music-plane__art {
   filter: saturate(1.04) brightness(.96);
   transform: translateZ(35px) scale(1.08);
-  box-shadow: 0 2.5rem 7rem rgba(0,0,0,.82), 0 0 3.5rem rgba(220,181,112,.14);
+  box-shadow: 0 2.5rem 7rem rgba(0,0,0,.82), 0 0 3.5rem rgba(255,255,255,.1);
 }
 .music-plane:hover .music-plane__meta,
 .music-plane:focus-visible .music-plane__meta { opacity: 1; transform: translateY(0); }
@@ -523,7 +524,7 @@ a { color: inherit; text-decoration: none; }
 }
 .music-plane.is-playing .music-plane__art {
   filter: saturate(1) brightness(.94);
-  box-shadow: 0 0 0 1px rgba(255,255,255,.55), 0 0 4rem rgba(120,160,255,.25);
+  box-shadow: 0 0 0 1px rgba(255,255,255,.55), 0 0 4rem rgba(255,255,255,.14);
 }
 .generated-cover {
   position: absolute;
@@ -590,7 +591,7 @@ a { color: inherit; text-decoration: none; }
 }
 .music-universe__welcome h1 {
   margin: .75rem 0 .7rem;
-  color: #f2eee5;
+  color: var(--white);
   font-family: var(--serif);
   font-size: clamp(1.8rem, 4.25vw, 4.65rem);
   font-weight: 400;
@@ -598,7 +599,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: .18em;
 }
 .music-universe__welcome small {
-  color: rgba(235,220,196,.68);
+  color: rgba(255,255,255,.58);
   font-size: .4rem;
   letter-spacing: .3em;
 }
