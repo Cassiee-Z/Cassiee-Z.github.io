@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-type View = "universe" | "projects" | "about" | "contact";
+type View = "universe" | "songs" | "projects" | "about" | "contact";
 type EntryPhase = "gate" | "zooming" | "ready";
 type ProjectKey =
   | "catalog"
@@ -263,23 +263,26 @@ const projects: Project[] = [
 ];
 
 const tracks = [
-  { title: "蓝调夜行", scene: "URBAN BLUES", src: "/audio/blue-night.mp3" },
-  { title: "雨停在旧站台", scene: "POP BALLAD", src: "/audio/rain-old-platform.mp3" },
-  { title: "梨园照山河", scene: "CHINESE FUSION", src: "/audio/opera-mountains.mp3" },
-  { title: "RUN INTO THE THUNDER", scene: "ENGLISH ROCK", src: "/audio/run-into-thunder.mp3" },
-  { title: "GOLD ON THE FLOOR", scene: "DANCE POP", src: "/audio/gold-on-floor.mp3" },
-  { title: "未发送的晚安", scene: "MIDNIGHT MESSAGE", src: "/audio/unsent-goodnight.mp3" },
-  { title: "凌晨四点的便利店", scene: "CITY POP", src: "/audio/four-am-store.mp3" },
-  { title: "把夜走成清晨", scene: "DAWN WALK", src: "/audio/night-to-morning.mp3" },
-  { title: "百年新章", scene: "CEREMONIAL", src: "/audio/century-new-chapter.mp3" },
-  { title: "逆着光生长", scene: "UPLIFTING POP", src: "/audio/grow-against-light.mp3" },
-  { title: "把名字写进风里", scene: "AIRY POP", src: "/audio/name-in-wind.mp3" },
-  { title: "月亮没有回信", scene: "LUNAR BALLAD", src: "/audio/moon-no-reply.mp3" },
-  { title: "SWINGING HARD", scene: "BRASS & GROOVE", src: "/audio/swinging-hard.mp3" },
-  { title: "风从长江吹来", scene: "RIVER FUSION", src: "/audio/wind-from-yangtze.mp3" },
-  { title: "玻璃海", scene: "AMBIENT POP", src: "/audio/glass-sea.mp3" },
-  { title: "仍在路上", scene: "FORWARD", src: "/audio/still-on-road.mp3" },
+  { title: "蓝调夜行", scene: "URBAN BLUES", description: "夜色、铜管与都市行进感交织的 AI 音乐实验。", src: "/audio/blue-night.mp3" },
+  { title: "雨停在旧站台", scene: "POP BALLAD", description: "以旧站台和雨后余韵构建的叙事流行作品。", src: "/audio/rain-old-platform.mp3" },
+  { title: "梨园照山河", scene: "CHINESE FUSION", description: "戏曲音色与现代编曲交织的文化融合尝试。", src: "/audio/opera-mountains.mp3" },
+  { title: "RUN INTO THE THUNDER", scene: "ENGLISH ROCK", description: "高能鼓组与电吉他共同推进的英文摇滚作品。", src: "/audio/run-into-thunder.mp3" },
+  { title: "GOLD ON THE FLOOR", scene: "DANCE POP", description: "面向舞蹈与短视频场景的律动流行作品。", src: "/audio/gold-on-floor.mp3" },
+  { title: "未发送的晚安", scene: "MIDNIGHT MESSAGE", description: "夜间消息感与克制叙事构成的情绪作品。", src: "/audio/unsent-goodnight.mp3" },
+  { title: "凌晨四点的便利店", scene: "CITY POP", description: "都市深夜场景下的 City Pop 氛围实验。", src: "/audio/four-am-store.mp3" },
+  { title: "把夜走成清晨", scene: "DAWN WALK", description: "从暗夜走向晨光的渐进式情绪叙事。", src: "/audio/night-to-morning.mp3" },
+  { title: "百年新章", scene: "CEREMONIAL", description: "面向庆典与文化场景的宏阔融合创作。", src: "/audio/century-new-chapter.mp3" },
+  { title: "逆着光生长", scene: "UPLIFTING POP", description: "强调向上能量与副歌推动力的流行作品。", src: "/audio/grow-against-light.mp3" },
+  { title: "把名字写进风里", scene: "AIRY POP", description: "轻盈空气感与离别意象交织的流行作品。", src: "/audio/name-in-wind.mp3" },
+  { title: "月亮没有回信", scene: "LUNAR BALLAD", description: "围绕等待与失落展开的月夜抒情作品。", src: "/audio/moon-no-reply.mp3" },
+  { title: "SWINGING HARD", scene: "BRASS & GROOVE", description: "铜管、律动与现场感驱动的 Groove 实验。", src: "/audio/swinging-hard.mp3" },
+  { title: "风从长江吹来", scene: "RIVER FUSION", description: "江河意象与地域文化融合的音乐作品。", src: "/audio/wind-from-yangtze.mp3" },
+  { title: "玻璃海", scene: "AMBIENT POP", description: "透明质感与漂浮空间感构成的氛围流行作品。", src: "/audio/glass-sea.mp3" },
+  { title: "仍在路上", scene: "FORWARD", description: "面向前行叙事与成长主题的鼓舞型作品。", src: "/audio/still-on-road.mp3" },
 ];
+
+const learnMoreLetters = "LEARN MORE".split("");
+const learnMoreLambdas = [18, 15, 13, 11, 9.5, 8.5, 7.5, 6.7, 6, 5.5];
 
 type UniversePlane = {
   id: string;
@@ -391,27 +394,26 @@ function useInertialCamera(enabled: boolean) {
       camera.style.setProperty("--camera-yaw", "0deg");
       camera.style.setProperty("--camera-pitch", "0deg");
       camera.style.setProperty("--camera-blur", "0px");
+      camera.style.setProperty("--camera-sway", "0deg");
       return;
     }
 
     let frame = 0;
-    const render = (time: number) => {
+    const render = () => {
       const current = currentRef.current;
       const target = targetRef.current;
-      const idleYaw = Math.sin(time * 0.00019) * 1.65;
-      const idlePitch = Math.cos(time * 0.00014) * 0.72;
-      const desiredYaw = target.yaw + idleYaw;
-      const desiredPitch = target.pitch + idlePitch;
-      const yawDistance = desiredYaw - current.yaw;
-      const pitchDistance = desiredPitch - current.pitch;
-      current.yaw += yawDistance * 0.055;
-      current.pitch += pitchDistance * 0.055;
+      const yawDistance = target.yaw - current.yaw;
+      const pitchDistance = target.pitch - current.pitch;
+      current.yaw += yawDistance * 0.035;
+      current.pitch += pitchDistance * 0.035;
       const motionBlur = Math.min(1.15, Math.hypot(yawDistance, pitchDistance) * 0.085);
+      const cameraSway = Math.max(-1.6, Math.min(1.6, yawDistance * 0.16));
       camera.style.setProperty("--camera-yaw", `${current.yaw.toFixed(3)}deg`);
       camera.style.setProperty("--camera-pitch", `${current.pitch.toFixed(3)}deg`);
-      camera.style.setProperty("--camera-x", `${(-current.yaw * 2.1).toFixed(2)}px`);
-      camera.style.setProperty("--camera-y", `${(current.pitch * 1.8).toFixed(2)}px`);
+      camera.style.setProperty("--camera-x", `${(-current.yaw * 4.4).toFixed(2)}px`);
+      camera.style.setProperty("--camera-y", `${(current.pitch * 3.2).toFixed(2)}px`);
       camera.style.setProperty("--camera-blur", `${motionBlur.toFixed(2)}px`);
+      camera.style.setProperty("--camera-sway", `${cameraSway.toFixed(3)}deg`);
       frame = window.requestAnimationFrame(render);
     };
     frame = window.requestAnimationFrame(render);
@@ -435,8 +437,8 @@ function useInertialCamera(enabled: boolean) {
     }
     if (event.pointerType !== "mouse") return;
     const box = event.currentTarget.getBoundingClientRect();
-    targetRef.current.yaw = ((event.clientX - box.left) / box.width - 0.5) * 14;
-    targetRef.current.pitch = -((event.clientY - box.top) / box.height - 0.5) * 10;
+    targetRef.current.yaw = ((event.clientX - box.left) / box.width - 0.5) * 18;
+    targetRef.current.pitch = -((event.clientY - box.top) / box.height - 0.5) * 12;
   };
 
   const onPointerDown = (event: React.PointerEvent<HTMLElement>) => {
@@ -498,7 +500,7 @@ function SoundGate({
       className={`sound-gate ${zooming ? "sound-gate--zooming" : ""}`}
       role="dialog"
       aria-modal="true"
-      aria-labelledby="sound-gate-title"
+      aria-label="声音设置"
       onKeyDown={(event) => {
         if (event.key === "Escape" && !zooming) {
           event.preventDefault();
@@ -508,35 +510,6 @@ function SoundGate({
         trapDialogFocus(event);
       }}
     >
-      <div className="sound-gate__depth" aria-hidden="true">
-        {universePlanes.map((plane, index) => {
-          const style = {
-            "--gate-x": `${50 + plane.x * 0.82}%`,
-            "--gate-y": `${50 + plane.y * 0.78}%`,
-            "--gate-z": `${-2350 + (index % 8) * 245}px`,
-            "--gate-rx": `${plane.rx}deg`,
-            "--gate-ry": `${plane.ry}deg`,
-            "--gate-size": `${Math.max(8, plane.size * 0.82)}vw`,
-            "--gate-order": index,
-          } as React.CSSProperties;
-          return (
-            <span key={plane.id} className={`gate-cover art-${plane.art}`} style={style}>
-              {plane.src ? (
-                <Image
-                  unoptimized
-                  src={plane.src}
-                  alt=""
-                  fill
-                  sizes="(max-width: 760px) 24vw, 10vw"
-                  priority={index < 4}
-                />
-              ) : (
-                <span className="generated-cover" aria-hidden="true"><i /><b>{String(index + 1).padStart(2, "0")}</b></span>
-              )}
-            </span>
-          );
-        })}
-      </div>
       <button
         className="sound-gate__enter"
         onClick={() => { if (!zooming) enter(true); }}
@@ -544,19 +517,23 @@ function SoundGate({
         aria-label="开启声音并进入音乐宇宙"
         autoFocus
       >
-        <span className="sound-gate__kicker">WELCOME TO</span>
-        <span className="sound-gate__title" id="sound-gate-title">
-          CASSIE&apos;S<br />MUSIC UNIVERSE
+        <span className="sound-gate__prompt" id="sound-gate-title" aria-hidden="true">
+          <span>CLICK</span>
+          <span>ANYWHERE</span>
+          <span>TO</span>
+          <span>TURN</span>
+          <span>ON</span>
+          <span>YOUR</span>
+          <span>SOUND</span>
         </span>
-        <span className="sound-gate__instruction">CLICK TO ENTER WITH SOUND</span>
-        <small>让音乐被听见，也被正确地运营 · 16 ALBUM COVERS</small>
+        <span className="sr-only">点击任意位置开启声音并进入 Cassie 的音乐宇宙</span>
       </button>
       <button
         className="enter-muted"
         onClick={() => { if (!zooming) enter(false); }}
         aria-disabled={zooming}
       >
-        静音进入 · ENTER WITHOUT SOUND
+        ENTER WITHOUT SOUND · 静音进入
       </button>
     </div>
   );
@@ -578,13 +555,126 @@ function MusicUniverse({
   interactive: boolean;
 }) {
   const { cameraRef, handlers, shouldSuppressClick } = useInertialCamera(interactive);
+  const [pointerHoverId, setPointerHoverId] = useState<string | null>(null);
+  const [focusId, setFocusId] = useState<string | null>(null);
+  const hoverTimerRef = useRef<number | null>(null);
+  const cursorLettersRef = useRef<(HTMLSpanElement | null)[]>([]);
+  const cursorFrameRef = useRef<number | null>(null);
+  const pointerRef = useRef({ x: -120, y: -120, initialized: false });
+  const cursorPositionsRef = useRef(
+    learnMoreLetters.map(() => ({ x: -120, y: -120 })),
+  );
+  const activeId = pointerHoverId ?? focusId;
+  const focusedPlane = activeId
+    ? universePlanes.find((plane) => plane.id === activeId) ?? null
+    : null;
+  const pointerHoveredPlane = pointerHoverId
+    ? universePlanes.find((plane) => plane.id === pointerHoverId) ?? null
+    : null;
+
+  useEffect(() => {
+    return () => {
+      if (hoverTimerRef.current !== null) window.clearTimeout(hoverTimerRef.current);
+      if (cursorFrameRef.current !== null) window.cancelAnimationFrame(cursorFrameRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!pointerHoverId) {
+      pointerRef.current.initialized = false;
+      if (cursorFrameRef.current !== null) {
+        window.cancelAnimationFrame(cursorFrameRef.current);
+        cursorFrameRef.current = null;
+      }
+      return;
+    }
+
+    let lastTime = performance.now();
+    const animate = (time: number) => {
+      const pointer = pointerRef.current;
+      const positions = cursorPositionsRef.current;
+      const dt = Math.min(0.05, Math.max(0.001, (time - lastTime) / 1000));
+      lastTime = time;
+
+      if (!pointer.initialized) {
+        let startX = pointer.x + 18;
+        positions.forEach((position, index) => {
+          position.x = startX;
+          position.y = pointer.y - 16;
+          startX += learnMoreLetters[index] === " " ? 7 : 10;
+        });
+        pointer.initialized = true;
+      }
+
+      positions.forEach((position, index) => {
+        const previous = positions[index - 1];
+        const targetX = index === 0
+          ? pointer.x + 18
+          : previous.x + (learnMoreLetters[index - 1] === " " ? 7 : 10);
+        const targetY = index === 0 ? pointer.y - 16 : previous.y;
+        const alpha = 1 - Math.exp(-learnMoreLambdas[index] * dt);
+        position.x += (targetX - position.x) * alpha;
+        position.y += (targetY - position.y) * alpha;
+        const letter = cursorLettersRef.current[index];
+        if (letter) {
+          letter.style.transform = `translate3d(${position.x.toFixed(2)}px, ${position.y.toFixed(2)}px, 0)`;
+        }
+      });
+
+      cursorFrameRef.current = window.requestAnimationFrame(animate);
+    };
+
+    cursorFrameRef.current = window.requestAnimationFrame(animate);
+    return () => {
+      if (cursorFrameRef.current !== null) {
+        window.cancelAnimationFrame(cursorFrameRef.current);
+        cursorFrameRef.current = null;
+      }
+    };
+  }, [pointerHoverId]);
+
+  const scheduleHover = (plane: UniversePlane, pointerType: string) => {
+    if (pointerType !== "mouse") return;
+    if (hoverTimerRef.current !== null) window.clearTimeout(hoverTimerRef.current);
+    hoverTimerRef.current = window.setTimeout(() => {
+      setPointerHoverId(plane.id);
+      hoverTimerRef.current = null;
+    }, 100);
+  };
+
+  const clearPointerHover = (planeId?: string) => {
+    if (hoverTimerRef.current !== null) {
+      window.clearTimeout(hoverTimerRef.current);
+      hoverTimerRef.current = null;
+    }
+    setPointerHoverId((current) => (!planeId || current === planeId ? null : current));
+  };
+
+  const moveLearnMore = (event: React.PointerEvent<HTMLElement>) => {
+    if (event.pointerType !== "mouse") return;
+    pointerRef.current.x = event.clientX;
+    pointerRef.current.y = event.clientY;
+  };
 
   return (
-    <main className="music-universe" id="main-content" tabIndex={-1}>
+    <main
+      className={`music-universe ${focusedPlane ? "is-focused" : ""}`}
+      id="main-content"
+      tabIndex={-1}
+    >
+      <span className="sr-only">让音乐被听见：探索 Cassie 的 16 首 AI 音乐作品。</span>
       <section
         className="music-universe__stage"
         aria-label="可探索的歌曲专辑宇宙"
         {...handlers}
+        onPointerMove={(event) => {
+          handlers.onPointerMove(event);
+          moveLearnMore(event);
+        }}
+        onPointerLeave={(event) => {
+          handlers.onPointerLeave(event);
+          clearPointerHover();
+        }}
       >
         <div className="music-universe__arrival">
           <div className="music-universe__camera" ref={cameraRef}>
@@ -593,6 +683,9 @@ function MusicUniverse({
               {universePlanes.map((plane, index) => {
                 const isTrack = plane.trackIndex !== undefined;
                 const isPlaying = isTrack && activeTrack === plane.trackIndex && playing;
+                const isHovered = activeId === plane.id;
+                const isDimmed = activeId !== null && !isHovered;
+                const baseOpacity = Math.max(0.38, Math.min(0.64, 0.5 + plane.z / 1400));
                 const style = {
                   "--plane-x": `${plane.x}vw`,
                   "--plane-y": `${plane.y}vh`,
@@ -600,14 +693,26 @@ function MusicUniverse({
                   "--plane-rx": `${plane.rx}deg`,
                   "--plane-ry": `${plane.ry}deg`,
                   "--plane-size": `${plane.size}vw`,
-                  "--flight-delay": `${-(index * 1.07).toFixed(2)}s`,
-                  "--flight-duration": `${(15.5 + (index % 5) * 1.35).toFixed(2)}s`,
+                  "--plane-opacity": baseOpacity.toFixed(2),
                 } as React.CSSProperties;
                 return (
                   <button
-                    className={`music-plane art-${plane.art} ${isPlaying ? "is-playing" : ""}`}
+                    className={[
+                      "music-plane",
+                      `art-${plane.art}`,
+                      isPlaying ? "is-playing" : "",
+                      isHovered ? "is-hovered" : "",
+                      isDimmed ? "is-dimmed" : "",
+                    ].filter(Boolean).join(" ")}
                     style={style}
                     key={plane.id}
+                    onPointerEnter={(event) => {
+                      moveLearnMore(event);
+                      scheduleHover(plane, event.pointerType);
+                    }}
+                    onPointerLeave={() => clearPointerHover(plane.id)}
+                    onFocus={() => setFocusId(plane.id)}
+                    onBlur={() => setFocusId((current) => current === plane.id ? null : current)}
                     onClick={(event) => {
                       if (shouldSuppressClick()) {
                         event.preventDefault();
@@ -642,19 +747,69 @@ function MusicUniverse({
           </div>
         </div>
       </section>
-      <div className="music-universe__hud">
-        <div className="music-universe__welcome">
-          <span>WELCOME TO</span>
-          <h1>CASSIE&apos;S<br />MUSIC UNIVERSE</h1>
-          <small>16 TRACKS · COMPOSITION × CONTENT × RIGHTS</small>
-        </div>
-        <button onClick={() => chooseView("projects")} aria-label="打开作品索引">
-          <i>＋</i>
-          <span>MUSIC INDEX</span>
-        </button>
-        <p>HOVER TO HOLD · CLICK TO LISTEN · 触摸点按播放</p>
+      <div className={`music-universe__hud ${focusedPlane ? "is-showing-track" : ""}`}>
+        {focusedPlane ? (
+          <div className="music-universe__focus-copy" key={focusedPlane.id} aria-live="polite">
+            <h1>{focusedPlane.title}</h1>
+            <span className="music-universe__focus-scene">{focusedPlane.subtitle}</span>
+            <p className="music-universe__focus-description">
+              {focusedPlane.trackIndex !== undefined
+                ? tracks[focusedPlane.trackIndex].description
+                : "从生成歌曲到可检索、可评估、可分发的音乐内容资产。"}
+            </p>
+            <small>FROM THE 16-TRACK AI MUSIC CATALOG · CLICK TO LISTEN</small>
+          </div>
+        ) : (
+          <>
+            <button onClick={() => chooseView("songs")} aria-label="打开歌曲索引">
+              <i>＋</i>
+              <span>MUSIC INDEX</span>
+            </button>
+            <p>MOVE TO EXPLORE · HOVER TO FOCUS · CLICK TO LISTEN</p>
+          </>
+        )}
+      </div>
+      <div className={`learn-more-cursor ${pointerHoveredPlane ? "is-visible" : ""}`} aria-hidden="true">
+        {learnMoreLetters.map((character, index) => (
+          <span
+            key={`${character}-${index}`}
+            ref={(element) => { cursorLettersRef.current[index] = element; }}
+          >
+            {character === " " ? "\u00a0" : character}
+          </span>
+        ))}
       </div>
       <WordNavigation view="universe" chooseView={chooseView} />
+    </main>
+  );
+}
+
+function SongIndex({
+  playTrack,
+  chooseView,
+}: {
+  playTrack: (index: number) => void;
+  chooseView: (view: View) => void;
+}) {
+  return (
+    <main className="song-index" id="main-content">
+      <button className="space-back" onClick={() => chooseView("universe")}>
+        ← BACK TO SPACE VIEW
+      </button>
+      <div className="song-index__heading">
+        <span>SONG INDEX</span>
+        <p>16 TRACKS · CLICK TO LISTEN</p>
+      </div>
+      <div className="song-index__grid">
+        {tracks.map((track, index) => (
+          <button key={track.src} onClick={() => playTrack(index)}>
+            <span>{String(index + 1).padStart(3, "0")}</span>
+            <strong>{track.title}</strong>
+            <em>{track.scene}</em>
+          </button>
+        ))}
+      </div>
+      <WordNavigation view="songs" chooseView={chooseView} />
     </main>
   );
 }
@@ -1084,7 +1239,7 @@ export default function PortfolioExperience() {
       return;
     }
     setEntryPhase("zooming");
-    entryTimerRef.current = window.setTimeout(finishEntry, 3200);
+    entryTimerRef.current = window.setTimeout(finishEntry, 4400);
   };
 
   const toggleAudio = async () => {
@@ -1159,6 +1314,8 @@ export default function PortfolioExperience() {
             playing={playing}
             interactive={entryPhase === "ready"}
           />
+        ) : view === "songs" ? (
+          <SongIndex playTrack={(index) => startAudio(index)} chooseView={chooseView} />
         ) : view === "projects" ? (
           <ProjectsIndex openProject={openProject} chooseView={chooseView} />
         ) : view === "about" ? (
@@ -1182,9 +1339,10 @@ export default function PortfolioExperience() {
           }}
         >
           <button className="mobile-menu__close" onClick={closeMobileMenu} autoFocus>CLOSE ×</button>
-          <button onClick={() => chooseView("projects")}><span>01</span>THE WORK</button>
-          <button onClick={() => chooseView("about")}><span>02</span>ABOUT ME</button>
-          <button onClick={() => chooseView("contact")}><span>03</span>CONTACT</button>
+          <button onClick={() => chooseView("songs")}><span>01</span>MUSIC INDEX</button>
+          <button onClick={() => chooseView("projects")}><span>02</span>THE WORK</button>
+          <button onClick={() => chooseView("about")}><span>03</span>ABOUT ME</button>
+          <button onClick={() => chooseView("contact")}><span>04</span>CONTACT</button>
         </nav>
       )}
 
