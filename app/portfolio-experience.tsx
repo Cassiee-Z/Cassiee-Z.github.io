@@ -268,6 +268,17 @@ const tracks = [
   { title: "梨园照山河", scene: "CHINESE FUSION", src: "/audio/opera-mountains.mp3" },
   { title: "RUN INTO THE THUNDER", scene: "ENGLISH ROCK", src: "/audio/run-into-thunder.mp3" },
   { title: "GOLD ON THE FLOOR", scene: "DANCE POP", src: "/audio/gold-on-floor.mp3" },
+  { title: "未发送的晚安", scene: "MIDNIGHT MESSAGE", src: "/audio/unsent-goodnight.mp3" },
+  { title: "凌晨四点的便利店", scene: "CITY POP", src: "/audio/four-am-store.mp3" },
+  { title: "把夜走成清晨", scene: "DAWN WALK", src: "/audio/night-to-morning.mp3" },
+  { title: "百年新章", scene: "CEREMONIAL", src: "/audio/century-new-chapter.mp3" },
+  { title: "逆着光生长", scene: "UPLIFTING POP", src: "/audio/grow-against-light.mp3" },
+  { title: "把名字写进风里", scene: "AIRY POP", src: "/audio/name-in-wind.mp3" },
+  { title: "月亮没有回信", scene: "LUNAR BALLAD", src: "/audio/moon-no-reply.mp3" },
+  { title: "SWINGING HARD", scene: "BRASS & GROOVE", src: "/audio/swinging-hard.mp3" },
+  { title: "风从长江吹来", scene: "RIVER FUSION", src: "/audio/wind-from-yangtze.mp3" },
+  { title: "玻璃海", scene: "AMBIENT POP", src: "/audio/glass-sea.mp3" },
+  { title: "仍在路上", scene: "FORWARD", src: "/audio/still-on-road.mp3" },
 ];
 
 type UniversePlane = {
@@ -291,17 +302,17 @@ const universePlanes: UniversePlane[] = [
   { id: "opera", title: "梨园照山河", subtitle: "CHINESE FUSION", src: "/images/covers/opera-mountains.jpg", art: "opera", x: -13, y: -20, z: 135, rx: -2, ry: 5, size: 13, trackIndex: 2 },
   { id: "thunder", title: "RUN INTO THE THUNDER", subtitle: "ENGLISH ROCK", src: "/images/covers/run-into-thunder-v3.jpg", art: "thunder", x: 38, y: 4, z: 100, rx: 2, ry: -13, size: 17, trackIndex: 3 },
   { id: "gold", title: "GOLD ON THE FLOOR", subtitle: "DANCE POP", src: "/images/covers/gold-on-floor-v3.jpg", art: "gold", x: -31, y: 23, z: -130, rx: -5, ry: 9, size: 12, trackIndex: 4 },
-  { id: "goodnight", title: "未发送的晚安", subtitle: "MIDNIGHT MESSAGE", src: "/images/covers/unsent-goodnight-v4.jpg", art: "violet", x: -11, y: -34, z: -340, rx: 8, ry: 4, size: 8 },
-  { id: "store", title: "凌晨四点的便利店", subtitle: "CITY POP", art: "store", x: 42, y: -18, z: -390, rx: -4, ry: -16, size: 8 },
-  { id: "morning", title: "把夜走成清晨", subtitle: "DAWN WALK", src: "/images/covers/night-to-morning-v3.jpg", art: "dawn", x: -44, y: -4, z: -260, rx: 6, ry: 14, size: 9 },
-  { id: "chapter", title: "百年新章", subtitle: "CEREMONIAL", src: "/images/covers/century-new-chapter-v3.jpg", art: "crimson", x: 20, y: 29, z: -300, rx: -7, ry: -7, size: 9 },
-  { id: "light", title: "逆着光生长", subtitle: "UPLIFTING POP", src: "/images/covers/grow-against-light-v3.jpg", art: "light", x: 44, y: 28, z: -220, rx: 5, ry: -15, size: 10 },
-  { id: "wind", title: "把名字写进风里", subtitle: "AIRY POP", src: "/images/covers/name-in-wind-v3.jpg", art: "wind", x: -15, y: 32, z: 70, rx: 4, ry: 3, size: 11 },
-  { id: "moon", title: "月亮没有回信", subtitle: "LUNAR BALLAD", src: "/images/covers/moon-no-reply-v3.jpg", art: "moon", x: 16, y: -39, z: -480, rx: 7, ry: -2, size: 7 },
-  { id: "swing", title: "SWINGING HARD", subtitle: "BRASS & GROOVE", src: "/images/covers/swinging-hard-v3.jpg", art: "swing", x: -45, y: 36, z: -430, rx: -5, ry: 17, size: 8 },
-  { id: "river", title: "风从长江吹来", subtitle: "RIVER FUSION", art: "river", x: 31, y: 38, z: -470, rx: 5, ry: -9, size: 7 },
-  { id: "glass", title: "玻璃海", subtitle: "AMBIENT POP", src: "/images/covers/glass-sea-v3.jpg", art: "glass", x: -25, y: -7, z: -510, rx: -8, ry: 8, size: 7 },
-  { id: "road", title: "仍在路上", subtitle: "FORWARD", src: "/images/covers/still-on-road-v3.jpg", art: "road", x: 7, y: 38, z: -180, rx: -4, ry: -2, size: 9 },
+  { id: "goodnight", title: "未发送的晚安", subtitle: "MIDNIGHT MESSAGE", src: "/images/covers/unsent-goodnight-v4.jpg", art: "violet", x: -11, y: -34, z: -340, rx: 8, ry: 4, size: 8, trackIndex: 5 },
+  { id: "store", title: "凌晨四点的便利店", subtitle: "CITY POP", src: "/images/covers/four-am-store-v3.jpg", art: "store", x: 42, y: -18, z: -390, rx: -4, ry: -16, size: 8, trackIndex: 6 },
+  { id: "morning", title: "把夜走成清晨", subtitle: "DAWN WALK", src: "/images/covers/night-to-morning-v3.jpg", art: "dawn", x: -44, y: -4, z: -260, rx: 6, ry: 14, size: 9, trackIndex: 7 },
+  { id: "chapter", title: "百年新章", subtitle: "CEREMONIAL", src: "/images/covers/century-new-chapter-v3.jpg", art: "crimson", x: 20, y: 29, z: -300, rx: -7, ry: -7, size: 9, trackIndex: 8 },
+  { id: "light", title: "逆着光生长", subtitle: "UPLIFTING POP", src: "/images/covers/grow-against-light-v3.jpg", art: "light", x: 44, y: 28, z: -220, rx: 5, ry: -15, size: 10, trackIndex: 9 },
+  { id: "wind", title: "把名字写进风里", subtitle: "AIRY POP", src: "/images/covers/name-in-wind-v3.jpg", art: "wind", x: -15, y: 32, z: 70, rx: 4, ry: 3, size: 11, trackIndex: 10 },
+  { id: "moon", title: "月亮没有回信", subtitle: "LUNAR BALLAD", src: "/images/covers/moon-no-reply-v3.jpg", art: "moon", x: 16, y: -39, z: -480, rx: 7, ry: -2, size: 7, trackIndex: 11 },
+  { id: "swing", title: "SWINGING HARD", subtitle: "BRASS & GROOVE", src: "/images/covers/swinging-hard-v3.jpg", art: "swing", x: -45, y: 36, z: -430, rx: -5, ry: 17, size: 8, trackIndex: 12 },
+  { id: "river", title: "风从长江吹来", subtitle: "RIVER FUSION", src: "/images/covers/wind-from-yangtze-v3.jpg", art: "river", x: 31, y: 38, z: -470, rx: 5, ry: -9, size: 7, trackIndex: 13 },
+  { id: "glass", title: "玻璃海", subtitle: "AMBIENT POP", src: "/images/covers/glass-sea-v3.jpg", art: "glass", x: -25, y: -7, z: -510, rx: -8, ry: 8, size: 7, trackIndex: 14 },
+  { id: "road", title: "仍在路上", subtitle: "FORWARD", src: "/images/covers/still-on-road-v3.jpg", art: "road", x: 7, y: 38, z: -180, rx: -4, ry: -2, size: 9, trackIndex: 15 },
 ];
 
 function formatTime(value: number) {
@@ -502,10 +513,10 @@ function SoundGate({
           const style = {
             "--gate-x": `${50 + plane.x * 0.82}%`,
             "--gate-y": `${50 + plane.y * 0.78}%`,
-            "--gate-z": `${Math.round(plane.z * 0.62 - 120)}px`,
+            "--gate-z": `${-2350 + (index % 8) * 245}px`,
             "--gate-rx": `${plane.rx}deg`,
             "--gate-ry": `${plane.ry}deg`,
-            "--gate-size": `${Math.max(4.8, plane.size * 0.56)}vw`,
+            "--gate-size": `${Math.max(8, plane.size * 0.82)}vw`,
             "--gate-order": index,
           } as React.CSSProperties;
           return (
@@ -589,6 +600,8 @@ function MusicUniverse({
                   "--plane-rx": `${plane.rx}deg`,
                   "--plane-ry": `${plane.ry}deg`,
                   "--plane-size": `${plane.size}vw`,
+                  "--flight-delay": `${-(index * 1.07).toFixed(2)}s`,
+                  "--flight-duration": `${(15.5 + (index % 5) * 1.35).toFixed(2)}s`,
                 } as React.CSSProperties;
                 return (
                   <button
@@ -913,6 +926,7 @@ function PlayerOverlay({
   seek: (value: number) => void;
 }) {
   const track = tracks[trackIndex];
+  const plane = universePlanes[trackIndex];
   return (
     <div
       className="player-overlay"
@@ -928,12 +942,34 @@ function PlayerOverlay({
         trapDialogFocus(event);
       }}
     >
+      {plane.src && (
+        <div className="player-overlay__backdrop" aria-hidden="true">
+          <Image unoptimized src={plane.src} alt="" fill sizes="100vw" />
+        </div>
+      )}
       <button className="player-close" onClick={close} autoFocus>CLOSE ×</button>
       <p className="playing-label">PLAYING NOW</p>
-      <button className={`equalizer ${playing ? "is-playing" : ""}`} onClick={toggle} aria-label={playing ? "暂停" : "播放"}>
-        <i /><i /><i />
-        <span>{playing ? "Ⅱ" : "▶"}</span>
-      </button>
+      <div className="player-cover">
+        {plane.src ? (
+          <Image
+            unoptimized
+            src={plane.src}
+            alt={`${track.title}专辑封面`}
+            fill
+            sizes="(max-width: 760px) 72vw, 42vw"
+            priority
+          />
+        ) : (
+          <span className={`generated-cover art-${plane.art}`} aria-hidden="true"><i /><b>{String(trackIndex + 1).padStart(2, "0")}</b></span>
+        )}
+        <button
+          className={`player-cover__toggle ${playing ? "is-playing" : ""}`}
+          onClick={toggle}
+          aria-label={playing ? "暂停" : "播放"}
+        >
+          <span>{playing ? "Ⅱ" : "▶"}</span>
+        </button>
+      </div>
       <div className="player-copy">
         <strong>{track.title}</strong>
         <span>FROM {track.scene}</span>
@@ -1048,7 +1084,7 @@ export default function PortfolioExperience() {
       return;
     }
     setEntryPhase("zooming");
-    entryTimerRef.current = window.setTimeout(finishEntry, 2500);
+    entryTimerRef.current = window.setTimeout(finishEntry, 3200);
   };
 
   const toggleAudio = async () => {

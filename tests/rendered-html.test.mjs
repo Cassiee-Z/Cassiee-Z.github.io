@@ -48,6 +48,17 @@ test("ships audio, profile, social and recruiter download assets", async () => {
     "../public/audio/opera-mountains.mp3",
     "../public/audio/run-into-thunder.mp3",
     "../public/audio/gold-on-floor.mp3",
+    "../public/audio/unsent-goodnight.mp3",
+    "../public/audio/four-am-store.mp3",
+    "../public/audio/night-to-morning.mp3",
+    "../public/audio/century-new-chapter.mp3",
+    "../public/audio/grow-against-light.mp3",
+    "../public/audio/name-in-wind.mp3",
+    "../public/audio/moon-no-reply.mp3",
+    "../public/audio/swinging-hard.mp3",
+    "../public/audio/wind-from-yangtze.mp3",
+    "../public/audio/glass-sea.mp3",
+    "../public/audio/still-on-road.mp3",
     "../public/images/cassie-editorial.jpg",
     "../public/images/cassie-headshot.jpg",
     "../public/images/og-cassie-music.jpg",
@@ -69,6 +80,8 @@ test("ships audio, profile, social and recruiter download assets", async () => {
     "../public/images/covers/night-to-morning-v3.jpg",
     "../public/images/covers/century-new-chapter-v3.jpg",
     "../public/images/covers/swinging-hard-v3.jpg",
+    "../public/images/covers/four-am-store-v3.jpg",
+    "../public/images/covers/wind-from-yangtze-v3.jpg",
     "../public/docs/Cassie_Zha_Wenxin_Resume_CN.pdf",
     "../public/docs/Cassie_2-Day_Music_Ops_Cram_Plan.pdf",
   ];
@@ -84,4 +97,7 @@ test("ships audio, profile, social and recruiter download assets", async () => {
   assert.match(source, /公开事实与个人分析假设分开标注/);
   assert.match(source, /该事项未获得最终解决/);
   assert.match(source, /电话号码仅放在下载简历中/);
+  assert.match(source, /凌晨四点的便利店/);
+  assert.match(source, /风从长江吹来/);
+  assert.match(source, /wind-from-yangtze\.mp3/);
 });

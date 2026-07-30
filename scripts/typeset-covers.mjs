@@ -125,6 +125,15 @@ const covers = [
     theme: "light",
   },
   {
+    input: "public/images/covers/four-am-store-v2.png",
+    output: "public/images/covers/four-am-store-v3.jpg",
+    number: "07",
+    chapter: "NIGHT CITY",
+    title: "凌晨四点的便利店",
+    english: "THE 4 A.M. CONVENIENCE STORE / CITY POP",
+    titleSize: 52,
+  },
+  {
     input: "public/images/covers/night-to-morning-v2.png",
     output: "public/images/covers/night-to-morning-v3.jpg",
     number: "08",
@@ -154,6 +163,15 @@ const covers = [
     titleFamily: "Helvetica Neue, Arial, sans-serif",
     titleTracking: 1.8,
     align: "right",
+  },
+  {
+    input: "public/images/covers/wind-from-yangtze-v2.png",
+    output: "public/images/covers/wind-from-yangtze-v3.jpg",
+    number: "14",
+    chapter: "RIVER & HOMELAND",
+    title: "风从长江吹来",
+    english: "WIND FROM THE YANGTZE / RIVER FUSION",
+    titleSize: 62,
   },
 ];
 
