@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { getTrackLyrics } from "./track-lyrics";
 
 type View = "universe" | "songs" | "projects" | "about" | "contact";
 type EntryPhase = "gate" | "zooming" | "ready";
@@ -321,6 +322,92 @@ const universePlanes: UniversePlane[] = [
 function formatTime(value: number) {
   if (!Number.isFinite(value)) return "0:00";
   return `${Math.floor(value / 60)}:${Math.floor(value % 60).toString().padStart(2, "0")}`;
+}
+
+type LyricLine = {
+  text: string;
+  gapBefore: number;
+};
+
+type LyricCue = LyricLine & {
+  at: number;
+};
+
+function parseLyricLines(rawLyrics?: string | null): LyricLine[] {
+  if (!rawLyrics) return [];
+  const lines: LyricLine[] = [];
+  let gapBefore = 0;
+
+  rawLyrics.split(/\r?\n/).forEach((rawLine) => {
+    const text = rawLine.trim();
+    if (!text) {
+      gapBefore = Math.min(2.4, gapBefore + 0.45);
+      return;
+    }
+    if (/^\[[^\]]+\]$/.test(text)) {
+      gapBefore = Math.min(2.4, gapBefore + 1.15);
+      return;
+    }
+    if (text === "```" || (lines.length === 0 && /^《[^》]+》$/.test(text))) {
+      return;
+    }
+    lines.push({ text, gapBefore });
+    gapBefore = 0;
+  });
+
+  return lines;
+}
+
+function lyricLineWeight(text: string) {
+  const compact = text.replace(/\s+/g, "");
+  const hasCjk = /[\u3400-\u9fff]/.test(compact);
+  const units = hasCjk
+    ? Array.from(compact).length
+    : Math.max(1, text.trim().split(/\s+/).length * 1.55);
+  return Math.max(2.25, Math.min(7.4, 1.25 + units * 0.36));
+}
+
+function buildLyricCues(rawLyrics: string | null | undefined, duration: number): LyricCue[] {
+  const lines = parseLyricLines(rawLyrics);
+  if (!lines.length) return [];
+
+  if (!Number.isFinite(duration) || duration <= 0) {
+    return lines.map((line, index) => ({ ...line, at: 7 + index * 4 }));
+  }
+
+  const leadIn = Math.min(15, Math.max(6, duration * 0.045));
+  const tail = Math.min(10, Math.max(4, duration * 0.03));
+  const usable = Math.max(lines.length * 1.8, duration - leadIn - tail);
+  const totalWeight = lines.reduce(
+    (sum, line) => sum + line.gapBefore + lyricLineWeight(line.text),
+    0,
+  );
+  let elapsed = leadIn;
+
+  return lines.map((line) => {
+    elapsed += (line.gapBefore / totalWeight) * usable;
+    const cue = { ...line, at: elapsed };
+    elapsed += (lyricLineWeight(line.text) / totalWeight) * usable;
+    return cue;
+  });
+}
+
+function findActiveLyric(cues: LyricCue[], current: number) {
+  let low = 0;
+  let high = cues.length - 1;
+  let active = -1;
+
+  while (low <= high) {
+    const middle = Math.floor((low + high) / 2);
+    if (cues[middle].at <= current) {
+      active = middle;
+      low = middle + 1;
+    } else {
+      high = middle - 1;
+    }
+  }
+
+  return active;
 }
 
 function Brand({ onHome }: { onHome: () => void }) {
@@ -1082,12 +1169,40 @@ function PlayerOverlay({
 }) {
   const track = tracks[trackIndex];
   const plane = universePlanes[trackIndex];
+  const lyricViewportRef = useRef<HTMLOListElement>(null);
+  const lyricLineRefs = useRef<(HTMLLIElement | null)[]>([]);
+  const lyricCues = useMemo(
+    () => buildLyricCues(getTrackLyrics(track.src), duration),
+    [duration, track.src],
+  );
+  const activeLyricIndex = useMemo(
+    () => findActiveLyric(lyricCues, current),
+    [current, lyricCues],
+  );
+  const songProgress = duration > 0
+    ? Math.max(0, Math.min(1, current / duration))
+    : 0;
+
+  useEffect(() => {
+    const viewport = lyricViewportRef.current;
+    const targetIndex = Math.max(0, activeLyricIndex);
+    const line = lyricLineRefs.current[targetIndex];
+    if (!viewport || !line) return;
+
+    const top = line.offsetTop - (viewport.clientHeight - line.offsetHeight) / 2;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    viewport.scrollTo({
+      top: Math.max(0, top),
+      behavior: reduceMotion ? "auto" : "smooth",
+    });
+  }, [activeLyricIndex, track.src]);
+
   return (
     <div
       className="player-overlay"
       role="dialog"
       aria-modal="true"
-      aria-label="音乐播放器"
+      aria-labelledby="player-title"
       onKeyDown={(event) => {
         if (event.key === "Escape") {
           event.preventDefault();
@@ -1102,42 +1217,85 @@ function PlayerOverlay({
           <Image unoptimized src={plane.src} alt="" fill sizes="100vw" />
         </div>
       )}
-      <button className="player-close" onClick={close} autoFocus>CLOSE ×</button>
-      <p className="playing-label">PLAYING NOW</p>
-      <div className="player-cover">
-        {plane.src ? (
-          <Image
-            unoptimized
-            src={plane.src}
-            alt={`${track.title}专辑封面`}
-            fill
-            sizes="(max-width: 760px) 72vw, 42vw"
-            priority
-          />
-        ) : (
-          <span className={`generated-cover art-${plane.art}`} aria-hidden="true"><i /><b>{String(trackIndex + 1).padStart(2, "0")}</b></span>
-        )}
-        <button
-          className={`player-cover__toggle ${playing ? "is-playing" : ""}`}
-          onClick={toggle}
-          aria-label={playing ? "暂停" : "播放"}
-        >
-          <span>{playing ? "Ⅱ" : "▶"}</span>
-        </button>
+      <button className="player-close" onClick={close} aria-label="关闭播放器" autoFocus>CLOSE ×</button>
+      <div className="player-stage">
+        <section className="player-main" aria-label="当前播放歌曲">
+          <p className="playing-label">PLAYING NOW</p>
+          <div className="player-cover">
+            {plane.src ? (
+              <Image
+                unoptimized
+                src={plane.src}
+                alt={`${track.title}专辑封面`}
+                fill
+                sizes="(max-width: 760px) 28vw, 34vw"
+                priority
+              />
+            ) : (
+              <span className={`generated-cover art-${plane.art}`} aria-hidden="true"><i /><b>{String(trackIndex + 1).padStart(2, "0")}</b></span>
+            )}
+            <button
+              className={`player-cover__toggle ${playing ? "is-playing" : ""}`}
+              onClick={toggle}
+              aria-label={playing ? "暂停" : "播放"}
+            >
+              <span>{playing ? "Ⅱ" : "▶"}</span>
+            </button>
+          </div>
+          <div className="player-copy">
+            <h2 id="player-title">{track.title}</h2>
+            <span>FROM {track.scene}</span>
+          </div>
+          <div className="player-progress">
+            <input
+              type="range"
+              min="0"
+              max={duration || 0}
+              step="0.1"
+              value={Math.min(current, duration || 0)}
+              onChange={(event) => seek(Number(event.target.value))}
+              aria-label="播放进度"
+              aria-valuetext={`${formatTime(current)} / ${formatTime(duration)}`}
+              disabled={!duration}
+            />
+            <small>{formatTime(current)} / {formatTime(duration)}</small>
+          </div>
+        </section>
+
+        <section className="lyrics-panel" aria-labelledby="lyrics-title">
+          <p className="lyrics-panel__label" id="lyrics-title">LYRICS / 歌词</p>
+          {lyricCues.length ? (
+            <>
+              <span className="lyrics-rail" aria-hidden="true">
+                <i style={{ top: `${(songProgress * 100).toFixed(2)}%` }} />
+              </span>
+              <ol className="lyrics-viewport" ref={lyricViewportRef}>
+                {lyricCues.map((cue, index) => {
+                  const distance = activeLyricIndex < 0
+                    ? Math.min(3, index + 1)
+                    : Math.min(3, Math.abs(index - activeLyricIndex));
+                  return (
+                    <li
+                      key={`${cue.at.toFixed(3)}-${cue.text}`}
+                      ref={(element) => { lyricLineRefs.current[index] = element; }}
+                      data-distance={distance}
+                      aria-current={index === activeLyricIndex ? "true" : undefined}
+                    >
+                      {cue.text}
+                    </li>
+                  );
+                })}
+              </ol>
+            </>
+          ) : (
+            <div className="lyrics-empty">
+              <strong>INSTRUMENTAL</strong>
+              <span>纯音乐</span>
+              <p>本曲无人声歌词，请直接聆听完整音乐。</p>
+            </div>
+          )}
+        </section>
       </div>
-      <div className="player-copy">
-        <strong>{track.title}</strong>
-        <span>FROM {track.scene}</span>
-      </div>
-      <input
-        type="range"
-        min="0"
-        max={duration || 0}
-        value={Math.min(current, duration || 0)}
-        onChange={(event) => seek(Number(event.target.value))}
-        aria-label="播放进度"
-      />
-      <small>{formatTime(current)} / {formatTime(duration)}</small>
     </div>
   );
 }
