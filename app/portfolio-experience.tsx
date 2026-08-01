@@ -264,22 +264,22 @@ const projects: Project[] = [
 ];
 
 const tracks = [
-  { title: "蓝调夜行", scene: "URBAN BLUES", description: "夜色、铜管与都市行进感交织的 AI 音乐实验。", src: "/audio/blue-night.mp3" },
-  { title: "雨停在旧站台", scene: "POP BALLAD", description: "以旧站台和雨后余韵构建的叙事流行作品。", src: "/audio/rain-old-platform.mp3" },
-  { title: "梨园照山河", scene: "CHINESE FUSION", description: "戏曲音色与现代编曲交织的文化融合尝试。", src: "/audio/opera-mountains.mp3" },
-  { title: "RUN INTO THE THUNDER", scene: "ENGLISH ROCK", description: "高能鼓组与电吉他共同推进的英文摇滚作品。", src: "/audio/run-into-thunder.mp3" },
-  { title: "GOLD ON THE FLOOR", scene: "DANCE POP", description: "面向舞蹈与短视频场景的律动流行作品。", src: "/audio/gold-on-floor.mp3" },
-  { title: "未发送的晚安", scene: "MIDNIGHT MESSAGE", description: "夜间消息感与克制叙事构成的情绪作品。", src: "/audio/unsent-goodnight.mp3" },
-  { title: "凌晨四点的便利店", scene: "CITY POP", description: "都市深夜场景下的 City Pop 氛围实验。", src: "/audio/four-am-store.mp3" },
-  { title: "把夜走成清晨", scene: "DAWN WALK", description: "从暗夜走向晨光的渐进式情绪叙事。", src: "/audio/night-to-morning.mp3" },
-  { title: "百年新章", scene: "CEREMONIAL", description: "面向庆典与文化场景的宏阔融合创作。", src: "/audio/century-new-chapter.mp3" },
-  { title: "逆着光生长", scene: "UPLIFTING POP", description: "强调向上能量与副歌推动力的流行作品。", src: "/audio/grow-against-light.mp3" },
-  { title: "把名字写进风里", scene: "AIRY POP", description: "轻盈空气感与离别意象交织的流行作品。", src: "/audio/name-in-wind.mp3" },
-  { title: "月亮没有回信", scene: "LUNAR BALLAD", description: "围绕等待与失落展开的月夜抒情作品。", src: "/audio/moon-no-reply.mp3" },
-  { title: "SWINGING HARD", scene: "BRASS & GROOVE", description: "铜管、律动与现场感驱动的 Groove 实验。", src: "/audio/swinging-hard.mp3" },
-  { title: "风从长江吹来", scene: "RIVER FUSION", description: "江河意象与地域文化融合的音乐作品。", src: "/audio/wind-from-yangtze.mp3" },
-  { title: "玻璃海", scene: "AMBIENT POP", description: "透明质感与漂浮空间感构成的氛围流行作品。", src: "/audio/glass-sea.mp3" },
-  { title: "仍在路上", scene: "FORWARD", description: "面向前行叙事与成长主题的鼓舞型作品。", src: "/audio/still-on-road.mp3" },
+  { title: "蓝调夜行", scene: "URBAN BLUES", description: "夜色、铜管与都市行进感交织的 AI 音乐实验。", src: "/audio-stream/blue-night.m4a" },
+  { title: "雨停在旧站台", scene: "POP BALLAD", description: "以旧站台和雨后余韵构建的叙事流行作品。", src: "/audio-stream/rain-old-platform.m4a" },
+  { title: "梨园照山河", scene: "CHINESE FUSION", description: "戏曲音色与现代编曲交织的文化融合尝试。", src: "/audio-stream/opera-mountains.m4a" },
+  { title: "RUN INTO THE THUNDER", scene: "ENGLISH ROCK", description: "高能鼓组与电吉他共同推进的英文摇滚作品。", src: "/audio-stream/run-into-thunder.m4a" },
+  { title: "GOLD ON THE FLOOR", scene: "DANCE POP", description: "面向舞蹈与短视频场景的律动流行作品。", src: "/audio-stream/gold-on-floor.m4a" },
+  { title: "未发送的晚安", scene: "MIDNIGHT MESSAGE", description: "夜间消息感与克制叙事构成的情绪作品。", src: "/audio-stream/unsent-goodnight.m4a" },
+  { title: "凌晨四点的便利店", scene: "CITY POP", description: "都市深夜场景下的 City Pop 氛围实验。", src: "/audio-stream/four-am-store.m4a" },
+  { title: "把夜走成清晨", scene: "DAWN WALK", description: "从暗夜走向晨光的渐进式情绪叙事。", src: "/audio-stream/night-to-morning.m4a" },
+  { title: "百年新章", scene: "CEREMONIAL", description: "面向庆典与文化场景的宏阔融合创作。", src: "/audio-stream/century-new-chapter.m4a" },
+  { title: "逆着光生长", scene: "UPLIFTING POP", description: "强调向上能量与副歌推动力的流行作品。", src: "/audio-stream/grow-against-light.m4a" },
+  { title: "把名字写进风里", scene: "AIRY POP", description: "轻盈空气感与离别意象交织的流行作品。", src: "/audio-stream/name-in-wind.m4a" },
+  { title: "月亮没有回信", scene: "LUNAR BALLAD", description: "围绕等待与失落展开的月夜抒情作品。", src: "/audio-stream/moon-no-reply.m4a" },
+  { title: "SWINGING HARD", scene: "BRASS & GROOVE", description: "铜管、律动与现场感驱动的 Groove 实验。", src: "/audio-stream/swinging-hard.m4a" },
+  { title: "风从长江吹来", scene: "RIVER FUSION", description: "江河意象与地域文化融合的音乐作品。", src: "/audio-stream/wind-from-yangtze.m4a" },
+  { title: "玻璃海", scene: "AMBIENT POP", description: "透明质感与漂浮空间感构成的氛围流行作品。", src: "/audio-stream/glass-sea.m4a" },
+  { title: "仍在路上", scene: "FORWARD", description: "面向前行叙事与成长主题的鼓舞型作品。", src: "/audio-stream/still-on-road.m4a" },
 ];
 
 const learnMoreLetters = "LEARN MORE".split("");
@@ -333,7 +333,7 @@ type LyricCue = LyricLine & {
   at: number;
 };
 
-function parseLyricLines(rawLyrics?: string | null): LyricLine[] {
+function parseLyricLines(rawLyrics?: string | null, trackTitle?: string): LyricLine[] {
   if (!rawLyrics) return [];
   const lines: LyricLine[] = [];
   let gapBefore = 0;
@@ -348,7 +348,13 @@ function parseLyricLines(rawLyrics?: string | null): LyricLine[] {
       gapBefore = Math.min(2.4, gapBefore + 1.15);
       return;
     }
-    if (text === "```" || (lines.length === 0 && /^《[^》]+》$/.test(text))) {
+    if (
+      text === "```"
+      || (
+        lines.length === 0
+        && (text === trackTitle || /^《[^》]+》$/.test(text))
+      )
+    ) {
       return;
     }
     lines.push({ text, gapBefore });
@@ -367,8 +373,12 @@ function lyricLineWeight(text: string) {
   return Math.max(2.25, Math.min(7.4, 1.25 + units * 0.36));
 }
 
-function buildLyricCues(rawLyrics: string | null | undefined, duration: number): LyricCue[] {
-  const lines = parseLyricLines(rawLyrics);
+function buildLyricCues(
+  rawLyrics: string | null | undefined,
+  duration: number,
+  trackTitle?: string,
+): LyricCue[] {
+  const lines = parseLyricLines(rawLyrics, trackTitle);
   if (!lines.length) return [];
 
   if (!Number.isFinite(duration) || duration <= 0) {
@@ -630,6 +640,7 @@ function MusicUniverse({
   openProject,
   chooseView,
   playTrack,
+  warmTrack,
   activeTrack,
   playing,
   interactive,
@@ -637,6 +648,7 @@ function MusicUniverse({
   openProject: (key: ProjectKey) => void;
   chooseView: (view: View) => void;
   playTrack: (index: number) => void;
+  warmTrack: (index: number) => void;
   activeTrack: number;
   playing: boolean;
   interactive: boolean;
@@ -795,10 +807,14 @@ function MusicUniverse({
                     key={plane.id}
                     onPointerEnter={(event) => {
                       moveLearnMore(event);
+                      if (isTrack) warmTrack(plane.trackIndex!);
                       scheduleHover(plane, event.pointerType);
                     }}
                     onPointerLeave={() => clearPointerHover(plane.id)}
-                    onFocus={() => setFocusId(plane.id)}
+                    onFocus={() => {
+                      setFocusId(plane.id);
+                      if (isTrack) warmTrack(plane.trackIndex!);
+                    }}
                     onBlur={() => setFocusId((current) => current === plane.id ? null : current)}
                     onClick={(event) => {
                       if (shouldSuppressClick()) {
@@ -873,9 +889,11 @@ function MusicUniverse({
 
 function SongIndex({
   playTrack,
+  warmTrack,
   chooseView,
 }: {
   playTrack: (index: number) => void;
+  warmTrack: (index: number) => void;
   chooseView: (view: View) => void;
 }) {
   return (
@@ -889,7 +907,12 @@ function SongIndex({
       </div>
       <div className="song-index__grid">
         {tracks.map((track, index) => (
-          <button key={track.src} onClick={() => playTrack(index)}>
+          <button
+            key={track.src}
+            onPointerEnter={() => warmTrack(index)}
+            onFocus={() => warmTrack(index)}
+            onClick={() => playTrack(index)}
+          >
             <span>{String(index + 1).padStart(3, "0")}</span>
             <strong>{track.title}</strong>
             <em>{track.scene}</em>
@@ -929,11 +952,22 @@ function ProjectsIndex({
   );
 }
 
-function TrackList({ playTrack }: { playTrack: (index: number) => void }) {
+function TrackList({
+  playTrack,
+  warmTrack,
+}: {
+  playTrack: (index: number) => void;
+  warmTrack: (index: number) => void;
+}) {
   return (
     <div className="project-tracks">
       {tracks.map((track, index) => (
-        <button key={track.src} onClick={() => playTrack(index)}>
+        <button
+          key={track.src}
+          onPointerEnter={() => warmTrack(index)}
+          onFocus={() => warmTrack(index)}
+          onClick={() => playTrack(index)}
+        >
           <span>{String(index + 1).padStart(3, "0")}</span>
           <strong>{track.title}</strong>
           <em>{track.scene}</em>
@@ -949,11 +983,13 @@ function ProjectDetail({
   onBack,
   openProject,
   playTrack,
+  warmTrack,
 }: {
   project: Project;
   onBack: () => void;
   openProject: (key: ProjectKey) => void;
   playTrack: (index: number) => void;
+  warmTrack: (index: number) => void;
 }) {
   const index = projects.findIndex((item) => item.key === project.key);
   const next = projects[(index + 1) % projects.length];
@@ -991,7 +1027,7 @@ function ProjectDetail({
         <section className="listening-section">
           <p>SELECTED AUDIO / 点击进入全屏播放器</p>
           <h2>LISTEN TO THE CATALOG</h2>
-          <TrackList playTrack={playTrack} />
+          <TrackList playTrack={playTrack} warmTrack={warmTrack} />
         </section>
       )}
 
@@ -1153,6 +1189,7 @@ function Contact({ chooseView }: { chooseView: (view: View) => void }) {
 function PlayerOverlay({
   trackIndex,
   playing,
+  loading,
   current,
   duration,
   close,
@@ -1161,6 +1198,7 @@ function PlayerOverlay({
 }: {
   trackIndex: number;
   playing: boolean;
+  loading: boolean;
   current: number;
   duration: number;
   close: () => void;
@@ -1172,8 +1210,8 @@ function PlayerOverlay({
   const lyricViewportRef = useRef<HTMLOListElement>(null);
   const lyricLineRefs = useRef<(HTMLLIElement | null)[]>([]);
   const lyricCues = useMemo(
-    () => buildLyricCues(getTrackLyrics(track.src), duration),
-    [duration, track.src],
+    () => buildLyricCues(getTrackLyrics(track.src), duration, track.title),
+    [duration, track.src, track.title],
   );
   const activeLyricIndex = useMemo(
     () => findActiveLyric(lyricCues, current),
@@ -1235,11 +1273,11 @@ function PlayerOverlay({
               <span className={`generated-cover art-${plane.art}`} aria-hidden="true"><i /><b>{String(trackIndex + 1).padStart(2, "0")}</b></span>
             )}
             <button
-              className={`player-cover__toggle ${playing ? "is-playing" : ""}`}
+              className={`player-cover__toggle ${playing ? "is-playing" : ""} ${loading ? "is-loading" : ""}`}
               onClick={toggle}
-              aria-label={playing ? "暂停" : "播放"}
+              aria-label={loading ? "停止加载" : playing ? "暂停" : "播放"}
             >
-              <span>{playing ? "Ⅱ" : "▶"}</span>
+              <span>{loading ? "•••" : playing ? "Ⅱ" : "▶"}</span>
             </button>
           </div>
           <div className="player-copy">
@@ -1258,7 +1296,7 @@ function PlayerOverlay({
               aria-valuetext={`${formatTime(current)} / ${formatTime(duration)}`}
               disabled={!duration}
             />
-            <small>{formatTime(current)} / {formatTime(duration)}</small>
+            <small>{loading ? "LOADING · 正在缓冲" : `${formatTime(current)} / ${formatTime(duration)}`}</small>
           </div>
         </section>
 
@@ -1307,6 +1345,7 @@ export default function PortfolioExperience() {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [trackIndex, setTrackIndex] = useState(0);
   const [playing, setPlaying] = useState(false);
+  const [loadingTrack, setLoadingTrack] = useState(false);
   const [playerOpen, setPlayerOpen] = useState(false);
   const [current, setCurrent] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -1316,6 +1355,9 @@ export default function PortfolioExperience() {
   const trackIndexRef = useRef(0);
   const playerOpenerRef = useRef<HTMLElement | null>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const warmTimerRef = useRef<number | null>(null);
+  const warmedTracksRef = useRef(new Set<number>());
+  const warmLinksRef = useRef<HTMLLinkElement[]>([]);
 
   useEffect(() => {
     document.body.style.overflow = playerOpen || mobileMenu || entryPhase !== "ready" ? "hidden" : "";
@@ -1323,8 +1365,11 @@ export default function PortfolioExperience() {
   }, [playerOpen, mobileMenu, entryPhase]);
 
   useEffect(() => {
+    const warmLinks = warmLinksRef.current;
     return () => {
       if (entryTimerRef.current !== null) window.clearTimeout(entryTimerRef.current);
+      if (warmTimerRef.current !== null) window.clearTimeout(warmTimerRef.current);
+      warmLinks.forEach((link) => link.remove());
     };
   }, []);
 
@@ -1358,10 +1403,31 @@ export default function PortfolioExperience() {
     window.requestAnimationFrame(() => menuButtonRef.current?.focus());
   };
 
+  const warmTrack = (index: number) => {
+    if (warmedTracksRef.current.has(index) || trackIndexRef.current === index) return;
+    if (warmTimerRef.current !== null) window.clearTimeout(warmTimerRef.current);
+    warmTimerRef.current = window.setTimeout(() => {
+      const link = document.createElement("link");
+      link.rel = "preload";
+      link.as = "audio";
+      link.type = "audio/mp4";
+      link.href = tracks[index].src;
+      document.head.appendChild(link);
+      warmLinksRef.current.push(link);
+      warmedTracksRef.current.add(index);
+      warmTimerRef.current = null;
+    }, 120);
+  };
+
   const startAudio = async (index: number, open = true) => {
     const audio = audioRef.current;
     if (!audio) return;
+    if (warmTimerRef.current !== null) {
+      window.clearTimeout(warmTimerRef.current);
+      warmTimerRef.current = null;
+    }
     if (trackIndexRef.current !== index) {
+      setLoadingTrack(true);
       audio.pause();
       audio.src = tracks[index].src;
       audio.load();
@@ -1369,12 +1435,16 @@ export default function PortfolioExperience() {
       setTrackIndex(index);
       setCurrent(0);
       setDuration(0);
+    } else if (audio.readyState < HTMLMediaElement.HAVE_FUTURE_DATA) {
+      setLoadingTrack(true);
     }
     if (open) openPlayer();
     try {
       await audio.play();
+      setLoadingTrack(false);
     } catch {
       setPlaying(false);
+      setLoadingTrack(false);
     }
   };
 
@@ -1404,7 +1474,14 @@ export default function PortfolioExperience() {
     const audio = audioRef.current;
     if (!audio) return;
     if (audio.paused) {
-      try { await audio.play(); } catch { setPlaying(false); }
+      if (audio.readyState < HTMLMediaElement.HAVE_FUTURE_DATA) setLoadingTrack(true);
+      try {
+        await audio.play();
+        setLoadingTrack(false);
+      } catch {
+        setPlaying(false);
+        setLoadingTrack(false);
+      }
     } else {
       audio.pause();
     }
@@ -1420,17 +1497,26 @@ export default function PortfolioExperience() {
       <audio
         ref={audioRef}
         src={tracks[0].src}
-        preload="metadata"
+        preload="auto"
+        playsInline
+        onLoadStart={() => setLoadingTrack(true)}
         onLoadedMetadata={(event) => setDuration(event.currentTarget.duration)}
         onDurationChange={(event) => setDuration(event.currentTarget.duration)}
-        onCanPlay={(event) => setDuration(event.currentTarget.duration)}
+        onCanPlay={(event) => {
+          setDuration(event.currentTarget.duration);
+          if (event.currentTarget.paused) setLoadingTrack(false);
+        }}
+        onWaiting={() => setLoadingTrack(true)}
+        onStalled={() => setLoadingTrack(true)}
         onTimeUpdate={(event) => {
           setCurrent(event.currentTarget.currentTime);
           if (Number.isFinite(event.currentTarget.duration)) setDuration(event.currentTarget.duration);
         }}
         onPlay={() => setPlaying(true)}
-        onPause={() => setPlaying(false)}
-        onEnded={() => { setPlaying(false); setCurrent(0); }}
+        onPlaying={() => { setPlaying(true); setLoadingTrack(false); }}
+        onPause={() => { setPlaying(false); setLoadingTrack(false); }}
+        onError={() => { setPlaying(false); setLoadingTrack(false); }}
+        onEnded={() => { setPlaying(false); setLoadingTrack(false); setCurrent(0); }}
       />
 
       {entryPhase !== "ready" && <SoundGate phase={entryPhase} enter={enter} />}
@@ -1462,18 +1548,24 @@ export default function PortfolioExperience() {
             onBack={() => { setActiveProject(null); window.scrollTo({ top: 0, behavior: "smooth" }); }}
             openProject={openProject}
             playTrack={(index) => startAudio(index)}
+            warmTrack={warmTrack}
           />
         ) : view === "universe" ? (
           <MusicUniverse
             openProject={openProject}
             chooseView={chooseView}
             playTrack={(index) => startAudio(index)}
+            warmTrack={warmTrack}
             activeTrack={trackIndex}
             playing={playing}
             interactive={entryPhase === "ready"}
           />
         ) : view === "songs" ? (
-          <SongIndex playTrack={(index) => startAudio(index)} chooseView={chooseView} />
+          <SongIndex
+            playTrack={(index) => startAudio(index)}
+            warmTrack={warmTrack}
+            chooseView={chooseView}
+          />
         ) : view === "projects" ? (
           <ProjectsIndex openProject={openProject} chooseView={chooseView} />
         ) : view === "about" ? (
@@ -1508,6 +1600,7 @@ export default function PortfolioExperience() {
         <PlayerOverlay
           trackIndex={trackIndex}
           playing={playing}
+          loading={loadingTrack}
           current={current}
           duration={duration}
           close={closePlayer}

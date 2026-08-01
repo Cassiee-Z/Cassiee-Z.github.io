@@ -1191,9 +1191,20 @@ a { color: inherit; text-decoration: none; }
   outline: none;
 }
 .player-cover__toggle.is-playing { animation: player-pulse 1.8s ease-in-out infinite; }
+.player-cover__toggle.is-loading {
+  animation: player-loading 1.05s ease-in-out infinite;
+  cursor: progress;
+}
 .player-cover__toggle span { color: #fff; font-size: 1rem; }
 @keyframes player-pulse {
   50% { box-shadow: 0 0 0 .65rem rgba(255,255,255,.06); }
+}
+@keyframes player-loading {
+  50% {
+    border-color: rgba(255,255,255,.28);
+    color: rgba(255,255,255,.45);
+    transform: translate(-50%, -50%) scale(.94);
+  }
 }
 .player-copy {
   display: flex;

@@ -43,22 +43,22 @@ test("server-renders Cassie's recruiter-facing portfolio", async () => {
 
 test("ships audio, profile, social and recruiter download assets", async () => {
   const files = [
-    "../public/audio/blue-night.mp3",
-    "../public/audio/rain-old-platform.mp3",
-    "../public/audio/opera-mountains.mp3",
-    "../public/audio/run-into-thunder.mp3",
-    "../public/audio/gold-on-floor.mp3",
-    "../public/audio/unsent-goodnight.mp3",
-    "../public/audio/four-am-store.mp3",
-    "../public/audio/night-to-morning.mp3",
-    "../public/audio/century-new-chapter.mp3",
-    "../public/audio/grow-against-light.mp3",
-    "../public/audio/name-in-wind.mp3",
-    "../public/audio/moon-no-reply.mp3",
-    "../public/audio/swinging-hard.mp3",
-    "../public/audio/wind-from-yangtze.mp3",
-    "../public/audio/glass-sea.mp3",
-    "../public/audio/still-on-road.mp3",
+    "../public/audio-stream/blue-night.m4a",
+    "../public/audio-stream/rain-old-platform.m4a",
+    "../public/audio-stream/opera-mountains.m4a",
+    "../public/audio-stream/run-into-thunder.m4a",
+    "../public/audio-stream/gold-on-floor.m4a",
+    "../public/audio-stream/unsent-goodnight.m4a",
+    "../public/audio-stream/four-am-store.m4a",
+    "../public/audio-stream/night-to-morning.m4a",
+    "../public/audio-stream/century-new-chapter.m4a",
+    "../public/audio-stream/grow-against-light.m4a",
+    "../public/audio-stream/name-in-wind.m4a",
+    "../public/audio-stream/moon-no-reply.m4a",
+    "../public/audio-stream/swinging-hard.m4a",
+    "../public/audio-stream/wind-from-yangtze.m4a",
+    "../public/audio-stream/glass-sea.m4a",
+    "../public/audio-stream/still-on-road.m4a",
     "../public/images/cassie-editorial.jpg",
     "../public/images/cassie-headshot.jpg",
     "../public/images/og-cassie-music.jpg",
@@ -99,5 +99,7 @@ test("ships audio, profile, social and recruiter download assets", async () => {
   assert.match(source, /电话号码仅放在下载简历中/);
   assert.match(source, /凌晨四点的便利店/);
   assert.match(source, /风从长江吹来/);
-  assert.match(source, /wind-from-yangtze\.mp3/);
+  assert.match(source, /wind-from-yangtze\.m4a/);
+  assert.match(source, /preload="auto"/);
+  assert.match(source, /LOADING · 正在缓冲/);
 });
