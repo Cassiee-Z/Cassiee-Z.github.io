@@ -59,6 +59,8 @@ test("ships audio, profile, social and recruiter download assets", async () => {
     "../public/audio-stream/wind-from-yangtze.m4a",
     "../public/audio-stream/glass-sea.m4a",
     "../public/audio-stream/still-on-road.m4a",
+    "../public/audio-stream/midnight-signal.m4a",
+    "../public/audio-stream/winter-embers.m4a",
     "../public/images/cassie-editorial.jpg",
     "../public/images/cassie-headshot.jpg",
     "../public/images/og-cassie-music.jpg",
@@ -82,6 +84,10 @@ test("ships audio, profile, social and recruiter download assets", async () => {
     "../public/images/covers/swinging-hard-v3.jpg",
     "../public/images/covers/four-am-store-v3.jpg",
     "../public/images/covers/wind-from-yangtze-v3.jpg",
+    "../public/images/covers/midnight-signal.jpg",
+    "../public/images/covers/winter-embers.jpg",
+    "../public/images/projects/winter-embers-poster.jpg",
+    "../public/video/winter-embers-preview.mp4",
     "../public/docs/Cassie_Zha_Wenxin_Resume_CN.pdf",
     "../public/docs/Cassie_2-Day_Music_Ops_Cram_Plan.pdf",
   ];
@@ -91,7 +97,7 @@ test("ships audio, profile, social and recruiter download assets", async () => {
     new URL("../app/portfolio-experience.tsx", import.meta.url),
     "utf8",
   );
-  assert.match(source, /从 16 首 AI 歌曲到可运营曲库/);
+  assert.match(source, /从 16 首 AI 歌曲到持续扩展的可运营曲库/);
   assert.match(source, /中文新歌与潜力音乐人数据侦察/);
   assert.match(source, /歌词商用未署名事件：版权风险复盘/);
   assert.match(source, /公开事实与个人分析假设分开标注/);
@@ -100,6 +106,15 @@ test("ships audio, profile, social and recruiter download assets", async () => {
   assert.match(source, /凌晨四点的便利店/);
   assert.match(source, /风从长江吹来/);
   assert.match(source, /wind-from-yangtze\.m4a/);
+  assert.match(source, /MIDNIGHT SIGNAL/);
+  assert.match(source, /midnight-signal\.m4a/);
+  assert.match(source, /《冬烬之地》：原创配乐与概念预告片/);
+  assert.match(source, /winter-embers\.m4a/);
+  assert.match(source, /winter-embers-preview\.mp4/);
+  assert.match(source, /阶段性预览/);
+  assert.match(source, /controls/);
+  assert.match(source, /playsInline/);
+  assert.match(source, /preload="metadata"/);
   assert.match(source, /preload="auto"/);
   assert.match(source, /LOADING · 正在缓冲/);
 });

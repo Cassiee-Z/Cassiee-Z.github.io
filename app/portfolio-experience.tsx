@@ -7,6 +7,7 @@ import { getTrackLyrics } from "./track-lyrics";
 type View = "universe" | "songs" | "projects" | "about" | "contact";
 type EntryPhase = "gate" | "zooming" | "ready";
 type ProjectKey =
+  | "winter-embers"
   | "catalog"
   | "scouting"
   | "copyright"
@@ -27,14 +28,60 @@ type Project = {
 
 const projects: Project[] = [
   {
-    key: "catalog",
+    key: "winter-embers",
     no: "001",
-    title: "从 16 首 AI 歌曲到可运营曲库",
+    title: "《冬烬之地》：原创配乐与概念预告片",
+    english: "THE LAND OF WINTER EMBERS",
+    field: "原创科幻短片配乐 · 影视音乐概念创作",
+    intro: "围绕冰封世界、文明遗迹与母女告别构建的原创视听概念项目。",
+    metrics: [
+      ["60 SEC", "完整短片规划"],
+      ["ORIGINAL", "同名原创配乐"],
+      ["5 SEC", "当前预览片段"],
+    ],
+    sections: [
+      {
+        label: "01 / WORLD",
+        title: "冰原之下，仍有一座为生者等待的城市。",
+        body: [
+          "无尽寒冬覆盖世界，部族世代生活在“白脊”冰墙之下。年迈的守火人带领女儿抵达黑碑祭坛，将即将熄灭的火种归还冰原。",
+          "仪式结束后，黑碑唤醒的并非亡者，而是一座沉睡数百年的地下城市。火种从来不是献给死者的祭品，而是母亲为后来者打开的一扇门。",
+        ],
+      },
+      {
+        label: "02 / SCORE DESIGN",
+        title: "冷—静—裂变—余温，构成配乐的叙事轨迹。",
+        body: [
+          "音乐从低频持续音、疏离空气感与冰晶质感出发，建立辽阔而压迫的冰原空间；母亲摘下面具后，声场逐渐收窄，以克制的脉冲与机械质感贴近人物。",
+          "献祭时声音短暂坠入近乎真空的寂静，随后由苏醒的低频力量和逐渐打开的和声揭示地下世界；结尾仍保留尚未消散的寒意。",
+        ],
+        items: ["COLD / 冰封表层", "STILLNESS / 克制停顿", "RUPTURE / 地下苏醒", "EMBER / 余温留存"],
+      },
+      {
+        label: "03 / CORE EXPRESSION",
+        title: "不是描写死亡，而是让生命成为后来者的入口。",
+        body: [
+          "配乐不只承担画面情绪背景，也参与隐藏真相、推动献祭与完成视觉揭示。母亲用仅剩的生命完成一次代际交付；新的家园得以开启，但打开它的人已经无法抵达。",
+        ],
+      },
+      {
+        label: "04 / CURRENT CUT",
+        title: "当前上线为阶段性预览，完整视听版本继续制作中。",
+        body: [
+          "本页先公开 5 秒概念预告片片段与 3 分钟同名原创配乐，用于呈现冰原巨构、音乐方向与视听关系。完整短片规划为 60 秒，后续将替换画面、剪辑与完整版预告片。",
+        ],
+      },
+    ],
+  },
+  {
+    key: "catalog",
+    no: "002",
+    title: "从 16 首 AI 歌曲到持续扩展的可运营曲库",
     english: "AI MUSIC CATALOG",
     field: "音乐内容 · 曲库产品化",
     intro: "把“生成歌曲”推进到可检索、可评估、可分发的音乐内容资产。",
     metrics: [
-      ["16", "首可发布成品"],
+      ["18", "首当前曲目"],
       ["4", "层曲库元数据"],
       ["5", "类分发场景"],
     ],
@@ -43,7 +90,7 @@ const projects: Project[] = [
         label: "01 / THE QUESTION",
         title: "生成不是终点，内容要能进入运营判断。",
         body: [
-          "我将 16 首 AI 歌曲从零散音频整理为曲库样本：统一命名、补充风格与场景标签、记录版本，并设计适用于选歌、分发和复盘的评估维度。",
+          "我以最初 16 首 AI 歌曲为基础，将零散音频整理为曲库样本：统一命名、补充风格与场景标签、记录版本，并设计适用于选歌、分发和复盘的评估维度。当前曲库已扩展至 18 首音乐作品，新增 K-pop 歌曲与影视配乐案例。",
           "这不是一套 AI 工具展示，而是一种把创作结果转译为内容资产的工作方法。",
         ],
       },
@@ -74,7 +121,7 @@ const projects: Project[] = [
   },
   {
     key: "scouting",
-    no: "002",
+    no: "003",
     title: "中文新歌与潜力音乐人数据侦察",
     english: "DISCOVERY SIGNALS",
     field: "自主研究 · 数据分析",
@@ -112,7 +159,7 @@ const projects: Project[] = [
   },
   {
     key: "copyright",
-    no: "003",
+    no: "004",
     title: "歌词商用未署名事件：版权风险复盘",
     english: "RIGHTS REVIEW",
     field: "真实经历 · 匿名化复盘",
@@ -150,7 +197,7 @@ const projects: Project[] = [
   },
   {
     key: "review",
-    no: "004",
+    no: "005",
     title: "上千份内容审核与质检",
     english: "CONTENT QUALITY ASSURANCE",
     field: "江苏省委组织部 · 实习",
@@ -188,7 +235,7 @@ const projects: Project[] = [
   },
   {
     key: "event",
-    no: "005",
+    no: "006",
     title: "南艺 520：从策划到全场落地",
     english: "LIVE CONTENT OPERATIONS",
     field: "学生总负责人 · 2025",
@@ -226,7 +273,7 @@ const projects: Project[] = [
   },
   {
     key: "editorial",
-    no: "006",
+    no: "007",
     title: "AI 内容实验：短视频与图文",
     english: "AI EDITORIAL LAB",
     field: "个人实践 · 持续更新",
@@ -280,6 +327,8 @@ const tracks = [
   { title: "风从长江吹来", scene: "RIVER FUSION", description: "江河意象与地域文化融合的音乐作品。", src: "/audio-stream/wind-from-yangtze.m4a" },
   { title: "玻璃海", scene: "AMBIENT POP", description: "透明质感与漂浮空间感构成的氛围流行作品。", src: "/audio-stream/glass-sea.m4a" },
   { title: "仍在路上", scene: "FORWARD", description: "面向前行叙事与成长主题的鼓舞型作品。", src: "/audio-stream/still-on-road.m4a" },
+  { title: "MIDNIGHT SIGNAL", scene: "K-POP / SYNTH POP", description: "以午夜城市感与情绪推进为核心，在鲜明旋律、节奏张力与舞台化想象之间建立统一表达。", src: "/audio-stream/midnight-signal.m4a" },
+  { title: "冬烬之地", scene: "SCI-FI FILM SCORE", description: "以“冷—静—裂变—余温”为轨迹，为冰原文明、母女告别与地下城市揭示构建叙事配乐。", src: "/audio-stream/winter-embers.m4a" },
 ];
 
 const learnMoreLetters = "LEARN MORE".split("");
@@ -317,6 +366,8 @@ const universePlanes: UniversePlane[] = [
   { id: "river", title: "风从长江吹来", subtitle: "RIVER FUSION", src: "/images/covers/wind-from-yangtze-v3.jpg", art: "river", x: 31, y: 38, z: -470, rx: 5, ry: -9, size: 7, trackIndex: 13 },
   { id: "glass", title: "玻璃海", subtitle: "AMBIENT POP", src: "/images/covers/glass-sea-v3.jpg", art: "glass", x: -25, y: -7, z: -510, rx: -8, ry: 8, size: 7, trackIndex: 14 },
   { id: "road", title: "仍在路上", subtitle: "FORWARD", src: "/images/covers/still-on-road-v3.jpg", art: "road", x: 7, y: 38, z: -180, rx: -4, ry: -2, size: 9, trackIndex: 15 },
+  { id: "midnight-signal", title: "MIDNIGHT SIGNAL", subtitle: "K-POP / SYNTH POP", src: "/images/covers/midnight-signal.jpg", art: "signal", x: 36, y: -34, z: 140, rx: 5, ry: -12, size: 13, trackIndex: 16 },
+  { id: "winter-embers", title: "冬烬之地", subtitle: "SCI-FI FILM SCORE", src: "/images/covers/winter-embers.jpg", art: "embers", x: 3, y: 12, z: 240, rx: -2, ry: 4, size: 16, trackIndex: 17 },
 ];
 
 function formatTime(value: number) {
@@ -761,7 +812,7 @@ function MusicUniverse({
       id="main-content"
       tabIndex={-1}
     >
-      <span className="sr-only">让音乐被听见：探索 Cassie 的 16 首 AI 音乐作品。</span>
+      <span className="sr-only">让音乐被听见：探索 Cassie 的 18 首音乐作品。</span>
       <section
         className="music-universe__stage"
         aria-label="可探索的歌曲专辑宇宙"
@@ -860,7 +911,7 @@ function MusicUniverse({
                 ? tracks[focusedPlane.trackIndex].description
                 : "从生成歌曲到可检索、可评估、可分发的音乐内容资产。"}
             </p>
-            <small>FROM THE 16-TRACK AI MUSIC CATALOG · CLICK TO LISTEN</small>
+            <small>FROM THE 18-TRACK MUSIC CATALOG · CLICK TO LISTEN</small>
           </div>
         ) : (
           <>
@@ -903,7 +954,7 @@ function SongIndex({
       </button>
       <div className="song-index__heading">
         <span>SONG INDEX</span>
-        <p>16 TRACKS · CLICK TO LISTEN</p>
+        <p>18 TRACKS · CLICK TO LISTEN</p>
       </div>
       <div className="song-index__grid">
         {tracks.map((track, index) => (
@@ -984,12 +1035,14 @@ function ProjectDetail({
   openProject,
   playTrack,
   warmTrack,
+  pauseAudio,
 }: {
   project: Project;
   onBack: () => void;
   openProject: (key: ProjectKey) => void;
   playTrack: (index: number) => void;
   warmTrack: (index: number) => void;
+  pauseAudio: () => void;
 }) {
   const index = projects.findIndex((item) => item.key === project.key);
   const next = projects[(index + 1) % projects.length];
@@ -1004,7 +1057,9 @@ function ProjectDetail({
       </header>
 
       <section className="project-poster" aria-label={project.english}>
-        {project.key === "event" || project.key === "review" ? (
+        {project.key === "winter-embers" ? (
+          <Image unoptimized src="/images/projects/winter-embers-poster.jpg" alt="冰原巨构与中央余烬光源的《冬烬之地》项目视觉" fill sizes="100vw" priority />
+        ) : project.key === "event" || project.key === "review" ? (
           <Image unoptimized src="/images/cassie-editorial.jpg" alt="查文鑫个人项目视觉" fill sizes="100vw" />
         ) : project.key === "editorial" ? (
           <Image unoptimized src="/images/universe/pet-cover.png" alt="AI 内容实验项目视觉" fill sizes="100vw" />
@@ -1022,6 +1077,42 @@ function ProjectDetail({
           <div key={label}><strong>{value}</strong><span>{label}</span></div>
         ))}
       </section>
+
+      {project.key === "winter-embers" && (
+        <section className="film-preview" aria-labelledby="winter-preview-title">
+          <div className="film-preview__heading">
+            <div>
+              <p>CURRENT CUT / 阶段性预览</p>
+              <h2 id="winter-preview-title">A DOOR BENEATH THE ICE</h2>
+            </div>
+            <p>当前片段 00:05 · 完整短片规划 00:60<br />画面与剪辑后续替换</p>
+          </div>
+          <div className="film-preview__frame">
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              poster="/images/projects/winter-embers-poster.jpg"
+              aria-label="《冬烬之地》阶段性概念预告片片段"
+              onPlay={pauseAudio}
+            >
+              <source src="/video/winter-embers-preview.mp4" type="video/mp4" />
+              你的浏览器暂不支持视频播放。
+            </video>
+            <span>PREVIEW 01 / WORK IN PROGRESS</span>
+          </div>
+          <div className="film-preview__footer">
+            <p>无对白 · 当前片段以冰原巨构与配乐氛围为主</p>
+            <button
+              onPointerEnter={() => warmTrack(17)}
+              onFocus={() => warmTrack(17)}
+              onClick={() => playTrack(17)}
+            >
+              PLAY FULL ORIGINAL SCORE / 播放完整配乐 ↗
+            </button>
+          </div>
+        </section>
+      )}
 
       {project.key === "catalog" && (
         <section className="listening-section">
@@ -1105,7 +1196,7 @@ function About({ chooseView }: { chooseView: (view: View) => void }) {
             />
           </div>
           <div className="portrait-catalog" aria-hidden="true">
-            <span>CATALOG / 16 TRACKS</span>
+            <span>CATALOG / 18 TRACKS</span>
             <div>
               {universePlanes.slice(0, 4).map((plane) => (
                 <Image
@@ -1133,7 +1224,7 @@ function About({ chooseView }: { chooseView: (view: View) => void }) {
 
       <section className="about-scene numbers-scene">
         <p>THE WORK SO FAR</p>
-        <h2><span>16</span> SONGS</h2>
+        <h2><span>18</span> TRACKS</h2>
         <h2><span>1000+</span> REVIEWS</h2>
         <h2><span>20+</span> MEDIA</h2>
         <small>音乐创作 × 内容审核 × 项目统筹</small>
@@ -1206,7 +1297,7 @@ function PlayerOverlay({
   seek: (value: number) => void;
 }) {
   const track = tracks[trackIndex];
-  const plane = universePlanes[trackIndex];
+  const plane = universePlanes.find((item) => item.trackIndex === trackIndex) ?? universePlanes[trackIndex];
   const lyricViewportRef = useRef<HTMLOListElement>(null);
   const lyricLineRefs = useRef<(HTMLLIElement | null)[]>([]);
   const lyricCues = useMemo(
@@ -1549,6 +1640,7 @@ export default function PortfolioExperience() {
             openProject={openProject}
             playTrack={(index) => startAudio(index)}
             warmTrack={warmTrack}
+            pauseAudio={() => audioRef.current?.pause()}
           />
         ) : view === "universe" ? (
           <MusicUniverse

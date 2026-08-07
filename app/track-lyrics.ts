@@ -1,7 +1,7 @@
 export type TrackLyrics = string | null;
 
-// These are the exact unsynchronised USLT texts embedded in the public audio
-// files. They intentionally contain no generated timestamps.
+// These are the exact unsynchronised lyric texts embedded in the supplied
+// source audio files. They intentionally contain no generated timestamps.
 const rainOldPlatform = `[Verse 1]
 雨落在旧站台的边缘
 时刻表褪成模糊的线
@@ -824,6 +824,63 @@ const stillOnRoad = `[Verse 1]
 我们不知道哪里是终点
 却知道为什么出发`;
 
+const midnightSignal = `[Intro]
+Turn it up, turn it up
+별빛보다 선명한 sign
+Three, two, one
+Send me your midnight signal
+
+[Verse 1]
+잠든 도시 위를 달려
+네온빛이 번진 highway
+스쳐 가는 모든 장면
+Tonight, I'm feeling brand new
+감춰 두었던 내 맘이
+자꾸 너를 향해 blink, blink
+우연인 척 다가와도
+I know what you wanna do
+
+[Pre-Chorus]
+조금 더 가까이
+숨결이 닿을 때
+멈춰 있던 시간이 움직여
+눈을 피하지 마
+이미 시작된 night
+심장 소릴 따라 날 찾아와
+
+[Chorus]
+Send me your midnight signal
+깊어진 어둠을 밝혀
+Red light, green light
+기다릴 필요 없어
+Give me that electric feeling
+온몸에 번지는 rhythm
+Tonight, tonight
+We're dancing out of control
+Oh-oh-oh, midnight signal
+Oh-oh-oh, 들려오는 echo
+너와 나의 frequency
+맞춰지는 순간
+Send me your midnight signal
+
+[Post-Chorus]
+Signal, signal
+La-la-love is digital
+Signal, signal
+But the feeling's physical
+빛보다 빠르게 내게로 다가와
+Send me your midnight signal
+
+[Verse 2 / Rap]
+Click, click, 네 맘을 unlock
+Tick-tock, 시간은 non-stop
+No map, no rules, no limit
+원한다면 jump right in it
+차가운 화면을 넘어
+뜨거워진 우리 color
+숨길 생각 따윈 없어
+Baby, let me make it louder`;
+
 export const trackLyricsBySrc = {
   "/audio-stream/blue-night.m4a": null,
   "/audio-stream/rain-old-platform.m4a": rainOldPlatform,
@@ -841,6 +898,8 @@ export const trackLyricsBySrc = {
   "/audio-stream/wind-from-yangtze.m4a": windFromYangtze,
   "/audio-stream/glass-sea.m4a": glassSea,
   "/audio-stream/still-on-road.m4a": stillOnRoad,
+  "/audio-stream/midnight-signal.m4a": midnightSignal,
+  "/audio-stream/winter-embers.m4a": null,
 } as const satisfies Readonly<Record<string, TrackLyrics>>;
 
 export type TrackAudioSrc = keyof typeof trackLyricsBySrc;
@@ -862,6 +921,8 @@ export const trackLyricsByIndex = [
   trackLyricsBySrc["/audio-stream/wind-from-yangtze.m4a"],
   trackLyricsBySrc["/audio-stream/glass-sea.m4a"],
   trackLyricsBySrc["/audio-stream/still-on-road.m4a"],
+  trackLyricsBySrc["/audio-stream/midnight-signal.m4a"],
+  trackLyricsBySrc["/audio-stream/winter-embers.m4a"],
 ] as const satisfies readonly TrackLyrics[];
 
 export function getTrackLyrics(src: string): TrackLyrics {
