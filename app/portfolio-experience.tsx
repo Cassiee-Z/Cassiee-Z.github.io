@@ -125,34 +125,34 @@ const projects: Project[] = [
     title: "中文新歌与潜力音乐人数据侦察",
     english: "DISCOVERY SIGNALS",
     field: "自主研究 · 数据分析",
-    intro: "用公开榜单建立候选池，把“爆款直觉”拆成可补数、可复核的筛选流程。",
+    intro: "基于四期完整周榜与专业榜单，把“爆款直觉”拆成可补数、可复核的候选筛选流程。",
     metrics: [
-      ["5", "维初筛模型"],
-      ["4W", "建议观察周期"],
-      ["1", "份自主研究"],
+      ["800", "条周榜记录"],
+      ["336", "首候选歌曲"],
+      ["5+5", "歌 / 人观察名单"],
     ],
     sections: [
       {
-        label: "01 / THE QUESTION",
-        title: "公开榜单能筛出“值得补数”的候选人吗？",
+        label: "01 / THE DECISION",
+        title: "先回答“下一轮向谁补数”，不把观察分包装成爆款概率。",
         body: [
-          "本案例不把榜单名次等同于爆款结论，而是模拟内容运营岗位的第一轮侦察：建立候选池、拆解评价字段、标记信息缺口，再决定下一步向谁要数据。",
-          "案例性质：自主行业研究。公开事实与个人分析假设分开标注。",
+          "本案例模拟音乐内容运营的第一轮侦察：从腾讯音乐由你榜 2026 年第 28—31 期的 800 条记录中建立候选池，再用榜位、动量、持续性、播放热度与推荐度筛出优先补数对象。",
+          "观察分只用于候选排序。公开事实、分析假设与待补平台数据在页面中分开标注。",
         ],
       },
       {
-        label: "02 / THE FILTER",
-        title: "信息不足时，不制造精确分数。",
+        label: "02 / THE BOUNDARY",
+        title: "先做数据质量检查，再决定哪些字段可以进入判断。",
         body: [
-          "初筛框架由榜单信号、社交传播、场景适配、版权就绪度与差异化构成。榜单只用于发现，合作判断必须补齐连续趋势与权利信息。",
+          "四期数据的传播度与喜好度均为 0，无法区分候选，因此从评分中剔除；畅销度仅作为过滤条件，降低成熟粉丝购买力对候选排序的影响。",
         ],
-        items: ["榜单信号 30%", "社交传播 20%", "场景适配 20%", "版权就绪 20%", "差异化 10%"],
+        items: ["当前位置 30%", "名次动量 25%", "持续性 20%", "播放热度 15%", "推荐度 10%"],
       },
       {
-        label: "03 / DATA REQUEST",
-        title: "真正推进合作前，需要向平台与创作者要什么？",
+        label: "03 / NEXT ROUND",
+        title: "真正推进内容测试或合作前，还要补齐三类证据。",
         body: [
-          "连续四周日榜/周榜、完播收藏分享率、短视频 BGM 使用趋势、受众画像，以及词曲、录音制品、表演者与授权范围的完整信息。",
+          "平台侧补播放、完播、收藏、分享与受众画像；短视频侧补 BGM 使用量、投稿增速与衍生话题；版权侧核对词曲、录音制品、表演者、期限、地区与授权范围。",
         ],
       },
     ],
@@ -308,6 +308,93 @@ const projects: Project[] = [
       },
     ],
   },
+];
+
+const scoutingSongs = [
+  {
+    rank: "01",
+    song: "过海",
+    artist: "王赫野 / 黄龄",
+    score: 87.5,
+    trajectory: [113, 50, 43, 28],
+    signal: "四周连续上榜并由 113 位升至 28 位，当前榜位、动量与持续性同时成立。",
+    cover: "/images/scouting/guohai.jpg",
+    href: "https://y.qq.com/n/ryqq/songDetail/003DEzAQ3HSB9l",
+  },
+  {
+    rank: "02",
+    song: "两世洞天",
+    artist: "黄星",
+    score: 75.8,
+    trajectory: [58, 39, 31, 35],
+    signal: "四周稳定在 TOP 60，平均推荐度 70.2、畅销度 8.7，适合补做内容口碑与受众验证。",
+    cover: "/images/scouting/liangshi-dongtian.jpg",
+    href: "https://y.qq.com/n/ryqq/songDetail/001rRVzh2m7RJB",
+  },
+  {
+    rank: "03",
+    song: "挽红纱",
+    artist: "龚琳娜 / 张云雷",
+    score: 73.2,
+    trajectory: [49, 33, 48, 42],
+    signal: "四周维持 TOP 50，平均推荐度 68.5；需要补看传统文化内容场景与跨圈层受众结构。",
+    cover: "/images/scouting/wan-hongsha.jpg",
+    href: "https://y.qq.com/n/ryqq/songDetail/000QQHy712ZX4T",
+  },
+  {
+    rank: "04",
+    song: "周旋",
+    artist: "王以太 / 艾热 AIR",
+    score: 71.3,
+    trajectory: [40, 27, 47, 47],
+    signal: "四周保持 TOP 50、平均播放热度 78.2；当前动量回落，需判断是正常波动还是传播衰减。",
+    cover: "/images/scouting/zhouxuan.jpg",
+    href: "https://y.qq.com/n/ryqq/songDetail/0009cN231s93BH",
+  },
+  {
+    rank: "05",
+    song: "奔赴超无限",
+    artist: "周深 / 北京环球度假区",
+    score: 67.0,
+    trajectory: [122, 53],
+    signal: "两周上升 69 位且畅销度仅 1.4；IP 合作可能放大曝光，需拆分活动流量与自然留存。",
+    cover: "/images/scouting/benfu-chaowuxian.jpg",
+    href: "https://y.qq.com/n/ryqq/songDetail/002sjXkp1KKKUX",
+  },
+];
+
+const scoutingArtists = [
+  {
+    artist: "万海东",
+    label: "双曲复现",
+    evidence: "2 首作品 / 7 个曲周；《山风山风等等我》进入 TOP 13，《有风的日落》连续四周上榜。",
+  },
+  {
+    artist: "黄星",
+    label: "推荐信号",
+    evidence: "《两世洞天》四周维持 TOP 60，推荐度高而畅销度低，适合补受众与内容口碑数据。",
+  },
+  {
+    artist: "吴琳珂 Moske",
+    label: "持续上榜",
+    evidence: "《失眠了》四周连续上榜并由 88 位升至 72 位，值得验证自然播放与收藏转化。",
+  },
+  {
+    artist: "老中青民谣 / 小巷先生",
+    label: "后程爬升",
+    evidence: "《都有这一天》三周由 183 位升至 85 位，是低畅销度样本中的强爬升信号。",
+  },
+  {
+    artist: "庄淇玟29",
+    label: "低成本测试",
+    evidence: "《爱你是我的秘密》三周由 154 位升至 103 位，适合以短视频内容测试验证真实响应。",
+  },
+];
+
+const hiddenQualitySongs = [
+  ["在两个心中间坐下 Two Worlds", "CY Leo / 王菀之", "11", "8.22"],
+  ["Darling u", "邹沛沛", "13", "8.22"],
+  ["无忧", "周菲戈", "16", "8.18"],
 ];
 
 const tracks = [
@@ -1029,6 +1116,162 @@ function TrackList({
   );
 }
 
+function ScoutingCase() {
+  return (
+    <section className="scouting-case" aria-labelledby="scouting-case-title">
+      <header className="scouting-executive">
+        <p>EXECUTIVE SUMMARY / 结论先行</p>
+        <h2 id="scouting-case-title">5 首歌进入下一轮补数，5 组音乐人进入观察名单。</h2>
+        <div className="scouting-executive__copy">
+          <p>
+            分析覆盖 2026 年 7 月 13 日至 8 月 9 日四期完整周榜。观察分用于决定“先向谁补数据”，
+            不是爆款概率、签约建议或价值判断。
+          </p>
+          <span>DATA SNAPSHOT / 2026.08.11</span>
+        </div>
+      </header>
+
+      <section className="scouting-quality" aria-labelledby="scouting-quality-title">
+        <div>
+          <p>01 / DATA QUALITY</p>
+          <h3 id="scouting-quality-title">先发现失真字段，再开始评分。</h3>
+        </div>
+        <div className="scouting-quality__grid">
+          <article>
+            <strong>800 / 800</strong>
+            <span>周 × 名次粒度唯一</span>
+            <p>每期 200 首、名次 1—200，无周内重复记录。</p>
+          </article>
+          <article>
+            <strong>100%</strong>
+            <span>传播度与喜好度为零</span>
+            <p>两列无法区分候选，明确剔除，不制造无效精确度。</p>
+          </article>
+          <article>
+            <strong>22.25</strong>
+            <span>畅销度样本中位数</span>
+            <p>只保留不高于中位数的候选，降低成熟购买盘干扰。</p>
+          </article>
+        </div>
+        <div className="scouting-formula" aria-label="观察分计算方法">
+          <span><b>30%</b> 当前位置</span>
+          <span><b>25%</b> 名次动量</span>
+          <span><b>20%</b> 持续性</span>
+          <span><b>15%</b> 播放热度</span>
+          <span><b>10%</b> 推荐度</span>
+        </div>
+      </section>
+
+      <section className="scouting-watchlist" aria-labelledby="scouting-watchlist-title">
+        <div className="scouting-section-heading">
+          <p>02 / SONG WATCHLIST</p>
+          <h3 id="scouting-watchlist-title">值得优先补数的 5 首歌</h3>
+          <span>观察分 ≠ 爆款概率</span>
+        </div>
+        <div className="scouting-song-list">
+          {scoutingSongs.map((item) => (
+            <article className="scouting-song" key={item.song}>
+              <span className="scouting-song__rank">{item.rank}</span>
+              <a className="scouting-song__cover" href={item.href} target="_blank" rel="noreferrer" aria-label={`在腾讯音乐打开《${item.song}》`}>
+                <Image unoptimized src={item.cover} alt={`${item.song}专辑封面`} fill sizes="(max-width: 720px) 28vw, 132px" />
+              </a>
+              <div className="scouting-song__identity">
+                <h4>{item.song}</h4>
+                <p>{item.artist}</p>
+                <div className="scouting-trajectory" aria-label={`${item.song}四周榜位轨迹`}>
+                  {item.trajectory.map((value, index) => (
+                    <span key={`${item.song}-${index}`}>{value}</span>
+                  ))}
+                </div>
+              </div>
+              <div className="scouting-song__signal">
+                <p>{item.signal}</p>
+                <a href={item.href} target="_blank" rel="noreferrer">OPEN OFFICIAL TRACK ↗</a>
+              </div>
+              <div className="scouting-score">
+                <strong>{item.score.toFixed(1)}</strong>
+                <span>OBSERVATION SCORE</span>
+                <i><b style={{ width: `${item.score}%` }} /></i>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="scouting-artists" aria-labelledby="scouting-artists-title">
+        <div className="scouting-section-heading">
+          <p>03 / ARTIST WATCHLIST</p>
+          <h3 id="scouting-artists-title">从“单曲信号”走向“艺人复现”</h3>
+          <span>优先寻找连续性，而非一次性高点</span>
+        </div>
+        <div className="scouting-artist-list">
+          {scoutingArtists.map((item, index) => (
+            <article key={item.artist}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div>
+                <h4>{item.artist}</h4>
+                <em>{item.label}</em>
+              </div>
+              <p>{item.evidence}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="scouting-wave" aria-labelledby="scouting-wave-title">
+        <div className="scouting-wave__statement">
+          <p>04 / QUALITY ≠ POPULARITY</p>
+          <h3 id="scouting-wave-title"><strong>4 / 20</strong>专业评价与后续大众榜单曝光，并不重合。</h3>
+          <p>
+            2026 年 6 月腾讯音乐浪潮榜 TOP20 中，只有 4 首出现在随后四期由你榜 TOP200。
+            因此“质量池”和“热度池”需要并行侦察，不能用单一榜单互相替代。
+          </p>
+        </div>
+        <div className="scouting-wave__list">
+          <div className="scouting-wave__legend">
+            <span>专业榜优质样本</span><span>浪潮榜位</span><span>专业得分</span>
+          </div>
+          {hiddenQualitySongs.map(([song, artist, rank, score]) => (
+            <div key={song}>
+              <span><b>{song}</b><small>{artist}</small></span>
+              <strong>{rank}</strong>
+              <strong>{score}</strong>
+            </div>
+          ))}
+          <p>以上 3 首均未进入随后四期由你榜 TOP200；它们是“继续做内容场景验证”的质量池样本，而非失败样本。</p>
+        </div>
+      </section>
+
+      <section className="scouting-next-data" aria-labelledby="scouting-next-title">
+        <p>05 / NEXT DATA REQUEST</p>
+        <div>
+          <h3 id="scouting-next-title">公开榜单完成初筛，后台数据决定下一步。</h3>
+          <ol>
+            <li><span>PLATFORM</span><p>播放增速、完播、收藏、分享、搜索来源与受众画像</p></li>
+            <li><span>SHORT VIDEO</span><p>BGM 使用量、投稿增速、完播率、衍生话题与代表内容</p></li>
+            <li><span>RIGHTS</span><p>词曲、录音制品、表演者、期限、地区、平台与转授权范围</p></li>
+          </ol>
+        </div>
+      </section>
+
+      <footer className="scouting-sources">
+        <div>
+          <p>SOURCES / 公开来源</p>
+          <a href="https://chart.tencentmusic.com/" target="_blank" rel="noreferrer">腾讯音乐榜 ↗</a>
+          <a href="https://www.tencentmusic.com/zh-cn/wave-chart.html" target="_blank" rel="noreferrer">腾讯音乐浪潮榜评选细则 ↗</a>
+        </div>
+        <div>
+          <p>DOWNLOAD / 可复核数据</p>
+          <a href="/data/scouting/scouting-watchlist.csv" download>5 首候选清单 CSV ↓</a>
+          <a href="/data/scouting/tme-yobang-w28-w31.csv" download>四期周榜快照 CSV ↓</a>
+          <a href="/data/scouting/scouting-summary.json" download>方法与结果 JSON ↓</a>
+        </div>
+        <small>公开事实与个人分析假设分开标注 · 数据快照 2026.08.11 · 本研究不构成商业、版权或签约建议</small>
+      </footer>
+    </section>
+  );
+}
+
 function ProjectDetail({
   project,
   onBack,
@@ -1059,6 +1302,8 @@ function ProjectDetail({
       <section className="project-poster" aria-label={project.english}>
         {project.key === "winter-embers" ? (
           <Image unoptimized src="/images/projects/winter-embers-poster-v2.jpg" alt="冰原巨构与中央余烬光源的《冬烬之地》项目视觉" fill sizes="100vw" priority />
+        ) : project.key === "scouting" ? (
+          <Image unoptimized src="/images/scouting/guohai.jpg" alt="中文新歌数据侦察候选歌曲《过海》专辑封面" fill sizes="100vw" priority />
         ) : project.key === "event" || project.key === "review" ? (
           <Image unoptimized src="/images/cassie-editorial.jpg" alt="查文鑫个人项目视觉" fill sizes="100vw" />
         ) : project.key === "editorial" ? (
@@ -1123,6 +1368,8 @@ function ProjectDetail({
           <TrackList playTrack={playTrack} warmTrack={warmTrack} />
         </section>
       )}
+
+      {project.key === "scouting" && <ScoutingCase />}
 
       {project.sections.map((section) => (
         <section className="story-section" key={section.label}>

@@ -1,0 +1,332 @@
+{
+  "snapshot_as_of": "2026-08-11T10:40:23+00:00",
+  "timezone": "Asia/Shanghai",
+  "period": "2026-07-13—2026-08-09",
+  "issues": [
+    "202628",
+    "202629",
+    "202630",
+    "202631"
+  ],
+  "source": {
+    "name": "腾讯音乐由你榜 / 腾讯音乐浪潮榜",
+    "chart_url": "https://chart.tencentmusic.com/",
+    "method_url": "https://www.tencentmusic.com/zh-cn/wave-chart.html"
+  },
+  "dataset": {
+    "rows": 800,
+    "unique_tracks": 336,
+    "unique_artists": 199,
+    "weeks": 4
+  },
+  "data_quality": {
+    "checks": [
+      {
+        "issue": "202628",
+        "rows": 200,
+        "unique_ranks": 200,
+        "unique_tracks": 200,
+        "rank_range": [
+          1,
+          200
+        ]
+      },
+      {
+        "issue": "202629",
+        "rows": 200,
+        "unique_ranks": 200,
+        "unique_tracks": 200,
+        "rank_range": [
+          1,
+          200
+        ]
+      },
+      {
+        "issue": "202630",
+        "rows": 200,
+        "unique_ranks": 200,
+        "unique_tracks": 200,
+        "rank_range": [
+          1,
+          200
+        ]
+      },
+      {
+        "issue": "202631",
+        "rows": 200,
+        "unique_ranks": 200,
+        "unique_tracks": 200,
+        "rank_range": [
+          1,
+          200
+        ]
+      }
+    ],
+    "zero_rates": {
+      "play_heat": 0.0,
+      "spread": 1.0,
+      "preference": 1.0,
+      "sales": 0.0,
+      "recommendation": 0.0
+    },
+    "usable_fields": [
+      "rank",
+      "play_heat",
+      "sales",
+      "recommendation"
+    ],
+    "excluded_fields": [
+      "spread",
+      "preference"
+    ]
+  },
+  "methodology": {
+    "candidate_filter": "最新完整周排名21—120；四周内至少上榜2次；平均畅销度不高于全样本中位数。",
+    "sales_median": 22.24,
+    "score_formula": "30%当前位置 + 25%名次动量 + 20%持续性 + 15%播放热度 + 10%推荐度",
+    "excluded_from_score": [
+      "传播度",
+      "喜好度",
+      "畅销度"
+    ]
+  },
+  "watchlist": [
+    {
+      "song": "过海",
+      "artist": "王赫野,黄龄",
+      "score": 87.5,
+      "appearances": 4,
+      "trajectory": [
+        113,
+        50,
+        43,
+        28
+      ],
+      "first_rank": 113,
+      "latest_rank": 28,
+      "improvement": 85,
+      "average_play": 77.4,
+      "average_recommendation": 48.9,
+      "average_sales": 22.2,
+      "qq_track_mid": "003DEzAQ3HSB9l",
+      "cover_url": "https://y.gtimg.cn/music/photo_new/T002R500x500M000003sDdGY2FtUY2_1.jpg"
+    },
+    {
+      "song": "两世洞天",
+      "artist": "黄星",
+      "score": 75.8,
+      "appearances": 4,
+      "trajectory": [
+        58,
+        39,
+        31,
+        35
+      ],
+      "first_rank": 58,
+      "latest_rank": 35,
+      "improvement": 23,
+      "average_play": 50.7,
+      "average_recommendation": 70.2,
+      "average_sales": 8.7,
+      "qq_track_mid": "001rRVzh2m7RJB",
+      "cover_url": "https://y.gtimg.cn/music/photo_new/T002R500x500M0000001ze381iKWmo_2.jpg"
+    },
+    {
+      "song": "挽红纱",
+      "artist": "龚琳娜,张云雷",
+      "score": 73.2,
+      "appearances": 4,
+      "trajectory": [
+        49,
+        33,
+        48,
+        42
+      ],
+      "first_rank": 49,
+      "latest_rank": 42,
+      "improvement": 7,
+      "average_play": 61.9,
+      "average_recommendation": 68.5,
+      "average_sales": 14.9,
+      "qq_track_mid": "000QQHy712ZX4T",
+      "cover_url": "https://y.gtimg.cn/music/photo_new/T002R500x500M000000r1HER3uMIFZ_1.jpg"
+    },
+    {
+      "song": "周旋",
+      "artist": "王以太,艾热AIR",
+      "score": 71.3,
+      "appearances": 4,
+      "trajectory": [
+        40,
+        27,
+        47,
+        47
+      ],
+      "first_rank": 40,
+      "latest_rank": 47,
+      "improvement": -7,
+      "average_play": 78.2,
+      "average_recommendation": 57.2,
+      "average_sales": 10.1,
+      "qq_track_mid": "0009cN231s93BH",
+      "cover_url": "https://y.gtimg.cn/music/photo_new/T002R500x500M000000TFXPO1bLY2u_1.jpg"
+    },
+    {
+      "song": "奔赴超无限",
+      "artist": "周深,北京环球度假区",
+      "score": 67.0,
+      "appearances": 2,
+      "trajectory": [
+        122,
+        53
+      ],
+      "first_rank": 122,
+      "latest_rank": 53,
+      "improvement": 69,
+      "average_play": 68.7,
+      "average_recommendation": 52.0,
+      "average_sales": 1.4,
+      "qq_track_mid": "002sjXkp1KKKUX",
+      "cover_url": "https://y.gtimg.cn/music/photo_new/T002R500x500M000004T2U7i3TrVFC_2.jpg"
+    }
+  ],
+  "artist_watchlist": [
+    {
+      "artist": "万海东",
+      "tracks_in_window": 2,
+      "track_weeks": 7,
+      "best_rank": 11,
+      "latest_best_rank": 13,
+      "representative_track": "山风山风等等我",
+      "trajectory": [
+        102,
+        11,
+        13
+      ],
+      "average_play": 81.1,
+      "average_recommendation": 41.3,
+      "average_sales": 42.7,
+      "qq_track_mid": "0012TY2n0qQurs",
+      "cover_url": "https://y.gtimg.cn/music/photo_new/T002R500x500M000002O92eu0Jubpi_3.jpg",
+      "rationale": "两首作品同时形成连续榜单信号，代表作一首进入 TOP 13，避免把单曲偶发上榜误判为艺人势能。"
+    },
+    {
+      "artist": "黄星",
+      "tracks_in_window": 1,
+      "track_weeks": 4,
+      "best_rank": 31,
+      "latest_best_rank": 35,
+      "representative_track": "两世洞天",
+      "trajectory": [
+        58,
+        39,
+        31,
+        35
+      ],
+      "average_play": 50.7,
+      "average_recommendation": 70.2,
+      "average_sales": 8.7,
+      "qq_track_mid": "001rRVzh2m7RJB",
+      "cover_url": "https://y.gtimg.cn/music/photo_new/T002R500x500M0000001ze381iKWmo_2.jpg",
+      "rationale": "《两世洞天》四周维持 TOP 60，并呈现推荐度高、畅销度低的结构，适合补做内容口碑与受众画像验证。"
+    },
+    {
+      "artist": "吴琳珂Moske",
+      "tracks_in_window": 1,
+      "track_weeks": 4,
+      "best_rank": 70,
+      "latest_best_rank": 72,
+      "representative_track": "失眠了",
+      "trajectory": [
+        88,
+        85,
+        70,
+        72
+      ],
+      "average_play": 75.3,
+      "average_recommendation": 39.9,
+      "average_sales": 2.4,
+      "qq_track_mid": "001TbwI91Lu6kB",
+      "cover_url": "https://y.gtimg.cn/music/photo_new/T002R500x500M000001Eq1Sr22DGRf_1.jpg",
+      "rationale": "《失眠了》四周连续上榜并由 88 位升至 72 位，播放热度稳定而畅销度低，值得测试自然内容传播。"
+    },
+    {
+      "artist": "老中青民谣,小巷先生",
+      "tracks_in_window": 1,
+      "track_weeks": 3,
+      "best_rank": 85,
+      "latest_best_rank": 85,
+      "representative_track": "都有这一天",
+      "trajectory": [
+        183,
+        106,
+        85
+      ],
+      "average_play": 69.3,
+      "average_recommendation": 42.0,
+      "average_sales": 2.5,
+      "qq_track_mid": "000hceWt1DIler",
+      "cover_url": "https://y.gtimg.cn/music/photo_new/T002R500x500M000002CgPwJ1Sz9aU_1.jpg",
+      "rationale": "《都有这一天》三周由 183 位升至 85 位，是样本中较强的后程爬升信号之一。"
+    },
+    {
+      "artist": "庄淇玟29",
+      "tracks_in_window": 1,
+      "track_weeks": 3,
+      "best_rank": 103,
+      "latest_best_rank": 103,
+      "representative_track": "爱你是我的秘密",
+      "trajectory": [
+        154,
+        126,
+        103
+      ],
+      "average_play": 70.5,
+      "average_recommendation": 35.9,
+      "average_sales": 5.8,
+      "qq_track_mid": "000fQYli0zRiOx",
+      "cover_url": "https://y.gtimg.cn/music/photo_new/T002R500x500M000003Wra153uFebP_1.jpg",
+      "rationale": "《爱你是我的秘密》三周由 154 位升至 103 位，低畅销度下保持播放热度，适合小预算内容验证。"
+    }
+  ],
+  "wave": {
+    "issue": "2026年6月",
+    "tracks": 20,
+    "intersection_count": 4,
+    "intersection_tracks": [
+      "让你知道",
+      "别来无恙",
+      "潜到海底说爱你",
+      "Crazy Love"
+    ],
+    "hidden_quality": [
+      {
+        "song": "在两个心中间坐下 Two Worlds",
+        "artist": "CY Leo/王菀之",
+        "wave_rank": 11,
+        "professional_score": 8.22,
+        "company": "索尼音乐",
+        "four_week_top200_appearances": 0,
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R500x500M000003EZRsW4XDAAx_2.jpg"
+      },
+      {
+        "song": "Darling u",
+        "artist": "邹沛沛",
+        "wave_rank": 13,
+        "professional_score": 8.22,
+        "company": "环球唱片",
+        "four_week_top200_appearances": 0,
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R500x500M000004J4pJk3TPkEl_2.jpg"
+      },
+      {
+        "song": "无忧",
+        "artist": "周菲戈",
+        "wave_rank": 16,
+        "professional_score": 8.18,
+        "company": "索尼音乐",
+        "four_week_top200_appearances": 0,
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R500x500M000004a4J3F4I6jUB_2.jpg"
+      }
+    ]
+  }
+}

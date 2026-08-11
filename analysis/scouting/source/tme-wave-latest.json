@@ -1,0 +1,1188 @@
+{
+  "code": "0",
+  "msg": "请求成功",
+  "data": {
+    "totalCount": 20,
+    "pageSize": null,
+    "pageNo": null,
+    "hasNextPage": false,
+    "content": [
+      {
+        "rank": 1,
+        "songName": "一个人",
+        "singers": [
+          "A-Lin"
+        ],
+        "songCoverUrl": "https://y.gtimg.cn/music/photo_new/T002R500x500M000001304Me4HhNj9_1.jpg",
+        "publishTime": "2026-06-12T00:00:01",
+        "qySongId": 683300667,
+        "kugouSongId": 905640355,
+        "kuwoSongId": 594579682,
+        "uniSongId": 508155859,
+        "qyCopyRight": 1,
+        "kugouCopyRight": 1,
+        "kuwoCopyRight": 1,
+        "score": "7.95",
+        "showScore": "8.57",
+        "companyName": "索尼音乐",
+        "chartIssueInfo": "2026年6月",
+        "magicColor": "#232227",
+        "reducer": "",
+        "programAuthor": "",
+        "tuneAuthor": "戴佩妮Penny Tai",
+        "lyricsAuthor": "戴佩妮Penny Tai",
+        "showComments": [
+          {
+            "comment": "A-Lin依然在自己的风格“统治区”稳定发挥，结合Penny老师层层递进的旋律和代入感极强的文字，让人很难不沉浸。",
+            "judgeNickName": "胡宸",
+            "judgeTitle": "作曲人",
+            "qySingerMid": null
+          }
+        ],
+        "lyricsScore": "8.45",
+        "composeScore": "8.60",
+        "arrangeScore": "8.45",
+        "makeScore": "8.38",
+        "singScore": "8.72",
+        "tags": [
+          "初选最多评委投票",
+          "超20%评委给9分以上"
+        ],
+        "preferJudges": [
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M000002mQR510RovCl.jpg",
+            "judgeNickName": "彭学斌",
+            "score": 8,
+            "qySingerMid": "003JYXFv2Uv023"
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M000003o5Lbb0zKeQL.png",
+            "judgeNickName": "晴时书",
+            "score": 9,
+            "qySingerMid": "004cvs1a1QsuFk"
+          },
+          {
+            "judgeUrl": "https://cdn-y.tencentmusic.com/uni/commonPic/cos_9937eedb23ad7afa4af565d7dd6fcf7087ec99bd.png",
+            "judgeNickName": "胡宸",
+            "score": 9,
+            "qySingerMid": null
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M0000003Vwn82cARDp.png",
+            "judgeNickName": "包小松",
+            "score": 9,
+            "qySingerMid": "0031ERQL4HdLyV"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "songName": "生死未定",
+        "singers": [
+          "胡彦斌"
+        ],
+        "songCoverUrl": "https://y.gtimg.cn/music/photo_new/T002R500x500M0000021cEMa27oBo6_1.jpg",
+        "publishTime": "2026-06-26T00:00:00",
+        "qySongId": 691816226,
+        "kugouSongId": 914892661,
+        "kuwoSongId": 606444844,
+        "uniSongId": 516671380,
+        "qyCopyRight": 1,
+        "kugouCopyRight": 1,
+        "kuwoCopyRight": 1,
+        "score": "7.90",
+        "showScore": "8.53",
+        "companyName": "音之邦",
+        "chartIssueInfo": "2026年6月",
+        "magicColor": "#c69b5b",
+        "reducer": "",
+        "programAuthor": "",
+        "tuneAuthor": "胡彦斌",
+        "lyricsAuthor": "胡彦斌",
+        "showComments": [
+          {
+            "comment": "成熟的编曲、克制又充满力量的演唱，素描现代人面对未知的焦虑、不甘与倔强。不廉价热血，不强行消解，输赢未定，唯有向前。",
+            "judgeNickName": "杨炅翰",
+            "judgeTitle": "唱作歌手",
+            "qySingerMid": "001JNRtm0BOq84"
+          }
+        ],
+        "lyricsScore": "8.41",
+        "composeScore": "8.63",
+        "arrangeScore": "8.65",
+        "makeScore": "8.74",
+        "singScore": "8.65",
+        "tags": [
+          "得分最高制作"
+        ],
+        "preferJudges": [
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M0000045l8t53itg9V.png",
+            "judgeNickName": "周振霆",
+            "score": 8,
+            "qySingerMid": "004L2uGp0ZsTLL"
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M0000010c5bQ0Hkwsm.png",
+            "judgeNickName": "袁文睿",
+            "score": 8,
+            "qySingerMid": "004ebhPj30zXpj"
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M000000ksesW3IVsE5.jpg",
+            "judgeNickName": "杨炅翰",
+            "score": 9,
+            "qySingerMid": "001JNRtm0BOq84"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "songName": "让你知道",
+        "singers": [
+          "汪苏泷",
+          "G.E.M. 邓紫棋"
+        ],
+        "songCoverUrl": "https://y.gtimg.cn/music/photo_new/T002R500x500M000000A1M903iHvyT_4.jpg",
+        "publishTime": "2026-06-23T12:00:00",
+        "qySongId": 655794076,
+        "kugouSongId": 864609801,
+        "kuwoSongId": 557982910,
+        "uniSongId": 480650228,
+        "qyCopyRight": 1,
+        "kugouCopyRight": 1,
+        "kuwoCopyRight": 1,
+        "score": "7.85",
+        "showScore": "8.50",
+        "companyName": "大象无形",
+        "chartIssueInfo": "2026年6月",
+        "magicColor": "#fbfdfe",
+        "reducer": "",
+        "programAuthor": "",
+        "tuneAuthor": "汪苏泷",
+        "lyricsAuthor": "汪苏泷",
+        "showComments": [
+          {
+            "comment": "这首歌旋律朗朗上口，将暗恋中的反复拉扯描绘出甜甜的味道，算得上近些年难得的男女对唱作品。",
+            "judgeNickName": "罗文Rown",
+            "judgeTitle": "混音师",
+            "qySingerMid": "003ymZ2B4H9Wfb"
+          }
+        ],
+        "lyricsScore": "8.26",
+        "composeScore": "8.65",
+        "arrangeScore": "8.15",
+        "makeScore": "8.71",
+        "singScore": "8.65",
+        "tags": [
+          "最多唱作人喜欢"
+        ],
+        "preferJudges": [
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M0000045v9Ym0hTPcN.png",
+            "judgeNickName": "姜海威",
+            "score": 8,
+            "qySingerMid": "004UavIW2FF18Z"
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M000003vGpfJ0hkCjz.png",
+            "judgeNickName": "罗文Rown",
+            "score": 9,
+            "qySingerMid": "003ymZ2B4H9Wfb"
+          },
+          {
+            "judgeUrl": "https://cdn-y.tencentmusic.com/uni/commonPic/cos_9937eedb23ad7afa4af565d7dd6fcf7087ec99bd.png",
+            "judgeNickName": "胡宸",
+            "score": 9,
+            "qySingerMid": null
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M000003xm9Dm0shUVx.png",
+            "judgeNickName": "金大洲D-Jin",
+            "score": 9,
+            "qySingerMid": "003spLuB20PrNL"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "songName": "鹿回头",
+        "singers": [
+          "陈楚生"
+        ],
+        "songCoverUrl": "https://y.gtimg.cn/music/photo_new/T002R500x500M000003OxFPC0COxZC_2.jpg",
+        "publishTime": "2026-06-05T00:00:02",
+        "qySongId": 672605596,
+        "kugouSongId": 892567104,
+        "kuwoSongId": 581327330,
+        "uniSongId": 497460790,
+        "qyCopyRight": 1,
+        "kugouCopyRight": 1,
+        "kuwoCopyRight": 1,
+        "score": "7.80",
+        "showScore": "8.46",
+        "companyName": "海南百星赴海文化传媒有限公司",
+        "chartIssueInfo": "2026年6月",
+        "magicColor": "#101019",
+        "reducer": "",
+        "programAuthor": "",
+        "tuneAuthor": "陈楚生",
+        "lyricsAuthor": "唐恬",
+        "showComments": [
+          {
+            "comment": "黎语清唱如千年召唤，唐恬将传说落于烟火日常，陈楚生唱出游子归来的温柔，鹿回头即归家。",
+            "judgeNickName": "李文贤",
+            "judgeTitle": "作词人",
+            "qySingerMid": null
+          }
+        ],
+        "lyricsScore": "9.03",
+        "composeScore": "8.68",
+        "arrangeScore": "8.42",
+        "makeScore": "8.50",
+        "singScore": "8.41",
+        "tags": [
+          "得分最高作词",
+          "得分最高作曲",
+          "超20%评委给9分以上"
+        ],
+        "preferJudges": [
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M0000028WieM3S4faO.jpg",
+            "judgeNickName": "楼南蔚",
+            "score": 9,
+            "qySingerMid": "001Pxdq00HcVCy"
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M00000248QO60HFHfL.jpg",
+            "judgeNickName": "吴梦奇",
+            "score": 8,
+            "qySingerMid": "001HjYZR3bqFbh"
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M0000003Vwn82cARDp.png",
+            "judgeNickName": "包小松",
+            "score": 9,
+            "qySingerMid": "0031ERQL4HdLyV"
+          },
+          {
+            "judgeUrl": "https://cdn-y.tencentmusic.com/uni/commonPic/cos_977b4b71acb89a071c1317e6a9db5d2a63154886.png",
+            "judgeNickName": "张旭",
+            "score": 9,
+            "qySingerMid": null
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "songName": "别来无恙",
+        "singers": [
+          "任素汐"
+        ],
+        "songCoverUrl": "https://y.gtimg.cn/music/photo_new/T002R500x500M0000033vNiW2uLR2S_1.jpg",
+        "publishTime": "2026-06-05T10:00:00",
+        "qySongId": 667141630,
+        "kugouSongId": 884962659,
+        "kuwoSongId": 572298331,
+        "uniSongId": 491996827,
+        "qyCopyRight": 1,
+        "kugouCopyRight": 1,
+        "kuwoCopyRight": 1,
+        "score": "7.80",
+        "showScore": "8.46",
+        "companyName": "百纳娱乐",
+        "chartIssueInfo": "2026年6月",
+        "magicColor": "#6692c2",
+        "reducer": "",
+        "programAuthor": "",
+        "tuneAuthor": "许明明",
+        "lyricsAuthor": "临渡|任素汐|许明明",
+        "showComments": [
+          {
+            "comment": "任素汐的演唱如话家常，不炫技却深情。整首歌通俗治愈，是给疲惫生活的一记温柔耳光。",
+            "judgeNickName": "李文贤",
+            "judgeTitle": "作词人",
+            "qySingerMid": null
+          }
+        ],
+        "lyricsScore": "8.69",
+        "composeScore": "8.62",
+        "arrangeScore": "8.11",
+        "makeScore": "8.33",
+        "singScore": "8.68",
+        "tags": [
+          "最多作词人喜欢",
+          "最多编曲人喜欢"
+        ],
+        "preferJudges": [
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M000003o5Lbb0zKeQL.png",
+            "judgeNickName": "晴时书",
+            "score": 9,
+            "qySingerMid": "004cvs1a1QsuFk"
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M000004WRljH45v008.png",
+            "judgeNickName": "李文贤",
+            "score": 10,
+            "qySingerMid": null
+          },
+          {
+            "judgeUrl": "https://cdn-y.tencentmusic.com/uni/commonPic/cos_0678b50292fe14b17ddfd467df001acf3cec5686.png",
+            "judgeNickName": "吹米（九连真人）",
+            "score": 8,
+            "qySingerMid": null
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "songName": "Somewhere In Winter (失重)",
+        "singers": [
+          "火星电台",
+          "窦靖童"
+        ],
+        "songCoverUrl": "https://y.gtimg.cn/music/photo_new/T002R500x500M000000Rjkf04WgkX8_1.jpg",
+        "publishTime": "2026-06-01T10:00:00",
+        "qySongId": 668772569,
+        "kugouSongId": 887743001,
+        "kuwoSongId": 575744294,
+        "uniSongId": 493627764,
+        "qyCopyRight": 1,
+        "kugouCopyRight": 1,
+        "kuwoCopyRight": 1,
+        "score": "7.70",
+        "showScore": "8.39",
+        "companyName": "阔景音乐",
+        "chartIssueInfo": "2026年6月",
+        "magicColor": "#c0c0c",
+        "reducer": "",
+        "programAuthor": "",
+        "tuneAuthor": "曾宇",
+        "lyricsAuthor": "Mojo|曾宇|黄少峰",
+        "showComments": [
+          {
+            "comment": "乐器像心跳，声音像呼吸，在克制的气息中，流淌在充满诗意的歌词里，说的是失重，一切竟都平衡的如此自然与美好。",
+            "judgeNickName": "彭学斌",
+            "judgeTitle": "作曲人",
+            "qySingerMid": "003JYXFv2Uv023"
+          }
+        ],
+        "lyricsScore": "8.27",
+        "composeScore": "8.23",
+        "arrangeScore": "8.59",
+        "makeScore": "8.43",
+        "singScore": "8.27",
+        "tags": [
+          "最多制作人喜欢"
+        ],
+        "preferJudges": [
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M000002mQR510RovCl.jpg",
+            "judgeNickName": "彭学斌",
+            "score": 8,
+            "qySingerMid": "003JYXFv2Uv023"
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M0000003Vwn82cARDp.png",
+            "judgeNickName": "包小松",
+            "score": 9,
+            "qySingerMid": "0031ERQL4HdLyV"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "songName": "起初说",
+        "singers": [
+          "萨顶顶"
+        ],
+        "songCoverUrl": "https://y.gtimg.cn/music/photo_new/T002R500x500M0000005me6N4LpwcY_1.jpg",
+        "publishTime": "2026-06-27T00:00:01",
+        "qySongId": 692694551,
+        "kugouSongId": 916207199,
+        "kuwoSongId": 607351185,
+        "uniSongId": 517549698,
+        "qyCopyRight": 1,
+        "kugouCopyRight": 1,
+        "kuwoCopyRight": 1,
+        "score": "7.60",
+        "showScore": "8.32",
+        "companyName": "鲸鱼向海（成都）文化有限公司",
+        "chartIssueInfo": "2026年6月",
+        "magicColor": "#a77444",
+        "reducer": "",
+        "programAuthor": "",
+        "tuneAuthor": "萨顶顶",
+        "lyricsAuthor": "择荇",
+        "showComments": [
+          {
+            "comment": "混沌后的开端，也是万物生长的起点，逍遥洒脱的嗓音与电子融合架构，如同重生的游牧者自由切换着状态，让这首大地的生命序曲开启了新生的乐章。",
+            "judgeNickName": "谢景麒WAVE G",
+            "judgeTitle": "编曲人",
+            "qySingerMid": null
+          }
+        ],
+        "lyricsScore": "8.55",
+        "composeScore": "8.29",
+        "arrangeScore": "8.68",
+        "makeScore": "8.08",
+        "singScore": "8.34",
+        "tags": [
+          "得分最高编曲",
+          "超20%评委给9分以上"
+        ],
+        "preferJudges": [
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M000002NZ4iD3Jn2JQ.png",
+            "judgeNickName": "刘恩汛",
+            "score": 9,
+            "qySingerMid": "000S9s324OkFyk"
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M000003vGpfJ0hkCjz.png",
+            "judgeNickName": "罗文Rown",
+            "score": 9,
+            "qySingerMid": "003ymZ2B4H9Wfb"
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M000004EmHz23v9xSy.jpg",
+            "judgeNickName": "谢景麒WAVE G",
+            "score": 10,
+            "qySingerMid": null
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "songName": "潜到海底说爱你",
+        "singers": [
+          "万妮达Vinida Weng"
+        ],
+        "songCoverUrl": "https://y.gtimg.cn/music/photo_new/T002R500x500M000000OVfpX3qfz3Z_3.jpg",
+        "publishTime": "2026-06-12T00:00:00",
+        "qySongId": 668357077,
+        "kugouSongId": 888744285,
+        "kuwoSongId": 577622256,
+        "uniSongId": 493212272,
+        "qyCopyRight": 1,
+        "kugouCopyRight": 1,
+        "kuwoCopyRight": 1,
+        "score": "7.55",
+        "showScore": "8.29",
+        "companyName": "索尼音乐",
+        "chartIssueInfo": "2026年6月",
+        "magicColor": "#b1b29",
+        "reducer": "",
+        "programAuthor": "",
+        "tuneAuthor": "王懿W1",
+        "lyricsAuthor": "王懿W1",
+        "showComments": [
+          {
+            "comment": "以旋律说唱融合R&B，营造深海朦胧氛围。万妮达收敛锋芒，唱腔松弛，演绎隐秘内敛的隐喻浪漫。",
+            "judgeNickName": "郑亦钧",
+            "judgeTitle": "制作人",
+            "qySingerMid": "003qNquV39CD5a"
+          }
+        ],
+        "lyricsScore": "7.94",
+        "composeScore": "8.25",
+        "arrangeScore": "8.17",
+        "makeScore": "8.22",
+        "singScore": "8.44",
+        "tags": [
+          "最多编曲人喜欢"
+        ],
+        "preferJudges": [
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M000000ckO6m1XCwp6.jpg",
+            "judgeNickName": "郑亦钧",
+            "score": 9,
+            "qySingerMid": "003qNquV39CD5a"
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M000003xm9Dm0shUVx.png",
+            "judgeNickName": "金大洲D-Jin",
+            "score": 9,
+            "qySingerMid": "003spLuB20PrNL"
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M0000003Vwn82cARDp.png",
+            "judgeNickName": "包小松",
+            "score": 9,
+            "qySingerMid": "0031ERQL4HdLyV"
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "songName": "寂寞是什么 (feat. 陈娴静)",
+        "singers": [
+          "马念先",
+          "陳嫺靜"
+        ],
+        "songCoverUrl": "https://y.gtimg.cn/music/photo_new/T002R500x500M000002wwOhl3wd0Wl_1.jpg",
+        "publishTime": "2026-06-06T00:00:00",
+        "qySongId": 676515476,
+        "kugouSongId": 897954753,
+        "kuwoSongId": 585918439,
+        "uniSongId": 501370671,
+        "qyCopyRight": 1,
+        "kugouCopyRight": 1,
+        "kuwoCopyRight": 1,
+        "score": "7.50",
+        "showScore": "8.25",
+        "companyName": "华纳唱片",
+        "chartIssueInfo": "2026年6月",
+        "magicColor": "#f7e9e1",
+        "reducer": "",
+        "programAuthor": "",
+        "tuneAuthor": "马念先",
+        "lyricsAuthor": "周穆",
+        "showComments": [
+          {
+            "comment": "结合Bossa Nova的华语流行，在当下属实是稀缺的存在。两位歌者的声线松弛且有诉说感，让人情不自禁的就会跟着chill起来。",
+            "judgeNickName": "胡宸",
+            "judgeTitle": "作曲人",
+            "qySingerMid": null
+          }
+        ],
+        "lyricsScore": "8.48",
+        "composeScore": "8.15",
+        "arrangeScore": "8.37",
+        "makeScore": "8.41",
+        "singScore": "8.20",
+        "tags": [
+          "最多作曲人喜欢",
+          "最多编曲人喜欢"
+        ],
+        "preferJudges": [
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M0000002WYps0qPSXk.jpg",
+            "judgeNickName": "吕绍淳",
+            "score": 9,
+            "qySingerMid": "001fnXlT49gbnW"
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M000002mQR510RovCl.jpg",
+            "judgeNickName": "彭学斌",
+            "score": 8,
+            "qySingerMid": "003JYXFv2Uv023"
+          },
+          {
+            "judgeUrl": "https://cdn-y.tencentmusic.com/uni/commonPic/cos_9937eedb23ad7afa4af565d7dd6fcf7087ec99bd.png",
+            "judgeNickName": "胡宸",
+            "score": 9,
+            "qySingerMid": null
+          }
+        ]
+      },
+      {
+        "rank": 10,
+        "songName": "他与世纪的落幕 (The End of the Century,and Him)",
+        "singers": [
+          "许钧"
+        ],
+        "songCoverUrl": "https://y.gtimg.cn/music/photo_new/T002R500x500M000001e00IZ1DWcYE_1.jpg",
+        "publishTime": "2026-06-24T11:00:01",
+        "qySongId": 687232902,
+        "kugouSongId": 910092661,
+        "kuwoSongId": 597645795,
+        "uniSongId": 512088056,
+        "qyCopyRight": 1,
+        "kugouCopyRight": 1,
+        "kuwoCopyRight": 1,
+        "score": "7.50",
+        "showScore": "8.25",
+        "companyName": "北京东亚星光文化传播有限公司",
+        "chartIssueInfo": "2026年6月",
+        "magicColor": "#c0d0f",
+        "reducer": "",
+        "programAuthor": "",
+        "tuneAuthor": "许钧",
+        "lyricsAuthor": "许钧",
+        "showComments": [
+          {
+            "comment": "整首歌构建出末世意象体系，歌词充满超现实的隐喻，荒芜诗意的叙事，念白也显得有趣。落幕亦是序曲，从旁观者的视角展现出告别昨天，重启属于自己的新纪元，也让人对这张新专辑充满无限的好奇与期待。",
+            "judgeNickName": "刘恩汛",
+            "judgeTitle": "作词人",
+            "qySingerMid": "000S9s324OkFyk"
+          }
+        ],
+        "lyricsScore": "8.82",
+        "composeScore": "8.15",
+        "arrangeScore": "8.37",
+        "makeScore": "8.35",
+        "singScore": "8.03",
+        "tags": [
+          "最多编曲人喜欢"
+        ],
+        "preferJudges": [
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M000002NZ4iD3Jn2JQ.png",
+            "judgeNickName": "刘恩汛",
+            "score": 9,
+            "qySingerMid": "000S9s324OkFyk"
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M000000ksesW3IVsE5.jpg",
+            "judgeNickName": "杨炅翰",
+            "score": 9,
+            "qySingerMid": "001JNRtm0BOq84"
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M0000003Vwn82cARDp.png",
+            "judgeNickName": "包小松",
+            "score": 9,
+            "qySingerMid": "0031ERQL4HdLyV"
+          }
+        ]
+      },
+      {
+        "rank": 11,
+        "songName": "在两个心中间坐下 Two Worlds",
+        "singers": [
+          "CY Leo",
+          "王菀之"
+        ],
+        "songCoverUrl": "https://y.gtimg.cn/music/photo_new/T002R500x500M000003EZRsW4XDAAx_2.jpg",
+        "publishTime": "2026-06-17T00:00:44",
+        "qySongId": 687992109,
+        "kugouSongId": 910225152,
+        "kuwoSongId": 599279314,
+        "uniSongId": 512847263,
+        "qyCopyRight": 1,
+        "kugouCopyRight": 1,
+        "kuwoCopyRight": 1,
+        "score": "7.45",
+        "showScore": "8.22",
+        "companyName": "索尼音乐",
+        "chartIssueInfo": "2026年6月",
+        "magicColor": "#85a9a9",
+        "reducer": "",
+        "programAuthor": "",
+        "tuneAuthor": "Cy Leo",
+        "lyricsAuthor": "周耀辉",
+        "showComments": [
+          {
+            "comment": "王菀之的声音有一种让人平静的力量，温柔的声线里隐藏着坚韧且磅礴的生命力。这把声音在这首3拍子且带着Swing感觉的作品里，没有选择相对刻意地去唱得更爵士、更炫技，而是稳稳地表达、稳稳地传达，内敛克制但足够打动人！优秀的演绎，优秀的作品。",
+            "judgeNickName": "袁文睿",
+            "judgeTitle": "制作人",
+            "qySingerMid": "004ebhPj30zXpj"
+          }
+        ],
+        "lyricsScore": "8.33",
+        "composeScore": "8.12",
+        "arrangeScore": "8.26",
+        "makeScore": "8.26",
+        "singScore": "8.17",
+        "tags": [],
+        "preferJudges": [
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M0000010c5bQ0Hkwsm.png",
+            "judgeNickName": "袁文睿",
+            "score": 8,
+            "qySingerMid": "004ebhPj30zXpj"
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M00000248QO60HFHfL.jpg",
+            "judgeNickName": "吴梦奇",
+            "score": 8,
+            "qySingerMid": "001HjYZR3bqFbh"
+          }
+        ]
+      },
+      {
+        "rank": 12,
+        "songName": "Ignore",
+        "singers": [
+          "Karencici"
+        ],
+        "songCoverUrl": "https://y.gtimg.cn/music/photo_new/T002R500x500M0000033ZpAO1VxaHT_1.jpg",
+        "publishTime": "2026-06-19T00:00:00",
+        "qySongId": 688444386,
+        "kugouSongId": 911054121,
+        "kuwoSongId": 599140983,
+        "uniSongId": 513299541,
+        "qyCopyRight": 1,
+        "kugouCopyRight": 1,
+        "kuwoCopyRight": 1,
+        "score": "7.45",
+        "showScore": "8.22",
+        "companyName": "华纳唱片",
+        "chartIssueInfo": "2026年6月",
+        "magicColor": "#fafcfb",
+        "reducer": "",
+        "programAuthor": "",
+        "tuneAuthor": "Gabrielle Christine Puggi|Larry Contreras|Karencici|Kvnloverboy",
+        "lyricsAuthor": "Gabrielle Christine Puggi|Larry Contreras|Karencici|Kvnloverboy",
+        "showComments": [
+          {
+            "comment": "极简律动衬出极具辨识度的转音处理，精准描摹拉扯情愫，是氛围感R&B的优质代表作。",
+            "judgeNickName": "姜海威",
+            "judgeTitle": "作曲人",
+            "qySingerMid": "004UavIW2FF18Z"
+          }
+        ],
+        "lyricsScore": "7.87",
+        "composeScore": "8.06",
+        "arrangeScore": "8.41",
+        "makeScore": "8.37",
+        "singScore": "8.20",
+        "tags": [],
+        "preferJudges": [
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M0000045v9Ym0hTPcN.png",
+            "judgeNickName": "姜海威",
+            "score": 8,
+            "qySingerMid": "004UavIW2FF18Z"
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M0000028WieM3S4faO.jpg",
+            "judgeNickName": "楼南蔚",
+            "score": 9,
+            "qySingerMid": "001Pxdq00HcVCy"
+          }
+        ]
+      },
+      {
+        "rank": 13,
+        "songName": "Darling u",
+        "singers": [
+          "邹沛沛"
+        ],
+        "songCoverUrl": "https://y.gtimg.cn/music/photo_new/T002R500x500M000004J4pJk3TPkEl_2.jpg",
+        "publishTime": "2026-06-16T00:00:00",
+        "qySongId": 687207280,
+        "kugouSongId": 908719969,
+        "kuwoSongId": 597611924,
+        "uniSongId": 512062434,
+        "qyCopyRight": 1,
+        "kugouCopyRight": 1,
+        "kuwoCopyRight": 1,
+        "score": "7.45",
+        "showScore": "8.22",
+        "companyName": "环球唱片",
+        "chartIssueInfo": "2026年6月",
+        "magicColor": "#1c1b17",
+        "reducer": "",
+        "programAuthor": "",
+        "tuneAuthor": "邹沛沛",
+        "lyricsAuthor": "邹沛沛",
+        "showComments": [
+          {
+            "comment": "邹沛沛这次的新专辑，在音乐整体性上又有了新的升华。其中《Darling u》词曲的写法和声音表达上那种有点朦胧的律动与呼吸感，构建成了她自己特有的风格，类似一种“感官空间”的氛围感，编曲也恰到好处的做出了有点那种模糊的梦境感。",
+            "judgeNickName": "吴梦奇",
+            "judgeTitle": "制作人",
+            "qySingerMid": "001HjYZR3bqFbh"
+          }
+        ],
+        "lyricsScore": "7.87",
+        "composeScore": "7.99",
+        "arrangeScore": "8.26",
+        "makeScore": "8.26",
+        "singScore": "8.23",
+        "tags": [
+          "最多编曲人喜欢"
+        ],
+        "preferJudges": [
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M000003vGpfJ0hkCjz.png",
+            "judgeNickName": "罗文Rown",
+            "score": 9,
+            "qySingerMid": "003ymZ2B4H9Wfb"
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M00000248QO60HFHfL.jpg",
+            "judgeNickName": "吴梦奇",
+            "score": 8,
+            "qySingerMid": "001HjYZR3bqFbh"
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M000000lNFDp3XkV2C.jpg",
+            "judgeNickName": "大仙女罗茜",
+            "score": 8,
+            "qySingerMid": null
+          }
+        ]
+      },
+      {
+        "rank": 14,
+        "songName": "爱人啊！",
+        "singers": [
+          "庾澄庆"
+        ],
+        "songCoverUrl": "https://y.gtimg.cn/music/photo_new/T002R500x500M0000031AAyq4Vzu91_1.jpg",
+        "publishTime": "2026-06-22T00:00:00",
+        "qySongId": 689270278,
+        "kugouSongId": 913040347,
+        "kuwoSongId": 601345863,
+        "uniSongId": 514125433,
+        "qyCopyRight": 1,
+        "kugouCopyRight": 1,
+        "kuwoCopyRight": 1,
+        "score": "7.40",
+        "showScore": "8.18",
+        "companyName": "福茂唱片",
+        "chartIssueInfo": "2026年6月",
+        "magicColor": "#a4a4a4",
+        "reducer": "",
+        "programAuthor": "",
+        "tuneAuthor": "庾澄庆 Harlem Yu",
+        "lyricsAuthor": "昨梦 Y.Dreamer|庾澄庆 Harlem Yu",
+        "showComments": [
+          {
+            "comment": "一首优质的老式情歌，真情流露、不刻意修饰的演唱，哈林的歌声如醇酒一杯耐人寻味。",
+            "judgeNickName": "楼南蔚",
+            "judgeTitle": "作词人",
+            "qySingerMid": "001Pxdq00HcVCy"
+          }
+        ],
+        "lyricsScore": "8.41",
+        "composeScore": "8.34",
+        "arrangeScore": "8.38",
+        "makeScore": "8.05",
+        "singScore": "8.13",
+        "tags": [],
+        "preferJudges": [
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M0000010c5bQ0Hkwsm.png",
+            "judgeNickName": "袁文睿",
+            "score": 8,
+            "qySingerMid": "004ebhPj30zXpj"
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M0000037erqy3bjGin.jpg",
+            "judgeNickName": "赖家庆",
+            "score": 9,
+            "qySingerMid": null
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M0000028WieM3S4faO.jpg",
+            "judgeNickName": "楼南蔚",
+            "score": 9,
+            "qySingerMid": "001Pxdq00HcVCy"
+          }
+        ]
+      },
+      {
+        "rank": 15,
+        "songName": "老朋友",
+        "singers": [
+          "范晓萱"
+        ],
+        "songCoverUrl": "https://y.qq.com/music/photo_new/T062R500x500M0000008Tqy41MPuLt.jpg",
+        "publishTime": "2026-06-19T12:00:00",
+        "qySongId": 689306809,
+        "kugouSongId": 911086342,
+        "kuwoSongId": 600856559,
+        "uniSongId": 514161962,
+        "qyCopyRight": 1,
+        "kugouCopyRight": 1,
+        "kuwoCopyRight": 1,
+        "score": "7.40",
+        "showScore": "8.18",
+        "companyName": "制作家",
+        "chartIssueInfo": "2026年6月",
+        "magicColor": "#ffa41b",
+        "reducer": "",
+        "programAuthor": "",
+        "tuneAuthor": "贺斌",
+        "lyricsAuthor": "贺斌",
+        "showComments": [
+          {
+            "comment": "一首不那么年轻的关于“友情”的歌曲，旋律、人声、编曲的设计简单且好听，或许经历过的人，才更能听懂歌里表达的温柔和深情。",
+            "judgeNickName": "张旭",
+            "judgeTitle": "作曲人",
+            "qySingerMid": null
+          }
+        ],
+        "lyricsScore": "8.52",
+        "composeScore": "8.28",
+        "arrangeScore": "8.07",
+        "makeScore": "8.11",
+        "singScore": "8.20",
+        "tags": [],
+        "preferJudges": [
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M0000028WieM3S4faO.jpg",
+            "judgeNickName": "楼南蔚",
+            "score": 9,
+            "qySingerMid": "001Pxdq00HcVCy"
+          },
+          {
+            "judgeUrl": "https://cdn-y.tencentmusic.com/uni/commonPic/cos_977b4b71acb89a071c1317e6a9db5d2a63154886.png",
+            "judgeNickName": "张旭",
+            "score": 9,
+            "qySingerMid": null
+          }
+        ]
+      },
+      {
+        "rank": 16,
+        "songName": "无忧",
+        "singers": [
+          "周菲戈"
+        ],
+        "songCoverUrl": "https://y.gtimg.cn/music/photo_new/T002R500x500M000004a4J3F4I6jUB_2.jpg",
+        "publishTime": "2026-06-17T00:00:56",
+        "qySongId": 686603513,
+        "kugouSongId": 910159065,
+        "kuwoSongId": 599279212,
+        "uniSongId": 511458668,
+        "qyCopyRight": 1,
+        "kugouCopyRight": 1,
+        "kuwoCopyRight": 1,
+        "score": "7.40",
+        "showScore": "8.18",
+        "companyName": "索尼音乐",
+        "chartIssueInfo": "2026年6月",
+        "magicColor": "#283477",
+        "reducer": "",
+        "programAuthor": "",
+        "tuneAuthor": "周菲戈",
+        "lyricsAuthor": "姜郎山",
+        "showComments": [
+          {
+            "comment": "像深夜里一场温柔的自我和解。张步鸿担纲制作人的编曲用弦乐铺出松弛底色，褪去了炫技，用温润扎实的中低音缓缓诉说心事。“万物苏，万籁寂”的东方意境搭配都市人深夜的情绪出口，在呼吸般的旋律里，让疲惫慢慢舒展，是专辑《24:01》里最具治愈感的一首歌。",
+            "judgeNickName": "周振霆",
+            "judgeTitle": "作词人",
+            "qySingerMid": "004L2uGp0ZsTLL"
+          }
+        ],
+        "lyricsScore": "8.06",
+        "composeScore": "8.21",
+        "arrangeScore": "8.14",
+        "makeScore": "8.28",
+        "singScore": "8.23",
+        "tags": [
+          "最多编曲人喜欢"
+        ],
+        "preferJudges": [
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M0000045l8t53itg9V.png",
+            "judgeNickName": "周振霆",
+            "score": 8,
+            "qySingerMid": "004L2uGp0ZsTLL"
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M000002mQR510RovCl.jpg",
+            "judgeNickName": "彭学斌",
+            "score": 8,
+            "qySingerMid": "003JYXFv2Uv023"
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M0000037erqy3bjGin.jpg",
+            "judgeNickName": "赖家庆",
+            "score": 9,
+            "qySingerMid": null
+          }
+        ]
+      },
+      {
+        "rank": 17,
+        "songName": "照顾者",
+        "singers": [
+          "JW"
+        ],
+        "songCoverUrl": "https://y.gtimg.cn/music/photo_new/T002R500x500M0000019O69j0pLNh7_2.jpg",
+        "publishTime": "2026-06-05T00:00:06",
+        "qySongId": 673008806,
+        "kugouSongId": 896318209,
+        "kuwoSongId": 586998410,
+        "uniSongId": 497864001,
+        "qyCopyRight": 1,
+        "kugouCopyRight": 1,
+        "kuwoCopyRight": 1,
+        "score": "7.40",
+        "showScore": "8.18",
+        "companyName": "索尼音乐",
+        "chartIssueInfo": "2026年6月",
+        "magicColor": "#6c3d0e",
+        "reducer": "",
+        "programAuthor": "",
+        "tuneAuthor": "王灏儿|苏道哲",
+        "lyricsAuthor": "陳詠謙",
+        "showComments": [
+          {
+            "comment": "弦乐带出的娓娓叙述，像坦陈给自己，也像倾诉给密友。JW的声线很有画面感，是回顾来路时车窗上倒映出的那种诚实的疲惫和克制的表情。在抑郁肆虐的当下把着眼点转向陪伴左右的照顾者们，正视他们隐忍和脆弱，传递出巨大的温柔。",
+            "judgeNickName": "大仙女罗茜",
+            "judgeTitle": "作词人",
+            "qySingerMid": null
+          }
+        ],
+        "lyricsScore": "8.18",
+        "composeScore": "8.47",
+        "arrangeScore": "7.83",
+        "makeScore": "8.11",
+        "singScore": "8.20",
+        "tags": [],
+        "preferJudges": [
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M0000010c5bQ0Hkwsm.png",
+            "judgeNickName": "袁文睿",
+            "score": 8,
+            "qySingerMid": "004ebhPj30zXpj"
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M000000lNFDp3XkV2C.jpg",
+            "judgeNickName": "大仙女罗茜",
+            "score": 8,
+            "qySingerMid": null
+          }
+        ]
+      },
+      {
+        "rank": 18,
+        "songName": "Crazy Love",
+        "singers": [
+          "王以太",
+          "艾热AIR"
+        ],
+        "songCoverUrl": "https://y.gtimg.cn/music/photo_new/T002R500x500M000000TFXPO1bLY2u_1.jpg",
+        "publishTime": "2026-06-12T00:00:01",
+        "qySongId": 686537216,
+        "kugouSongId": 907975625,
+        "kuwoSongId": 596110687,
+        "uniSongId": 511392343,
+        "qyCopyRight": 1,
+        "kugouCopyRight": 1,
+        "kuwoCopyRight": 1,
+        "score": "7.30",
+        "showScore": "8.11",
+        "companyName": "环球唱片",
+        "chartIssueInfo": "2026年6月",
+        "magicColor": "#16b4fd",
+        "reducer": "",
+        "programAuthor": "",
+        "tuneAuthor": "王以太|艾热AIR",
+        "lyricsAuthor": "王以太|艾热AIR",
+        "showComments": [
+          {
+            "comment": "快慢flow交织碰撞，柔软唱腔褪去说唱锋利，直白诉说热烈又纯粹的疯狂爱意。",
+            "judgeNickName": "姜海威",
+            "judgeTitle": "作曲人",
+            "qySingerMid": "004UavIW2FF18Z"
+          }
+        ],
+        "lyricsScore": "8.11",
+        "composeScore": "8.21",
+        "arrangeScore": "8.00",
+        "makeScore": "8.15",
+        "singScore": "8.10",
+        "tags": [],
+        "preferJudges": [
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M0000045v9Ym0hTPcN.png",
+            "judgeNickName": "姜海威",
+            "score": 8,
+            "qySingerMid": "004UavIW2FF18Z"
+          }
+        ]
+      },
+      {
+        "rank": 19,
+        "songName": "试运行",
+        "singers": [
+          "陈粒"
+        ],
+        "songCoverUrl": "https://y.gtimg.cn/music/photo_new/T002R500x500M000000HSKrv12PrR9_1.jpg",
+        "publishTime": "2026-06-21T10:00:00",
+        "qySongId": 689073856,
+        "kugouSongId": 911022862,
+        "kuwoSongId": 600824818,
+        "uniSongId": 513929010,
+        "qyCopyRight": 1,
+        "kugouCopyRight": 1,
+        "kuwoCopyRight": 1,
+        "score": "7.30",
+        "showScore": "8.11",
+        "companyName": "北京有此山文化传媒有限公司",
+        "chartIssueInfo": "2026年6月",
+        "magicColor": "#d1a491",
+        "reducer": "",
+        "programAuthor": "",
+        "tuneAuthor": "陈粒",
+        "lyricsAuthor": "陈南西",
+        "showComments": [
+          {
+            "comment": "慵懒复古的旋律，陈粒漫不经心地开唱。人生开启试运行模式，所有遗憾都是系统漏洞，暂且停下来，不用急于更新，才会有更完美的版本。",
+            "judgeNickName": "晴时书",
+            "judgeTitle": "作词人",
+            "qySingerMid": "004cvs1a1QsuFk"
+          }
+        ],
+        "lyricsScore": "8.45",
+        "composeScore": "8.08",
+        "arrangeScore": "8.23",
+        "makeScore": "7.98",
+        "singScore": "8.06",
+        "tags": [],
+        "preferJudges": [
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M000003xm9Dm0shUVx.png",
+            "judgeNickName": "金大洲D-Jin",
+            "score": 9,
+            "qySingerMid": "003spLuB20PrNL"
+          }
+        ]
+      },
+      {
+        "rank": 20,
+        "songName": "我在意",
+        "singers": [
+          "谭咏麟"
+        ],
+        "songCoverUrl": "https://y.gtimg.cn/music/photo_new/T002R500x500M000001mursG2bjwgT_1.jpg",
+        "publishTime": "2026-06-22T00:00:01",
+        "qySongId": 689076746,
+        "kugouSongId": 911022150,
+        "kuwoSongId": 600488045,
+        "uniSongId": 513931900,
+        "qyCopyRight": 1,
+        "kugouCopyRight": 1,
+        "kuwoCopyRight": 1,
+        "score": "7.30",
+        "showScore": "8.11",
+        "companyName": "环球唱片",
+        "chartIssueInfo": "2026年6月",
+        "magicColor": "#b2d6d5",
+        "reducer": "",
+        "programAuthor": "",
+        "tuneAuthor": "谭咏麟",
+        "lyricsAuthor": "刘德华|李克勤",
+        "showComments": [
+          {
+            "comment": "谭咏麟给自己音乐生涯的谢幕曲，拉来好友刘德华和李克勤填词，如同老友闲谈，诉说长久的陪伴，带人重温港乐黄金时期，念一句，“校长，我好挂住你啊”！",
+            "judgeNickName": "晴时书",
+            "judgeTitle": "作词人",
+            "qySingerMid": "004cvs1a1QsuFk"
+          }
+        ],
+        "lyricsScore": "8.57",
+        "composeScore": "8.14",
+        "arrangeScore": "7.84",
+        "makeScore": "7.93",
+        "singScore": "8.23",
+        "tags": [
+          "最多编曲人喜欢"
+        ],
+        "preferJudges": [
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M000003vGpfJ0hkCjz.png",
+            "judgeNickName": "罗文Rown",
+            "score": 9,
+            "qySingerMid": "003ymZ2B4H9Wfb"
+          },
+          {
+            "judgeUrl": "//y.gtimg.cn/music/photo_new/T017M000003o5Lbb0zKeQL.png",
+            "judgeNickName": "晴时书",
+            "score": 9,
+            "qySingerMid": "004cvs1a1QsuFk"
+          }
+        ]
+      }
+    ]
+  },
+  "traceId": "unicharts-data_in_e6a370478c09489d85da57e1c8fbc942"
+}

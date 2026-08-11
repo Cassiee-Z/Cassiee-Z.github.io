@@ -87,7 +87,15 @@ test("ships audio, profile, social and recruiter download assets", async () => {
     "../public/images/covers/midnight-signal.jpg",
     "../public/images/covers/winter-embers.jpg",
     "../public/images/projects/winter-embers-poster-v2.jpg",
+    "../public/images/scouting/guohai.jpg",
+    "../public/images/scouting/liangshi-dongtian.jpg",
+    "../public/images/scouting/wan-hongsha.jpg",
+    "../public/images/scouting/zhouxuan.jpg",
+    "../public/images/scouting/benfu-chaowuxian.jpg",
     "../public/video/winter-embers-film-v2.mp4",
+    "../public/data/scouting/tme-yobang-w28-w31.csv",
+    "../public/data/scouting/scouting-watchlist.csv",
+    "../public/data/scouting/scouting-summary.json",
     "../public/docs/Cassie_Zha_Wenxin_Resume_CN.pdf",
     "../public/docs/Cassie_2-Day_Music_Ops_Cram_Plan.pdf",
   ];
@@ -99,6 +107,11 @@ test("ships audio, profile, social and recruiter download assets", async () => {
   );
   assert.match(source, /从 16 首 AI 歌曲到持续扩展的可运营曲库/);
   assert.match(source, /中文新歌与潜力音乐人数据侦察/);
+  assert.match(source, /观察分 ≠ 爆款概率/);
+  assert.match(source, /先发现失真字段，再开始评分/);
+  assert.match(source, /过海/);
+  assert.match(source, /两世洞天/);
+  assert.match(source, /万海东/);
   assert.match(source, /歌词商用未署名事件：版权风险复盘/);
   assert.match(source, /公开事实与个人分析假设分开标注/);
   assert.match(source, /该事项未获得最终解决/);
