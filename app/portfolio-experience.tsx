@@ -35,9 +35,9 @@ const projects: Project[] = [
     field: "原创科幻短片配乐 · 影视音乐概念创作",
     intro: "围绕冰封世界、文明遗迹与母女告别构建的原创视听概念项目。",
     metrics: [
-      ["60 SEC", "完整短片规划"],
+      ["01:59", "完整概念影片"],
       ["ORIGINAL", "同名原创配乐"],
-      ["5 SEC", "当前预览片段"],
+      ["FULL CUT", "完整视听版本"],
     ],
     sections: [
       {
@@ -65,10 +65,10 @@ const projects: Project[] = [
         ],
       },
       {
-        label: "04 / CURRENT CUT",
-        title: "当前上线为阶段性预览，完整视听版本继续制作中。",
+        label: "04 / FINAL CUT",
+        title: "完整概念影片与同名原创配乐已上线。",
         body: [
-          "本页先公开 5 秒概念预告片片段与 3 分钟同名原创配乐，用于呈现冰原巨构、音乐方向与视听关系。完整短片规划为 60 秒，后续将替换画面、剪辑与完整版预告片。",
+          "本页公开 1 分 59 秒同名科幻概念影片与 3 分钟原创配乐，以完整视听段落呈现冰原巨构、母女告别、献祭与地下城市揭示之间的叙事关系。",
         ],
       },
     ],
@@ -1058,7 +1058,7 @@ function ProjectDetail({
 
       <section className="project-poster" aria-label={project.english}>
         {project.key === "winter-embers" ? (
-          <Image unoptimized src="/images/projects/winter-embers-poster.jpg" alt="冰原巨构与中央余烬光源的《冬烬之地》项目视觉" fill sizes="100vw" priority />
+          <Image unoptimized src="/images/projects/winter-embers-poster-v2.jpg" alt="冰原巨构与中央余烬光源的《冬烬之地》项目视觉" fill sizes="100vw" priority />
         ) : project.key === "event" || project.key === "review" ? (
           <Image unoptimized src="/images/cassie-editorial.jpg" alt="查文鑫个人项目视觉" fill sizes="100vw" />
         ) : project.key === "editorial" ? (
@@ -1066,10 +1066,12 @@ function ProjectDetail({
         ) : (
           <Image unoptimized src="/images/og-cassie-music.jpg" alt="音乐内容作品集视觉" fill sizes="100vw" />
         )}
-        <div>
-          <small>A CASE BY CASSIE ZHA</small>
-          <strong>{project.english}</strong>
-        </div>
+        {project.key !== "winter-embers" && (
+          <div>
+            <small>A CASE BY CASSIE ZHA</small>
+            <strong>{project.english}</strong>
+          </div>
+        )}
       </section>
 
       <section className="metric-band">
@@ -1082,27 +1084,27 @@ function ProjectDetail({
         <section className="film-preview" aria-labelledby="winter-preview-title">
           <div className="film-preview__heading">
             <div>
-              <p>CURRENT CUT / 阶段性预览</p>
+              <p>FILM / 完整视听版本</p>
               <h2 id="winter-preview-title">A DOOR BENEATH THE ICE</h2>
             </div>
-            <p>当前片段 00:05 · 完整短片规划 00:60<br />画面与剪辑后续替换</p>
+            <p>影片 01:59 · 原创配乐 03:00<br />原创科幻概念创作</p>
           </div>
           <div className="film-preview__frame">
             <video
               controls
               playsInline
               preload="metadata"
-              poster="/images/projects/winter-embers-poster.jpg"
-              aria-label="《冬烬之地》阶段性概念预告片片段"
+              poster="/images/projects/winter-embers-poster-v2.jpg"
+              aria-label="《冬烬之地》完整科幻概念影片"
               onPlay={pauseAudio}
             >
-              <source src="/video/winter-embers-preview.mp4" type="video/mp4" />
+              <source src="/video/winter-embers-film-v2.mp4" type="video/mp4" />
               你的浏览器暂不支持视频播放。
             </video>
-            <span>PREVIEW 01 / WORK IN PROGRESS</span>
+            <span>THE LAND OF WINTER EMBERS / 2026</span>
           </div>
           <div className="film-preview__footer">
-            <p>无对白 · 当前片段以冰原巨构与配乐氛围为主</p>
+            <p>原创科幻概念影片 · 以同名配乐驱动视听叙事</p>
             <button
               onPointerEnter={() => warmTrack(17)}
               onFocus={() => warmTrack(17)}

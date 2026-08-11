@@ -86,8 +86,8 @@ test("ships audio, profile, social and recruiter download assets", async () => {
     "../public/images/covers/wind-from-yangtze-v3.jpg",
     "../public/images/covers/midnight-signal.jpg",
     "../public/images/covers/winter-embers.jpg",
-    "../public/images/projects/winter-embers-poster.jpg",
-    "../public/video/winter-embers-preview.mp4",
+    "../public/images/projects/winter-embers-poster-v2.jpg",
+    "../public/video/winter-embers-film-v2.mp4",
     "../public/docs/Cassie_Zha_Wenxin_Resume_CN.pdf",
     "../public/docs/Cassie_2-Day_Music_Ops_Cram_Plan.pdf",
   ];
@@ -110,8 +110,9 @@ test("ships audio, profile, social and recruiter download assets", async () => {
   assert.match(source, /midnight-signal\.m4a/);
   assert.match(source, /《冬烬之地》：原创配乐与概念预告片/);
   assert.match(source, /winter-embers\.m4a/);
-  assert.match(source, /winter-embers-preview\.mp4/);
-  assert.match(source, /阶段性预览/);
+  assert.match(source, /winter-embers-film-v2\.mp4/);
+  assert.match(source, /完整视听版本/);
+  assert.match(source, /影片 01:59/);
   assert.match(source, /controls/);
   assert.match(source, /playsInline/);
   assert.match(source, /preload="metadata"/);

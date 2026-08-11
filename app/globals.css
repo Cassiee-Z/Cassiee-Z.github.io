@@ -851,7 +851,7 @@ a { color: inherit; text-decoration: none; }
 .project-poster::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.72)); }
 .project-poster img { object-fit: cover; filter: saturate(.6) brightness(.72); }
 .detail-event .project-poster img, .detail-review .project-poster img { object-position: center 42%; }
-.detail-winter-embers .project-poster img { filter: saturate(.72) brightness(.88) contrast(1.03); }
+.detail-winter-embers .project-poster img { filter: none; }
 .detail-winter-embers .project-poster strong { font-size: clamp(1.7rem, 4.4vw, 4.5rem); }
 .project-poster div { position: absolute; z-index: 2; left: 7%; right: 7%; bottom: 8%; }
 .project-poster small { display: block; margin-bottom: 1rem; font-size: .48rem; letter-spacing: .38em; }
@@ -1539,6 +1539,7 @@ a { color: inherit; text-decoration: none; }
   .detail-title h2 { font-size: .55rem; line-height: 1.8; }
   .detail-title > span { font-size: .86rem; }
   .project-poster { width: 100%; height: 63svh; }
+  .detail-winter-embers .project-poster { height: auto; aspect-ratio: 16 / 9; }
   .project-poster strong { font-size: 2rem; }
   .detail-winter-embers .project-poster strong { font-size: 1.55rem; line-height: 1.45; letter-spacing: .12em; }
   .metric-band { width: 92vw; margin: 8vh auto 12vh; }
