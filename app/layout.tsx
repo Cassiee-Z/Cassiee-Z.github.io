@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "查文鑫 Cassie｜音乐内容运营作品集",
     description: "用音乐专业判断，让内容进入运营。",
     type: "website",
-    images: ["/images/og-cassie-music.jpg"],
+    images: ["/images/og-cassie-data-scouting.png"],
   },
 };
 

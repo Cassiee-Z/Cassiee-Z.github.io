@@ -125,10 +125,10 @@ const projects: Project[] = [
     title: "中文新歌与潜力音乐人数据侦察",
     english: "DISCOVERY SIGNALS",
     field: "自主研究 · 数据分析",
-    intro: "基于四期完整周榜与专业榜单，把“爆款直觉”拆成可补数、可复核的候选筛选流程。",
+    intro: "以腾讯音乐完成候选初筛，再把 Apple Music、Spotify、网易云与抖音拆成可补数、可复核的跨平台验证流程。",
     metrics: [
-      ["800", "条周榜记录"],
-      ["336", "首候选歌曲"],
+      ["6", "条平台信号线"],
+      ["3", "个当前可复核快照源"],
       ["5+5", "歌 / 人观察名单"],
     ],
     sections: [
@@ -150,9 +150,9 @@ const projects: Project[] = [
       },
       {
         label: "03 / NEXT ROUND",
-        title: "真正推进内容测试或合作前，还要补齐三类证据。",
+        title: "真正推进内容测试或合作前，还要补齐跨平台证据。",
         body: [
-          "平台侧补播放、完播、收藏、分享与受众画像；短视频侧补 BGM 使用量、投稿增速与衍生话题；版权侧核对词曲、录音制品、表演者、期限、地区与授权范围。",
+          "Apple Music 用于观察完整播放市场结构；Spotify 验证海外华语扩散；网易云补新人发现与社区传播；抖音补 BGM 使用和短视频改编信号。各平台原始名次不直接横比，权限受限与人工观察数据单独标注。",
         ],
       },
     ],
@@ -396,6 +396,113 @@ const hiddenQualitySongs = [
   ["Darling u", "邹沛沛", "13", "8.22"],
   ["无忧", "周菲戈", "16", "8.18"],
 ];
+
+const scoutingPlatforms = [
+  {
+    platform: "腾讯音乐",
+    access: "已采集",
+    accessTone: "ready",
+    role: "国内综合热度基线",
+    signal: "由你榜四期周榜、浪潮榜专业评价",
+    method: "已进入当前候选初筛",
+    href: "https://chart.tencentmusic.com/",
+  },
+  {
+    platform: "Apple Music 中国",
+    access: "公开快照",
+    accessTone: "ready",
+    role: "完整播放与经典曲库回流",
+    signal: "中国区 Top 100 的艺人及发行年代结构",
+    method: "作为市场结构切片，不推断增长趋势",
+    href: "https://music.apple.com/cn/new/top-charts",
+  },
+  {
+    platform: "Spotify",
+    access: "登录受限",
+    accessTone: "gated",
+    role: "海外华语与国际扩散",
+    signal: "Global、香港、台湾、新加坡、马来西亚榜单",
+    method: "取得同日授权快照后再纳入交叉验证",
+    href: "https://charts.spotify.com/home",
+  },
+  {
+    platform: "网易云音乐",
+    access: "公开快照",
+    accessTone: "ready",
+    role: "新人发现与社区传播",
+    signal: "飙升、新歌、原创、实时分享、潜力爆款榜",
+    method: "同日公开榜单可复核；历史序列仍需持续采集",
+    href: "https://music.163.com/discover/toplist",
+  },
+  {
+    platform: "抖音音乐",
+    access: "接口需权限",
+    accessTone: "gated",
+    role: "短视频传播与改编潜力",
+    signal: "热歌、飙升、原创榜及音乐使用量",
+    method: "获得开放平台权限后补入真实使用数据",
+    href: "https://developer.open-douyin.com/capacity-center-page/capacity-detail/7180545630253629498",
+  },
+  {
+    platform: "热门原声 / 音效",
+    access: "非官方观察",
+    accessTone: "manual",
+    role: "梗音、对白、环境声机会",
+    signal: "人工记录公开页面中的使用样本与内容场景",
+    method: "不称抖音官方音效榜，不与歌曲榜名次混算",
+  },
+] as const;
+
+const appleArtistSnapshot = [
+  ["周杰伦", 30],
+  ["林俊杰", 11],
+  ["孙燕姿", 6],
+  ["陈奕迅", 6],
+  ["其他艺人", 47],
+] as const;
+
+const appleEraSnapshot = [
+  ["≤ 2010", 58],
+  ["2011—2020", 28],
+  ["2021—2024", 3],
+  ["2025—2026", 11],
+] as const;
+
+const neteaseChartSnapshot = [
+  ["飙升榜", 100],
+  ["新歌榜", 100],
+  ["原创榜", 100],
+  ["潜力爆款榜", 10],
+  ["实时分享榜", 10],
+] as const;
+
+const neteaseOverlapSnapshot = [
+  ["只命中一个榜单", 238],
+  ["同时命中两个榜单", 41],
+] as const;
+
+const scoutingSignalRoles = [
+  {
+    signal: "完整播放",
+    sources: "腾讯音乐 / Apple Music / Spotify / 网易云",
+    decision: "验证歌曲是否跨平台进入稳定收听场景",
+  },
+  {
+    signal: "社区发现",
+    sources: "网易云音乐",
+    decision: "寻找小基盘但出现原创、分享或飙升复现的作品",
+  },
+  {
+    signal: "短视频使用",
+    sources: "抖音音乐",
+    decision: "验证片段传播、改编空间与内容生产效率",
+  },
+  {
+    signal: "原声 / 音效",
+    sources: "人工公开样本",
+    decision: "单独识别非歌曲型声音内容机会，不混入歌曲热度分",
+  },
+] as const;
 
 const tracks = [
   { title: "蓝调夜行", scene: "URBAN BLUES", description: "夜色、铜管与都市行进感交织的 AI 音乐实验。", src: "/audio-stream/blue-night.m4a" },
@@ -1218,9 +1325,169 @@ function ScoutingCase() {
         </div>
       </section>
 
+      <section className="scouting-cross scouting-cross-platform" aria-labelledby="scouting-cross-title">
+        <div className="scouting-section-heading scouting-cross__heading">
+          <p>04 / CROSS-PLATFORM RADAR</p>
+          <h3 id="scouting-cross-title">六条信号线不是六张相同的榜单，而是不同的市场证据。</h3>
+          <span>公开快照、权限受限与人工观察分开呈现</span>
+        </div>
+
+        <div className="scouting-platform-grid" aria-label="六类平台与声音数据源">
+          {scoutingPlatforms.map((item, index) => (
+            <article
+              className="scouting-platform-card"
+              data-index={String(index + 1).padStart(2, "0")}
+              key={`card-${item.platform}`}
+            >
+              <div>
+                <h4>{item.platform}</h4>
+                <span className={`scouting-cross__status is-${item.accessTone}`}>{item.access}</span>
+              </div>
+              <strong>{item.role}</strong>
+              <p>{item.signal}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="scouting-cross__matrix scouting-matrix" role="region" aria-labelledby="scouting-cross-matrix-title" tabIndex={0}>
+          <h4 id="scouting-cross-matrix-title">平台覆盖与数据状态矩阵</h4>
+          <table>
+            <caption>截至 2026 年 8 月 12 日的跨平台数据可用性、信号角色与使用边界</caption>
+            <thead>
+              <tr>
+                <th scope="col">平台</th>
+                <th scope="col">数据状态</th>
+                <th scope="col">主要角色</th>
+                <th scope="col">观察信号</th>
+                <th scope="col">本轮处理</th>
+              </tr>
+            </thead>
+            <tbody>
+              {scoutingPlatforms.map((item) => (
+                <tr key={item.platform}>
+                  <th scope="row">
+                    {item.href ? (
+                      <a href={item.href} target="_blank" rel="noreferrer">{item.platform} ↗</a>
+                    ) : item.platform}
+                  </th>
+                  <td><span className={`scouting-cross__status is-${item.accessTone}`}>{item.access}</span></td>
+                  <td>{item.role}</td>
+                  <td>{item.signal}</td>
+                  <td>{item.method}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <section className="scouting-chart scouting-chart--apple" aria-labelledby="scouting-apple-title">
+          <header className="scouting-chart__header">
+            <div>
+              <p>APPLE MUSIC CN / ONE-DAY SNAPSHOT</p>
+              <h4 id="scouting-apple-title">中国区 Top 100 呈现“头部集中 + 经典曲库回流”。</h4>
+            </div>
+            <span>2026.08.12 · 单日结构快照，不代表趋势</span>
+          </header>
+          <div className="scouting-chart__grid">
+            <figure className="scouting-chart__figure scouting-bar-chart">
+              <figcaption>榜内作品数最多的艺人</figcaption>
+              <ul aria-label="Apple Music 中国区 Top 100 艺人作品数分布">
+                {appleArtistSnapshot.map(([label, value]) => (
+                  <li key={label}>
+                    <span>{label}</span>
+                    <progress max="100" value={value} aria-label={`${label} ${value} 首`} />
+                    <strong>{value}</strong>
+                  </li>
+                ))}
+              </ul>
+            </figure>
+            <figure className="scouting-chart__figure scouting-era-chart">
+              <figcaption>作品发行年代结构</figcaption>
+              <ul aria-label="Apple Music 中国区 Top 100 发行年代分布">
+                {appleEraSnapshot.map(([label, value]) => (
+                  <li key={label}>
+                    <span>{label}</span>
+                    <progress max="100" value={value} aria-label={`${label} ${value} 首`} />
+                    <strong>{value}</strong>
+                  </li>
+                ))}
+              </ul>
+            </figure>
+          </div>
+          <p className="scouting-chart__note">
+            周杰伦 30 首、林俊杰 11 首、孙燕姿与陈奕迅各 6 首；2010 年及以前作品占 58 首。
+            这只能说明当日榜单结构，不能据此声称这些作品正在增长。
+          </p>
+        </section>
+
+        <section className="scouting-chart scouting-chart--netease" aria-labelledby="scouting-netease-title">
+          <header className="scouting-chart__header">
+            <div>
+              <p>NETEASE CLOUD MUSIC / REPRODUCIBLE SNAPSHOT</p>
+              <h4 id="scouting-netease-title">320 条榜单记录中，41 首作品出现跨榜复现。</h4>
+            </div>
+            <span>2026.08.12 · 279 首去重作品 · 5 张发现型榜单</span>
+          </header>
+          <div className="scouting-chart__grid">
+            <figure className="scouting-chart__figure scouting-bar-chart">
+              <figcaption>本次公开响应中的榜单记录数</figcaption>
+              <ul aria-label="网易云音乐五张榜单本次公开响应记录数">
+                {neteaseChartSnapshot.map(([label, value]) => (
+                  <li key={label}>
+                    <span>{label}</span>
+                    <progress max="100" value={value} aria-label={`${label} ${value} 条记录`} />
+                    <strong>{value}</strong>
+                  </li>
+                ))}
+              </ul>
+            </figure>
+            <figure className="scouting-chart__figure scouting-era-chart">
+              <figcaption>去重作品的跨榜复现结构</figcaption>
+              <ul aria-label="网易云音乐去重作品跨榜复现结构">
+                {neteaseOverlapSnapshot.map(([label, value]) => (
+                  <li key={label}>
+                    <span>{label}</span>
+                    <progress max="279" value={value} aria-label={`${label} ${value} 首`} />
+                    <strong>{value}</strong>
+                  </li>
+                ))}
+              </ul>
+            </figure>
+          </div>
+          <p className="scouting-chart__note">
+            跨榜复现用于提示“继续人工听审”，不等于播放规模或商业价值。飙升、新歌、原创榜各返回 100 条；
+            潜力爆款榜与实时分享榜的公开响应本次仅返回前 10 条，因此不能把未返回作品解释为未上榜。
+          </p>
+        </section>
+
+        <section className="scouting-cross__signals scouting-signal-map" aria-labelledby="scouting-signal-roles-title">
+          <div className="scouting-cross__signals-heading">
+            <p>SIGNAL ROLES / 信号分工</p>
+            <h4 id="scouting-signal-roles-title">先让每类数据回答自己的问题，再做交叉验证。</h4>
+          </div>
+          <div className="scouting-cross__signal-grid">
+            {scoutingSignalRoles.map((item, index) => (
+              <article key={item.signal}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <h5>{item.signal}</h5>
+                <p>{item.sources}</p>
+                <strong>{item.decision}</strong>
+              </article>
+            ))}
+          </div>
+          <aside className="scouting-cross__boundary scouting-method-note" aria-label="跨平台比较边界">
+            <strong>COMPARISON BOUNDARY</strong>
+            <p>
+              原始榜位、播放量和使用量不跨平台直接相加。后续取得同日数据后，先转换为榜内排名百分位，
+              再记录跨平台命中与持续性；Spotify 与抖音在权限开放前不填充估算值。“热门原声 / 音效”仅为人工公开样本观察，非抖音官方音效榜。
+            </p>
+          </aside>
+        </section>
+      </section>
+
       <section className="scouting-wave" aria-labelledby="scouting-wave-title">
         <div className="scouting-wave__statement">
-          <p>04 / QUALITY ≠ POPULARITY</p>
+          <p>05 / QUALITY ≠ POPULARITY</p>
           <h3 id="scouting-wave-title"><strong>4 / 20</strong>专业评价与后续大众榜单曝光，并不重合。</h3>
           <p>
             2026 年 6 月腾讯音乐浪潮榜 TOP20 中，只有 4 首出现在随后四期由你榜 TOP200。
@@ -1243,7 +1510,7 @@ function ScoutingCase() {
       </section>
 
       <section className="scouting-next-data" aria-labelledby="scouting-next-title">
-        <p>05 / NEXT DATA REQUEST</p>
+        <p>06 / NEXT DATA REQUEST</p>
         <div>
           <h3 id="scouting-next-title">公开榜单完成初筛，后台数据决定下一步。</h3>
           <ol>
@@ -1259,14 +1526,22 @@ function ScoutingCase() {
           <p>SOURCES / 公开来源</p>
           <a href="https://chart.tencentmusic.com/" target="_blank" rel="noreferrer">腾讯音乐榜 ↗</a>
           <a href="https://www.tencentmusic.com/zh-cn/wave-chart.html" target="_blank" rel="noreferrer">腾讯音乐浪潮榜评选细则 ↗</a>
+          <a href="https://music.apple.com/cn/new/top-charts" target="_blank" rel="noreferrer">Apple Music 中国排行榜 ↗</a>
+          <a href="https://charts.spotify.com/home" target="_blank" rel="noreferrer">Spotify Charts（登录受限）↗</a>
+          <a href="https://music.163.com/discover/toplist" target="_blank" rel="noreferrer">网易云音乐榜单 ↗</a>
+          <a href="https://developer.open-douyin.com/capacity-center-page/capacity-detail/7180545630253629498" target="_blank" rel="noreferrer">抖音音乐榜单能力说明 ↗</a>
         </div>
         <div>
           <p>DOWNLOAD / 可复核数据</p>
           <a href="/data/scouting/scouting-watchlist.csv" download>5 首候选清单 CSV ↓</a>
           <a href="/data/scouting/tme-yobang-w28-w31.csv" download>四期周榜快照 CSV ↓</a>
           <a href="/data/scouting/scouting-summary.json" download>方法与结果 JSON ↓</a>
+          <a href="/data/scouting/cross-platform/current-charts.csv" download>Apple / 网易云当日榜单 CSV ↓</a>
+          <a href="/data/scouting/cross-platform/current-charts.json" download>跨平台标准化快照 JSON ↓</a>
+          <a href="/data/scouting/cross-platform/current-availability.json" download>平台权限与可用性 JSON ↓</a>
+          <a href="/data/scouting/cross-platform/current-quality.json" download>数据质量检查 JSON ↓</a>
         </div>
-        <small>公开事实与个人分析假设分开标注 · 数据快照 2026.08.11 · 本研究不构成商业、版权或签约建议</small>
+        <small>公开事实与个人分析假设分开标注 · 腾讯音乐数据快照 2026.08.11 · Apple Music 单日快照 2026.08.12 · 本研究不构成商业、版权或签约建议</small>
       </footer>
     </section>
   );

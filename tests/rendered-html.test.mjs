@@ -64,6 +64,7 @@ test("ships audio, profile, social and recruiter download assets", async () => {
     "../public/images/cassie-editorial.jpg",
     "../public/images/cassie-headshot.jpg",
     "../public/images/og-cassie-music.jpg",
+    "../public/images/og-cassie-data-scouting.png",
     "../public/images/covers/blue-night.jpg",
     "../public/images/covers/rain-old-platform.jpg",
     "../public/images/covers/opera-mountains.jpg",
@@ -96,6 +97,10 @@ test("ships audio, profile, social and recruiter download assets", async () => {
     "../public/data/scouting/tme-yobang-w28-w31.csv",
     "../public/data/scouting/scouting-watchlist.csv",
     "../public/data/scouting/scouting-summary.json",
+    "../public/data/scouting/cross-platform/current-charts.json",
+    "../public/data/scouting/cross-platform/current-charts.csv",
+    "../public/data/scouting/cross-platform/current-availability.json",
+    "../public/data/scouting/cross-platform/current-quality.json",
     "../public/docs/Cassie_Zha_Wenxin_Resume_CN.pdf",
     "../public/docs/Cassie_2-Day_Music_Ops_Cram_Plan.pdf",
   ];

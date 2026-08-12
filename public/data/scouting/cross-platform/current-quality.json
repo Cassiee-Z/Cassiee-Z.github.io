@@ -1,0 +1,72 @@
+{
+  "status": "pass",
+  "grain": "snapshot_id × platform × chart_key × track_id",
+  "row_count": 420,
+  "chart_count": 6,
+  "checks": [
+    {
+      "platform": "apple_music",
+      "chart_key": "cn_top_100",
+      "rows": 100,
+      "sequential_ranks": true,
+      "unique_ranks": true,
+      "unique_tracks": true,
+      "required_fields_complete": true,
+      "rank_percentile_valid": true
+    },
+    {
+      "platform": "netease_cloud_music",
+      "chart_key": "rising",
+      "rows": 100,
+      "sequential_ranks": true,
+      "unique_ranks": true,
+      "unique_tracks": true,
+      "required_fields_complete": true,
+      "rank_percentile_valid": true
+    },
+    {
+      "platform": "netease_cloud_music",
+      "chart_key": "new",
+      "rows": 100,
+      "sequential_ranks": true,
+      "unique_ranks": true,
+      "unique_tracks": true,
+      "required_fields_complete": true,
+      "rank_percentile_valid": true
+    },
+    {
+      "platform": "netease_cloud_music",
+      "chart_key": "original",
+      "rows": 100,
+      "sequential_ranks": true,
+      "unique_ranks": true,
+      "unique_tracks": true,
+      "required_fields_complete": true,
+      "rank_percentile_valid": true
+    },
+    {
+      "platform": "netease_cloud_music",
+      "chart_key": "potential",
+      "rows": 10,
+      "sequential_ranks": true,
+      "unique_ranks": true,
+      "unique_tracks": true,
+      "required_fields_complete": true,
+      "rank_percentile_valid": true
+    },
+    {
+      "platform": "netease_cloud_music",
+      "chart_key": "realtime_share",
+      "rows": 10,
+      "sequential_ranks": true,
+      "unique_ranks": true,
+      "unique_tracks": true,
+      "required_fields_complete": true,
+      "rank_percentile_valid": true
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "('netease_cloud_music', 'realtime_share'): chart description says 100 tracks, endpoint returned 10"
+  ]
+}
