@@ -2584,7 +2584,7 @@ export default function PortfolioExperience() {
       return;
     }
     setEntryPhase("zooming");
-    entryTimerRef.current = window.setTimeout(finishEntry, 1050);
+    entryTimerRef.current = window.setTimeout(finishEntry, 2280);
   };
 
   const toggleAudio = async () => {
@@ -2643,7 +2643,7 @@ export default function PortfolioExperience() {
       {entryPhase !== "ready" && <SoundGate phase={entryPhase} enter={enter} />}
 
       <div
-        className={`site-shell ${entryPhase !== "gate" ? "is-visible" : ""} ${entryPhase === "zooming" ? "is-arriving" : ""}`}
+        className={`site-shell ${entryPhase === "ready" ? "is-visible" : ""}`}
         aria-hidden={entryPhase !== "ready" || playerOpen || filmOpen || mobileMenu}
         inert={entryPhase !== "ready" || playerOpen || filmOpen || mobileMenu ? true : undefined}
       >
