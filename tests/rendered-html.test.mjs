@@ -31,9 +31,10 @@ test("server-renders Cassie's recruiter-facing portfolio", async () => {
   const html = await response.text();
   assert.match(html, /<html lang="zh-CN">/);
   assert.match(html, /<title>查文鑫 Cassie｜音乐内容运营作品集<\/title>/);
-  assert.match(html, /让音乐被听见/);
-  assert.match(html, /CLICK/);
+  assert.match(html, /首推《冬烬之地》原创概念影片/);
+  assert.match(html, /ENTER/);
   assert.match(html, /MUSIC INDEX/);
+  assert.match(html, /FEATURED FILM/);
   assert.match(html, /蓝调夜行/);
   assert.match(html, /雨停在旧站台/);
   assert.match(html, /梨园照山河/);
@@ -97,6 +98,7 @@ test("ships audio, profile, social and recruiter download assets", async () => {
     "../public/images/scouting/evidence/netease-rising-20260812.jpg",
     "../public/images/scouting/evidence/tme-yobang-20260811.jpg",
     "../public/video/winter-embers-film-v2.mp4",
+    "../public/video/winter-embers-teaser.mp4",
     "../public/data/scouting/tme-yobang-w28-w31.csv",
     "../public/data/scouting/scouting-watchlist.csv",
     "../public/data/scouting/scouting-summary.json",

@@ -106,7 +106,7 @@ const operaMountains = `[Verse 1]
 const runIntoThunder = `[Intro]
 One spark, one breath
 No fear left
-Three, two, one—
+Three, two, one -
 Go!
 
 [Verse 1]
@@ -139,7 +139,7 @@ I’ll keep running into the thunder
 
 [Post-Chorus]
 Run, run, run into the thunder
-Run, run—we’re going under
+Run, run - we’re going under
 Run, run, louder and louder
 We are the storm, we are the power
 
@@ -147,7 +147,7 @@ We are the storm, we are the power
 Fast lane burning underneath my feet
 Broken rhythm turning into belief
 There’s a voice inside that won’t stay low
-Saying, “This is your time—let it show”
+Saying, “This is your time - let it show”
 
 No looking back at the life I knew
 I’ve got nothing left to prove
@@ -264,7 +264,7 @@ If the morning comes, we’ll ask for more
 Keep on dancing on this gold, gold floor
 
 [Bridge]
-Hold up—
+Hold up -
 Let the drummer breathe
 Let the bass roll low
 Let me tell you something

@@ -51,7 +51,7 @@ const projects: Project[] = [
       },
       {
         label: "02 / SCORE DESIGN",
-        title: "冷—静—裂变—余温，构成配乐的叙事轨迹。",
+        title: "冷 / 静 / 裂变 / 余温，构成配乐的叙事轨迹。",
         body: [
           "音乐从低频持续音、疏离空气感与冰晶质感出发，建立辽阔而压迫的冰原空间；母亲摘下面具后，声场逐渐收窄，以克制的脉冲与机械质感贴近人物。",
           "献祭时声音短暂坠入近乎真空的寂静，随后由苏醒的低频力量和逐渐打开的和声揭示地下世界；结尾仍保留尚未消散的寒意。",
@@ -137,7 +137,7 @@ const projects: Project[] = [
         label: "01 / THE DECISION",
         title: "先回答“下一轮向谁补数”，不把观察分包装成爆款概率。",
         body: [
-          "本案例模拟音乐内容运营的第一轮侦察：从腾讯音乐由你榜 2026 年第 28—31 期的 800 条记录中建立候选池，再用榜位、动量、持续性、播放热度与推荐度筛出优先补数对象。",
+          "本案例模拟音乐内容运营的第一轮侦察：从腾讯音乐由你榜 2026 年第 28 - 31 期的 800 条记录中建立候选池，再用榜位、动量、持续性、播放热度与推荐度筛出优先补数对象。",
           "观察分只用于候选排序。公开事实、分析假设与待补平台数据在页面中分开标注。",
         ],
       },
@@ -557,7 +557,7 @@ const tracks = [
   { title: "玻璃海", scene: "AMBIENT POP", description: "透明质感与漂浮空间感构成的氛围流行作品。", src: "/audio-stream/glass-sea.m4a" },
   { title: "仍在路上", scene: "FORWARD", description: "面向前行叙事与成长主题的鼓舞型作品。", src: "/audio-stream/still-on-road.m4a" },
   { title: "MIDNIGHT SIGNAL", scene: "K-POP / SYNTH POP", description: "以午夜城市感与情绪推进为核心，在鲜明旋律、节奏张力与舞台化想象之间建立统一表达。", src: "/audio-stream/midnight-signal.m4a" },
-  { title: "冬烬之地", scene: "SCI-FI FILM SCORE", description: "以“冷—静—裂变—余温”为轨迹，为冰原文明、母女告别与地下城市揭示构建叙事配乐。", src: "/audio-stream/winter-embers.m4a" },
+  { title: "冬烬之地", scene: "SCI-FI FILM SCORE", description: "以“冷 / 静 / 裂变 / 余温”为轨迹，为冰原文明、母女告别与地下城市揭示构建叙事配乐。", src: "/audio-stream/winter-embers.m4a" },
 ];
 
 const learnMoreLetters = "LEARN MORE".split("");
@@ -579,25 +579,28 @@ type UniversePlane = {
 };
 
 const universePlanes: UniversePlane[] = [
-  { id: "blue", title: "蓝调夜行", subtitle: "URBAN BLUES", src: "/images/covers/blue-night-v3.jpg", art: "blue", x: -37, y: -26, z: 150, rx: -3, ry: 12, size: 16, trackIndex: 0 },
-  { id: "rain", title: "雨停在旧站台", subtitle: "POP BALLAD", src: "/images/covers/rain-old-platform-v3.jpg", art: "rain", x: 27, y: -28, z: -90, rx: 4, ry: -10, size: 11, trackIndex: 1 },
-  { id: "opera", title: "梨园照山河", subtitle: "CHINESE FUSION", src: "/images/covers/opera-mountains.jpg", art: "opera", x: -13, y: -20, z: 135, rx: -2, ry: 5, size: 13, trackIndex: 2 },
-  { id: "thunder", title: "RUN INTO THE THUNDER", subtitle: "ENGLISH ROCK", src: "/images/covers/run-into-thunder-v3.jpg", art: "thunder", x: 38, y: 4, z: 100, rx: 2, ry: -13, size: 17, trackIndex: 3 },
-  { id: "gold", title: "GOLD ON THE FLOOR", subtitle: "DANCE POP", src: "/images/covers/gold-on-floor-v3.jpg", art: "gold", x: -31, y: 23, z: -130, rx: -5, ry: 9, size: 12, trackIndex: 4 },
-  { id: "goodnight", title: "未发送的晚安", subtitle: "MIDNIGHT MESSAGE", src: "/images/covers/unsent-goodnight-v4.jpg", art: "violet", x: -11, y: -34, z: -340, rx: 8, ry: 4, size: 8, trackIndex: 5 },
-  { id: "store", title: "凌晨四点的便利店", subtitle: "CITY POP", src: "/images/covers/four-am-store-v3.jpg", art: "store", x: 42, y: -18, z: -390, rx: -4, ry: -16, size: 8, trackIndex: 6 },
-  { id: "morning", title: "把夜走成清晨", subtitle: "DAWN WALK", src: "/images/covers/night-to-morning-v3.jpg", art: "dawn", x: -44, y: -4, z: -260, rx: 6, ry: 14, size: 9, trackIndex: 7 },
-  { id: "chapter", title: "百年新章", subtitle: "CEREMONIAL", src: "/images/covers/century-new-chapter-v3.jpg", art: "crimson", x: 20, y: 29, z: -300, rx: -7, ry: -7, size: 9, trackIndex: 8 },
-  { id: "light", title: "逆着光生长", subtitle: "UPLIFTING POP", src: "/images/covers/grow-against-light-v3.jpg", art: "light", x: 44, y: 28, z: -220, rx: 5, ry: -15, size: 10, trackIndex: 9 },
-  { id: "wind", title: "把名字写进风里", subtitle: "AIRY POP", src: "/images/covers/name-in-wind-v3.jpg", art: "wind", x: -15, y: 32, z: 70, rx: 4, ry: 3, size: 11, trackIndex: 10 },
-  { id: "moon", title: "月亮没有回信", subtitle: "LUNAR BALLAD", src: "/images/covers/moon-no-reply-v3.jpg", art: "moon", x: 16, y: -39, z: -480, rx: 7, ry: -2, size: 7, trackIndex: 11 },
-  { id: "swing", title: "SWINGING HARD", subtitle: "BRASS & GROOVE", src: "/images/covers/swinging-hard-v3.jpg", art: "swing", x: -45, y: 36, z: -430, rx: -5, ry: 17, size: 8, trackIndex: 12 },
-  { id: "river", title: "风从长江吹来", subtitle: "RIVER FUSION", src: "/images/covers/wind-from-yangtze-v3.jpg", art: "river", x: 31, y: 38, z: -470, rx: 5, ry: -9, size: 7, trackIndex: 13 },
-  { id: "glass", title: "玻璃海", subtitle: "AMBIENT POP", src: "/images/covers/glass-sea-v3.jpg", art: "glass", x: -25, y: -7, z: -510, rx: -8, ry: 8, size: 7, trackIndex: 14 },
-  { id: "road", title: "仍在路上", subtitle: "FORWARD", src: "/images/covers/still-on-road-v3.jpg", art: "road", x: 7, y: 38, z: -180, rx: -4, ry: -2, size: 9, trackIndex: 15 },
-  { id: "midnight-signal", title: "MIDNIGHT SIGNAL", subtitle: "K-POP / SYNTH POP", src: "/images/covers/midnight-signal.jpg", art: "signal", x: 36, y: -34, z: 140, rx: 5, ry: -12, size: 13, trackIndex: 16 },
-  { id: "winter-embers", title: "冬烬之地", subtitle: "SCI-FI FILM SCORE", src: "/images/covers/winter-embers.jpg", art: "embers", x: 3, y: 12, z: 240, rx: -2, ry: 4, size: 16, trackIndex: 17 },
+  { id: "blue", title: "蓝调夜行", subtitle: "URBAN BLUES", src: "/images/covers/blue-night-v3.jpg", art: "blue", x: -42, y: -31, z: 150, rx: -3, ry: 12, size: 13, trackIndex: 0 },
+  { id: "rain", title: "雨停在旧站台", subtitle: "POP BALLAD", src: "/images/covers/rain-old-platform-v3.jpg", art: "rain", x: -22, y: -38, z: -90, rx: 4, ry: -10, size: 9, trackIndex: 1 },
+  { id: "opera", title: "梨园照山河", subtitle: "CHINESE FUSION", src: "/images/covers/opera-mountains.jpg", art: "opera", x: 0, y: -39, z: 135, rx: -2, ry: 5, size: 10, trackIndex: 2 },
+  { id: "thunder", title: "RUN INTO THE THUNDER", subtitle: "ENGLISH ROCK", src: "/images/covers/run-into-thunder-v3.jpg", art: "thunder", x: 22, y: -36, z: 100, rx: 2, ry: -13, size: 12, trackIndex: 3 },
+  { id: "gold", title: "GOLD ON THE FLOOR", subtitle: "DANCE POP", src: "/images/covers/gold-on-floor-v3.jpg", art: "gold", x: 42, y: -29, z: -130, rx: -5, ry: 9, size: 11, trackIndex: 4 },
+  { id: "goodnight", title: "未发送的晚安", subtitle: "MIDNIGHT MESSAGE", src: "/images/covers/unsent-goodnight-v4.jpg", art: "violet", x: 46, y: -10, z: -260, rx: 8, ry: 4, size: 8, trackIndex: 5 },
+  { id: "store", title: "凌晨四点的便利店", subtitle: "CITY POP", src: "/images/covers/four-am-store-v3.jpg", art: "store", x: 44, y: 10, z: -180, rx: -4, ry: -16, size: 9, trackIndex: 6 },
+  { id: "morning", title: "把夜走成清晨", subtitle: "DAWN WALK", src: "/images/covers/night-to-morning-v3.jpg", art: "dawn", x: 39, y: 30, z: -210, rx: 6, ry: 14, size: 8, trackIndex: 7 },
+  { id: "chapter", title: "百年新章", subtitle: "CEREMONIAL", src: "/images/covers/century-new-chapter-v3.jpg", art: "crimson", x: 23, y: 39, z: -240, rx: -7, ry: -7, size: 8, trackIndex: 8 },
+  { id: "light", title: "逆着光生长", subtitle: "UPLIFTING POP", src: "/images/covers/grow-against-light-v3.jpg", art: "light", x: 5, y: 42, z: -90, rx: 5, ry: -15, size: 9, trackIndex: 9 },
+  { id: "wind", title: "把名字写进风里", subtitle: "AIRY POP", src: "/images/covers/name-in-wind-v3.jpg", art: "wind", x: -13, y: 40, z: 70, rx: 4, ry: 3, size: 9, trackIndex: 10 },
+  { id: "moon", title: "月亮没有回信", subtitle: "LUNAR BALLAD", src: "/images/covers/moon-no-reply-v3.jpg", art: "moon", x: -31, y: 34, z: -320, rx: 7, ry: -2, size: 8, trackIndex: 11 },
+  { id: "swing", title: "SWINGING HARD", subtitle: "BRASS & GROOVE", src: "/images/covers/swinging-hard-v3.jpg", art: "swing", x: -44, y: 22, z: -160, rx: -5, ry: 17, size: 8, trackIndex: 12 },
+  { id: "river", title: "风从长江吹来", subtitle: "RIVER FUSION", src: "/images/covers/wind-from-yangtze-v3.jpg", art: "river", x: -46, y: 3, z: -270, rx: 5, ry: -9, size: 8, trackIndex: 13 },
+  { id: "glass", title: "玻璃海", subtitle: "AMBIENT POP", src: "/images/covers/glass-sea-v3.jpg", art: "glass", x: -44, y: -14, z: -360, rx: -8, ry: 8, size: 8, trackIndex: 14 },
+  { id: "road", title: "仍在路上", subtitle: "FORWARD", src: "/images/covers/still-on-road-v3.jpg", art: "road", x: -30, y: -23, z: -120, rx: -4, ry: -2, size: 9, trackIndex: 15 },
+  { id: "midnight-signal", title: "MIDNIGHT SIGNAL", subtitle: "K-POP / SYNTH POP", src: "/images/covers/midnight-signal.jpg", art: "signal", x: 31, y: -19, z: 140, rx: 5, ry: -12, size: 11, trackIndex: 16 },
+  { id: "winter-embers", title: "冬烬之地", subtitle: "SCI-FI FILM SCORE", src: "/images/covers/winter-embers.jpg", art: "embers", x: 30, y: 21, z: 180, rx: -2, ry: 4, size: 11, trackIndex: 17 },
 ];
+
+const gatePlaneIds = new Set(["blue", "thunder", "goodnight", "chapter", "swing", "midnight-signal"]);
+const mobileFeaturedTracks = [16, 0, 3, 5, 17];
 
 function formatTime(value: number) {
   if (!Number.isFinite(value)) return "0:00";
@@ -718,13 +721,26 @@ function WordNavigation({
 }) {
   return (
     <nav className="word-nav" aria-label="主要导航">
-      <button className={view === "projects" ? "is-active" : ""} onClick={() => chooseView("projects")}>THE</button>
-      <button className={view === "projects" ? "is-active" : ""} onClick={() => chooseView("projects")}>WORK</button>
-      <span>AND</span>
-      <button className={view === "about" ? "is-active" : ""} onClick={() => chooseView("about")}>ABOUT</button>
-      <button className={view === "about" ? "is-active" : ""} onClick={() => chooseView("about")}>ME</button>
-      <span>OR</span>
-      <button className={view === "contact" ? "is-active" : ""} onClick={() => chooseView("contact")}>CONTACT</button>
+      <button
+        className={view === "songs" || view === "universe" ? "is-active" : ""}
+        aria-current={view === "songs" || view === "universe" ? "page" : undefined}
+        onClick={() => chooseView("songs")}
+      >MUSIC</button>
+      <button
+        className={view === "projects" ? "is-active" : ""}
+        aria-current={view === "projects" ? "page" : undefined}
+        onClick={() => chooseView("projects")}
+      >WORK</button>
+      <button
+        className={view === "about" ? "is-active" : ""}
+        aria-current={view === "about" ? "page" : undefined}
+        onClick={() => chooseView("about")}
+      >ABOUT</button>
+      <button
+        className={view === "contact" ? "is-active" : ""}
+        aria-current={view === "contact" ? "page" : undefined}
+        onClick={() => chooseView("contact")}
+      >CONTACT</button>
     </nav>
   );
 }
@@ -887,6 +903,25 @@ function SoundGate({
         trapDialogFocus(event);
       }}
     >
+      <div className="sound-gate__depth" aria-hidden="true">
+        {universePlanes.filter((plane) => gatePlaneIds.has(plane.id)).map((plane, index) => (
+          <span
+            className="gate-cover"
+            key={plane.id}
+            style={{
+              "--gate-x": `${[13, 81, 26, 70, 9, 89][index]}%`,
+              "--gate-y": `${[18, 14, 75, 78, 48, 46][index]}%`,
+              "--gate-z": `${[-320, -180, -410, -270, -520, -450][index]}px`,
+              "--gate-rx": `${plane.rx}deg`,
+              "--gate-ry": `${plane.ry}deg`,
+              "--gate-size": `${[14, 17, 12, 13, 10, 11][index]}vw`,
+              "--gate-order": index,
+            } as CSSProperties}
+          >
+            {plane.src && <Image unoptimized src={plane.src} alt="" fill sizes="18vw" />}
+          </span>
+        ))}
+      </div>
       <button
         className="sound-gate__enter"
         onClick={() => { if (!zooming) enter(true); }}
@@ -895,12 +930,11 @@ function SoundGate({
         autoFocus
       >
         <span className="sound-gate__prompt" id="sound-gate-title" aria-hidden="true">
-          <span>CLICK</span>
-          <span>ANYWHERE</span>
-          <span>TO</span>
-          <span>TURN</span>
-          <span>ON</span>
-          <span>YOUR</span>
+          <span>ENTER</span>
+          <span>CASSIE&apos;S</span>
+          <span>MUSIC</span>
+          <span>UNIVERSE</span>
+          <span>WITH</span>
           <span>SOUND</span>
         </span>
         <span className="sr-only">点击任意位置开启声音并进入 Cassie 的音乐宇宙</span>
@@ -918,6 +952,7 @@ function SoundGate({
 
 function MusicUniverse({
   openProject,
+  openFilm,
   chooseView,
   playTrack,
   warmTrack,
@@ -926,6 +961,7 @@ function MusicUniverse({
   interactive,
 }: {
   openProject: (key: ProjectKey) => void;
+  openFilm: () => void;
   chooseView: (view: View) => void;
   playTrack: (index: number) => void;
   warmTrack: (index: number) => void;
@@ -933,10 +969,14 @@ function MusicUniverse({
   playing: boolean;
   interactive: boolean;
 }) {
+  const featuredVideoRef = useRef<HTMLVideoElement>(null);
+  const [featuredFilmUnavailable, setFeaturedFilmUnavailable] = useState(false);
   const { cameraRef, handlers, shouldSuppressClick } = useInertialCamera(interactive);
   const [pointerHoverId, setPointerHoverId] = useState<string | null>(null);
   const [focusId, setFocusId] = useState<string | null>(null);
   const hoverTimerRef = useRef<number | null>(null);
+  const planeButtonRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const [rovingPlaneIndex, setRovingPlaneIndex] = useState(0);
   const cursorLettersRef = useRef<(HTMLSpanElement | null)[]>([]);
   const cursorFrameRef = useRef<number | null>(null);
   const pointerRef = useRef({ x: -120, y: -120, initialized: false });
@@ -951,6 +991,16 @@ function MusicUniverse({
     ? universePlanes.find((plane) => plane.id === pointerHoverId) ?? null
     : null;
 
+  const pauseFeaturedPreview = () => featuredVideoRef.current?.pause();
+  const playFeaturedPreview = () => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    featuredVideoRef.current?.play().catch(() => undefined);
+  };
+  const openFeaturedFilm = () => {
+    pauseFeaturedPreview();
+    openFilm();
+  };
+
   useEffect(() => {
     return () => {
       if (hoverTimerRef.current !== null) window.clearTimeout(hoverTimerRef.current);
@@ -959,7 +1009,7 @@ function MusicUniverse({
   }, []);
 
   useEffect(() => {
-    if (!pointerHoverId) {
+    if (!pointerHoverId || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       pointerRef.current.initialized = false;
       if (cursorFrameRef.current !== null) {
         window.cancelAnimationFrame(cursorFrameRef.current);
@@ -1041,7 +1091,48 @@ function MusicUniverse({
       id="main-content"
       tabIndex={-1}
     >
-      <span className="sr-only">让音乐被听见：探索 Cassie 的 18 首音乐作品。</span>
+      <span className="sr-only">首推《冬烬之地》原创概念影片，同屏可探索 Cassie 的 18 首音乐作品。</span>
+      <article
+        className={`featured-film ${focusedPlane ? "is-background" : ""}`}
+        aria-labelledby="featured-film-title"
+        aria-hidden={focusedPlane ? true : undefined}
+        inert={focusedPlane ? true : undefined}
+      >
+        <button
+          className="featured-film__visual"
+          onClick={openFeaturedFilm}
+          onPointerEnter={playFeaturedPreview}
+          onPointerLeave={pauseFeaturedPreview}
+          onFocus={playFeaturedPreview}
+          onBlur={pauseFeaturedPreview}
+          aria-label="观看首推作品《冬烬之地》完整概念影片"
+        >
+          {featuredFilmUnavailable ? (
+            <Image unoptimized src="/images/projects/winter-embers-poster-v2.jpg" alt="" fill sizes="58vw" />
+          ) : (
+            <video
+              ref={featuredVideoRef}
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster="/images/projects/winter-embers-poster-v2.jpg"
+              aria-hidden="true"
+              onError={() => setFeaturedFilmUnavailable(true)}
+            >
+              <source src="/video/winter-embers-teaser.mp4" type="video/mp4" />
+            </video>
+          )}
+          <span className="featured-film__scrim" aria-hidden="true" />
+          <span className="featured-film__play" aria-hidden="true">PLAY FILM</span>
+        </button>
+        <div className="featured-film__copy">
+          <span>FEATURED FILM / 首推影片</span>
+          <h1 id="featured-film-title">冬烬之地</h1>
+          <p>原创科幻概念影片与同名配乐，以声音推动世界揭示。</p>
+          <button onClick={() => openProject("winter-embers")}>查看创作案例</button>
+        </div>
+      </article>
       <section
         className="music-universe__stage"
         aria-label="可探索的歌曲专辑宇宙"
@@ -1085,6 +1176,8 @@ function MusicUniverse({
                     ].filter(Boolean).join(" ")}
                     style={style}
                     key={plane.id}
+                    ref={(element) => { planeButtonRefs.current[index] = element; }}
+                    tabIndex={index === rovingPlaneIndex ? 0 : -1}
                     onPointerEnter={(event) => {
                       moveLearnMore(event);
                       if (isTrack) warmTrack(plane.trackIndex!);
@@ -1092,10 +1185,23 @@ function MusicUniverse({
                     }}
                     onPointerLeave={() => clearPointerHover(plane.id)}
                     onFocus={() => {
+                      setRovingPlaneIndex(index);
                       setFocusId(plane.id);
                       if (isTrack) warmTrack(plane.trackIndex!);
                     }}
                     onBlur={() => setFocusId((current) => current === plane.id ? null : current)}
+                    onKeyDown={(event) => {
+                      const direction = event.key === "ArrowRight" || event.key === "ArrowDown"
+                        ? 1
+                        : event.key === "ArrowLeft" || event.key === "ArrowUp"
+                          ? -1
+                          : 0;
+                      if (!direction) return;
+                      event.preventDefault();
+                      const nextIndex = (index + direction + universePlanes.length) % universePlanes.length;
+                      setRovingPlaneIndex(nextIndex);
+                      planeButtonRefs.current[nextIndex]?.focus();
+                    }}
                     onClick={(event) => {
                       if (shouldSuppressClick()) {
                         event.preventDefault();
@@ -1130,10 +1236,31 @@ function MusicUniverse({
           </div>
         </div>
       </section>
+      <nav className="mobile-universe-tracks" aria-label="首屏歌曲快捷试听">
+        {mobileFeaturedTracks.map((trackIndex) => {
+          const track = tracks[trackIndex];
+          const plane = universePlanes.find((item) => item.trackIndex === trackIndex)!;
+          return (
+            <button
+              key={track.src}
+              onClick={() => playTrack(trackIndex)}
+              onPointerEnter={() => warmTrack(trackIndex)}
+              onFocus={() => warmTrack(trackIndex)}
+              aria-label={`播放歌曲：${track.title}`}
+            >
+              <span>
+                {plane.src && <Image unoptimized src={plane.src} alt="" fill sizes="28vw" />}
+                <i aria-hidden="true">PLAY</i>
+              </span>
+              <strong>{track.title}</strong>
+            </button>
+          );
+        })}
+      </nav>
       <div className={`music-universe__hud ${focusedPlane ? "is-showing-track" : ""}`}>
         {focusedPlane ? (
           <div className="music-universe__focus-copy" key={focusedPlane.id} aria-live="polite">
-            <h1>{focusedPlane.title}</h1>
+            <h2>{focusedPlane.title}</h2>
             <span className="music-universe__focus-scene">{focusedPlane.subtitle}</span>
             <p className="music-universe__focus-description">
               {focusedPlane.trackIndex !== undefined
@@ -1146,9 +1273,9 @@ function MusicUniverse({
           <>
             <button onClick={() => chooseView("songs")} aria-label="打开歌曲索引">
               <i>＋</i>
-              <span>MUSIC INDEX</span>
+              <span>MUSIC INDEX / 18 首歌曲</span>
             </button>
-            <p>MOVE TO EXPLORE · HOVER TO FOCUS · CLICK TO LISTEN</p>
+            <p>拖动探索 · 悬停聚焦 · 点击试听</p>
           </>
         )}
       </div>
@@ -1179,11 +1306,32 @@ function SongIndex({
   return (
     <main className="song-index" id="main-content">
       <button className="space-back" onClick={() => chooseView("universe")}>
-        ← BACK TO SPACE VIEW
+        ← 返回音乐宇宙
       </button>
       <div className="song-index__heading">
-        <span>SONG INDEX</span>
-        <p>18 TRACKS · CLICK TO LISTEN</p>
+        <span>SONG INDEX / 歌曲目录</span>
+        <p>18 TRACKS · 点击试听</p>
+      </div>
+      <div className="song-index__featured" aria-label="精选试听">
+        {mobileFeaturedTracks.map((trackIndex) => {
+          const track = tracks[trackIndex];
+          const plane = universePlanes.find((item) => item.trackIndex === trackIndex)!;
+          return (
+            <button
+              key={track.src}
+              onPointerEnter={() => warmTrack(trackIndex)}
+              onFocus={() => warmTrack(trackIndex)}
+              onClick={() => playTrack(trackIndex)}
+            >
+              <span className="song-index__cover">
+                {plane.src && <Image unoptimized src={plane.src} alt={`${track.title}专辑封面`} fill sizes="(max-width: 760px) 44vw, 15vw" />}
+                <i aria-hidden="true">PLAY</i>
+              </span>
+              <strong>{track.title}</strong>
+              <em>{track.scene}</em>
+            </button>
+          );
+        })}
       </div>
       <div className="song-index__grid">
         {tracks.map((track, index) => (
@@ -1196,6 +1344,7 @@ function SongIndex({
             <span>{String(index + 1).padStart(3, "0")}</span>
             <strong>{track.title}</strong>
             <em>{track.scene}</em>
+            <i aria-hidden="true">PLAY</i>
           </button>
         ))}
       </div>
@@ -1216,7 +1365,7 @@ function ProjectsIndex({
       <button className="space-back" onClick={() => chooseView("universe")}>← BACK TO SPACE VIEW</button>
       <div className="index-heading">
         <span>SELECTED WORK</span>
-        <p>2023 — 2026</p>
+        <p>2023 - 2026</p>
       </div>
       <div className="project-rows">
         {projects.map((project) => (
@@ -1282,7 +1431,7 @@ function ScoutingCase() {
           <article>
             <strong>800 / 800</strong>
             <span>周 × 名次粒度唯一</span>
-            <p>每期 200 首、名次 1—200，无周内重复记录。</p>
+            <p>每期 200 首、名次 1 - 200，无周内重复记录。</p>
           </article>
           <article>
             <strong>100%</strong>
@@ -1454,7 +1603,7 @@ function ScoutingCase() {
             <figure className="scouting-viz scouting-viz--histogram">
               <figcaption>
                 <strong>榜内作品的发行年份分布</strong>
-                <span>发行年 1997—2026 · 单位：作品数（首）</span>
+                <span>发行年 1997 - 2026 · 单位：作品数（首）</span>
               </figcaption>
               <div className="scouting-viz-histogram" aria-label="Apple Music 中国区 Top 100 作品发行年份分布">
                 <div className="scouting-viz-y-axis" aria-hidden="true"><span>10</span><span>5</span><span>0</span></div>
@@ -1836,9 +1985,9 @@ function About({ chooseView }: { chooseView: (view: View) => void }) {
           <span>RESEARCH</span>
         </div>
         <div className="scene-copy">
-          <p>2016—2020 · 南京艺术学院</p>
+          <p>2016 - 2020 · 南京艺术学院</p>
           <strong>作曲与作曲技术理论 · 本科</strong>
-          <p>2023—2026 · 南京艺术学院</p>
+          <p>2023 - 2026 · 南京艺术学院</p>
           <strong>音乐与舞蹈学（流行音乐研究）· 硕士应届生</strong>
         </div>
       </section>
@@ -1878,8 +2027,8 @@ function About({ chooseView }: { chooseView: (view: View) => void }) {
           </div>
         </div>
         <div className="experience-copy">
-          <article><span>2023.12—2024.03</span><h2>江苏省委组织部</h2><p>独立审核上千份材料，参与新媒体文案、脚本与短视频运营。</p></article>
-          <article><span>2023.07—2024.03</span><h2>欧拉艺术空间</h2><p>创作者沟通、歌词交易协助与版权风险材料整理。</p></article>
+          <article><span>2023.12 - 2024.03</span><h2>江苏省委组织部</h2><p>独立审核上千份材料，参与新媒体文案、脚本与短视频运营。</p></article>
+          <article><span>2023.07 - 2024.03</span><h2>欧拉艺术空间</h2><p>创作者沟通、歌词交易协助与版权风险材料整理。</p></article>
           <article><span>1 YEAR</span><h2>研究生会学术部部长</h2><p>活动策划、跨团队协同与现场落地。</p></article>
         </div>
       </section>
@@ -1948,6 +2097,8 @@ function PlayerOverlay({
   close,
   toggle,
   seek,
+  error,
+  retry,
 }: {
   trackIndex: number;
   playing: boolean;
@@ -1957,6 +2108,8 @@ function PlayerOverlay({
   close: () => void;
   toggle: () => void;
   seek: (value: number) => void;
+  error: string | null;
+  retry: () => void;
 }) {
   const track = tracks[trackIndex];
   const plane = universePlanes.find((item) => item.trackIndex === trackIndex) ?? universePlanes[trackIndex];
@@ -2028,7 +2181,7 @@ function PlayerOverlay({
             <button
               className={`player-cover__toggle ${playing ? "is-playing" : ""} ${loading ? "is-loading" : ""}`}
               onClick={toggle}
-              aria-label={loading ? "停止加载" : playing ? "暂停" : "播放"}
+              aria-label={loading ? "正在缓冲，点击暂停" : playing ? "暂停" : "播放"}
             >
               <span>{loading ? "•••" : playing ? "Ⅱ" : "▶"}</span>
             </button>
@@ -2050,6 +2203,12 @@ function PlayerOverlay({
               disabled={!duration}
             />
             <small>{loading ? "LOADING · 正在缓冲" : `${formatTime(current)} / ${formatTime(duration)}`}</small>
+            {error && (
+              <div className="player-error" role="alert">
+                <span>{error}</span>
+                <button onClick={retry}>重新加载</button>
+              </div>
+            )}
           </div>
         </section>
 
@@ -2091,52 +2250,132 @@ function PlayerOverlay({
   );
 }
 
+function FilmOverlay({
+  close,
+  pauseAudio,
+  openCase,
+}: {
+  close: () => void;
+  pauseAudio: () => void;
+  openCase: () => void;
+}) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoState, setVideoState] = useState<"loading" | "ready" | "error">("loading");
+  const retryVideo = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    setVideoState("loading");
+    video.load();
+    video.play().catch(() => undefined);
+  };
+  return (
+    <div
+      className="film-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="film-overlay-title"
+      onKeyDown={(event) => {
+        if (event.key === "Escape") {
+          event.preventDefault();
+          close();
+          return;
+        }
+        trapDialogFocus(event);
+      }}
+    >
+      <button className="film-overlay__close" onClick={close} autoFocus>关闭 ×</button>
+      <header className="film-overlay__header">
+        <span>FEATURED FILM / 首推影片</span>
+        <h2 id="film-overlay-title">冬烬之地</h2>
+        <p>THE LAND OF WINTER EMBERS · 01:59</p>
+      </header>
+      <div className="film-overlay__frame">
+        <video
+          ref={videoRef}
+          controls
+          autoPlay
+          playsInline
+          preload="auto"
+          poster="/images/projects/winter-embers-poster-v2.jpg"
+          onPlay={pauseAudio}
+          onCanPlay={() => setVideoState("ready")}
+          onWaiting={() => setVideoState("loading")}
+          onError={() => setVideoState("error")}
+          aria-label="《冬烬之地》完整科幻概念影片"
+        >
+          <source src="/video/winter-embers-film-v2.mp4" type="video/mp4" />
+          你的浏览器暂不支持视频播放。
+        </video>
+        {videoState !== "ready" && (
+          <div className={`film-overlay__status is-${videoState}`} role={videoState === "error" ? "alert" : "status"}>
+            {videoState === "error" ? (
+              <><span>影片暂时无法载入</span><button onClick={retryVideo}>重新加载</button></>
+            ) : (
+              <span>影片载入中</span>
+            )}
+          </div>
+        )}
+      </div>
+      <footer className="film-overlay__footer">
+        <p>原创科幻概念影片与同名原创配乐</p>
+        <button onClick={openCase}>查看创作案例</button>
+      </footer>
+    </div>
+  );
+}
+
 export default function PortfolioExperience() {
   const [entryPhase, setEntryPhase] = useState<EntryPhase>("gate");
   const [view, setView] = useState<View>("universe");
   const [activeProject, setActiveProject] = useState<ProjectKey | null>(null);
   const [mobileMenu, setMobileMenu] = useState(false);
-  const [trackIndex, setTrackIndex] = useState(0);
+  const [trackIndex, setTrackIndex] = useState(17);
   const [playing, setPlaying] = useState(false);
   const [loadingTrack, setLoadingTrack] = useState(false);
+  const [mediaError, setMediaError] = useState<string | null>(null);
   const [playerOpen, setPlayerOpen] = useState(false);
+  const [filmOpen, setFilmOpen] = useState(false);
   const [current, setCurrent] = useState(0);
   const [duration, setDuration] = useState(0);
   const audioRef = useRef<HTMLAudioElement>(null);
   const entryTimerRef = useRef<number | null>(null);
   const entryStartedRef = useRef(false);
-  const trackIndexRef = useRef(0);
+  const trackIndexRef = useRef(17);
   const playerOpenerRef = useRef<HTMLElement | null>(null);
+  const filmOpenerRef = useRef<HTMLElement | null>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const warmTimerRef = useRef<number | null>(null);
   const warmedTracksRef = useRef(new Set<number>());
-  const warmLinksRef = useRef<HTMLLinkElement[]>([]);
 
   useEffect(() => {
-    document.body.style.overflow = playerOpen || mobileMenu || entryPhase !== "ready" ? "hidden" : "";
+    document.body.style.overflow = playerOpen || filmOpen || mobileMenu || entryPhase !== "ready" ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
-  }, [playerOpen, mobileMenu, entryPhase]);
+  }, [playerOpen, filmOpen, mobileMenu, entryPhase]);
 
   useEffect(() => {
-    const warmLinks = warmLinksRef.current;
     return () => {
       if (entryTimerRef.current !== null) window.clearTimeout(entryTimerRef.current);
       if (warmTimerRef.current !== null) window.clearTimeout(warmTimerRef.current);
-      warmLinks.forEach((link) => link.remove());
     };
   }, []);
+
+  const scrollToPageStart = () => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    window.requestAnimationFrame(() => document.getElementById("main-content")?.focus());
+  };
 
   const chooseView = (next: View) => {
     setView(next);
     setActiveProject(null);
     setMobileMenu(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    scrollToPageStart();
   };
 
   const openProject = (key: ProjectKey) => {
     setView("projects");
     setActiveProject(key);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    scrollToPageStart();
   };
 
   const openPlayer = () => {
@@ -2151,6 +2390,19 @@ export default function PortfolioExperience() {
     window.requestAnimationFrame(() => playerOpenerRef.current?.focus());
   };
 
+  const openFilm = () => {
+    filmOpenerRef.current = document.activeElement instanceof HTMLElement
+      ? document.activeElement
+      : null;
+    audioRef.current?.pause();
+    setFilmOpen(true);
+  };
+
+  const closeFilm = () => {
+    setFilmOpen(false);
+    window.requestAnimationFrame(() => filmOpenerRef.current?.focus());
+  };
+
   const closeMobileMenu = () => {
     setMobileMenu(false);
     window.requestAnimationFrame(() => menuButtonRef.current?.focus());
@@ -2160,16 +2412,15 @@ export default function PortfolioExperience() {
     if (warmedTracksRef.current.has(index) || trackIndexRef.current === index) return;
     if (warmTimerRef.current !== null) window.clearTimeout(warmTimerRef.current);
     warmTimerRef.current = window.setTimeout(() => {
-      const link = document.createElement("link");
-      link.rel = "preload";
-      link.as = "audio";
-      link.type = "audio/mp4";
-      link.href = tracks[index].src;
-      document.head.appendChild(link);
-      warmLinksRef.current.push(link);
-      warmedTracksRef.current.add(index);
+      const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
+      if (!connection?.saveData) {
+        const audio = new Audio();
+        audio.preload = "metadata";
+        audio.src = tracks[index].src;
+        warmedTracksRef.current.add(index);
+      }
       warmTimerRef.current = null;
-    }, 120);
+    }, 220);
   };
 
   const startAudio = async (index: number, open = true) => {
@@ -2179,6 +2430,7 @@ export default function PortfolioExperience() {
       window.clearTimeout(warmTimerRef.current);
       warmTimerRef.current = null;
     }
+    setMediaError(null);
     if (trackIndexRef.current !== index) {
       setLoadingTrack(true);
       audio.pause();
@@ -2201,6 +2453,19 @@ export default function PortfolioExperience() {
     }
   };
 
+  const retryAudio = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    setMediaError(null);
+    setLoadingTrack(true);
+    audio.src = tracks[trackIndexRef.current].src;
+    audio.load();
+    void audio.play().catch(() => {
+      setLoadingTrack(false);
+      setMediaError("音频暂时无法载入，请稍后重试。");
+    });
+  };
+
   const finishEntry = () => {
     if (entryTimerRef.current !== null) {
       window.clearTimeout(entryTimerRef.current);
@@ -2213,14 +2478,14 @@ export default function PortfolioExperience() {
   const enter = (withSound: boolean) => {
     if (entryStartedRef.current || entryPhase !== "gate") return;
     entryStartedRef.current = true;
-    if (withSound) void startAudio(0, false);
+    if (withSound) void startAudio(17, false);
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduceMotion) {
       finishEntry();
       return;
     }
     setEntryPhase("zooming");
-    entryTimerRef.current = window.setTimeout(finishEntry, 4400);
+    entryTimerRef.current = window.setTimeout(finishEntry, 3000);
   };
 
   const toggleAudio = async () => {
@@ -2244,13 +2509,13 @@ export default function PortfolioExperience() {
 
   return (
     <>
-      {entryPhase === "ready" && !playerOpen && !mobileMenu && (
+      {entryPhase === "ready" && !playerOpen && !filmOpen && !mobileMenu && (
         <a className="skip-link" href="#main-content">跳到主要内容</a>
       )}
       <audio
         ref={audioRef}
-        src={tracks[0].src}
-        preload="auto"
+        src={tracks[17].src}
+        preload="metadata"
         playsInline
         onLoadStart={() => setLoadingTrack(true)}
         onLoadedMetadata={(event) => setDuration(event.currentTarget.duration)}
@@ -2268,7 +2533,11 @@ export default function PortfolioExperience() {
         onPlay={() => setPlaying(true)}
         onPlaying={() => { setPlaying(true); setLoadingTrack(false); }}
         onPause={() => { setPlaying(false); setLoadingTrack(false); }}
-        onError={() => { setPlaying(false); setLoadingTrack(false); }}
+        onError={() => {
+          setPlaying(false);
+          setLoadingTrack(false);
+          setMediaError("音频暂时无法载入，请稍后重试。");
+        }}
         onEnded={() => { setPlaying(false); setLoadingTrack(false); setCurrent(0); }}
       />
 
@@ -2276,20 +2545,26 @@ export default function PortfolioExperience() {
 
       <div
         className={`site-shell ${entryPhase !== "gate" ? "is-visible" : ""} ${entryPhase === "zooming" ? "is-arriving" : ""}`}
-        aria-hidden={entryPhase !== "ready" || playerOpen || mobileMenu}
-        inert={entryPhase !== "ready" || playerOpen || mobileMenu ? true : undefined}
+        aria-hidden={entryPhase !== "ready" || playerOpen || filmOpen || mobileMenu}
+        inert={entryPhase !== "ready" || playerOpen || filmOpen || mobileMenu ? true : undefined}
       >
         <header className="site-header">
           <Brand onHome={() => chooseView("universe")} />
-          <button className="now-playing" onClick={openPlayer}>
+          <button
+            className="now-playing"
+            onClick={openPlayer}
+            aria-label={`${playing ? "正在播放" : "打开播放器"}：${tracks[trackIndex].title}`}
+          >
             <i className={playing ? "is-playing" : ""} />
-            {playing ? "PLAYING" : "LISTEN"}
+            <span>{playing ? `PLAYING · ${tracks[trackIndex].title}` : "LISTEN / 播放器"}</span>
           </button>
           <button
             ref={menuButtonRef}
             className={`menu-button ${mobileMenu ? "is-open" : ""}`}
             onClick={() => setMobileMenu(true)}
             aria-label="打开导航"
+            aria-expanded={mobileMenu}
+            aria-controls="mobile-navigation"
           >
             <i /><i />
           </button>
@@ -2298,7 +2573,7 @@ export default function PortfolioExperience() {
         {active ? (
           <ProjectDetail
             project={active}
-            onBack={() => { setActiveProject(null); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+            onBack={() => { setActiveProject(null); scrollToPageStart(); }}
             openProject={openProject}
             playTrack={(index) => startAudio(index)}
             warmTrack={warmTrack}
@@ -2307,6 +2582,7 @@ export default function PortfolioExperience() {
         ) : view === "universe" ? (
           <MusicUniverse
             openProject={openProject}
+            openFilm={openFilm}
             chooseView={chooseView}
             playTrack={(index) => startAudio(index)}
             warmTrack={warmTrack}
@@ -2331,8 +2607,11 @@ export default function PortfolioExperience() {
 
       {mobileMenu && (
         <nav
+          id="mobile-navigation"
           className="mobile-menu"
           aria-label="移动端导航"
+          role="dialog"
+          aria-modal="true"
           onKeyDown={(event) => {
             if (event.key === "Escape") {
               event.preventDefault();
@@ -2362,6 +2641,19 @@ export default function PortfolioExperience() {
           seek={(value) => {
             if (audioRef.current) audioRef.current.currentTime = value;
             setCurrent(value);
+          }}
+          error={mediaError}
+          retry={retryAudio}
+        />
+      )}
+
+      {filmOpen && (
+        <FilmOverlay
+          close={closeFilm}
+          pauseAudio={() => audioRef.current?.pause()}
+          openCase={() => {
+            setFilmOpen(false);
+            openProject("winter-embers");
           }}
         />
       )}
