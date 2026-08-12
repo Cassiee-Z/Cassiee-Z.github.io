@@ -97,6 +97,8 @@ test("ships audio, profile, social and recruiter download assets", async () => {
     "../public/images/scouting/evidence/apple-music-cn-top-charts-20260812.jpg",
     "../public/images/scouting/evidence/netease-rising-20260812.jpg",
     "../public/images/scouting/evidence/tme-yobang-20260811.jpg",
+    "../public/images/editorial/catalog-operations-article.jpg",
+    "../public/images/editorial/ai-tools-article.jpg",
     "../public/video/winter-embers-film-v2.mp4",
     "../public/video/winter-embers-teaser.mp4",
     "../public/data/scouting/tme-yobang-w28-w31.csv",
@@ -108,6 +110,10 @@ test("ships audio, profile, social and recruiter download assets", async () => {
     "../public/data/scouting/cross-platform/current-quality.json",
     "../public/docs/Cassie_Zha_Wenxin_Resume_CN.pdf",
     "../public/docs/Cassie_2-Day_Music_Ops_Cram_Plan.pdf",
+    "../public/docs/从16首AI歌曲到可运营曲库_查文鑫.docx",
+    "../public/docs/从16首AI歌曲到可运营曲库_查文鑫.pdf",
+    "../public/docs/六款AI音乐工具实测_查文鑫.docx",
+    "../public/docs/六款AI音乐工具实测_查文鑫.pdf",
   ];
 
   await Promise.all(files.map((file) => access(new URL(file, import.meta.url))));
@@ -141,4 +147,9 @@ test("ships audio, profile, social and recruiter download assets", async () => {
   assert.match(source, /preload="metadata"/);
   assert.match(source, /preload="auto"/);
   assert.match(source, /LOADING · 正在缓冲/);
+  assert.match(source, /音乐内容研究与 AI 工具实测/);
+  assert.match(source, /从16首AI歌曲到可运营曲库/);
+  assert.match(source, /六款AI音乐工具实测/);
+  assert.match(source, /PDF 阅读版/);
+  assert.match(source, /DOCX 原稿/);
 });

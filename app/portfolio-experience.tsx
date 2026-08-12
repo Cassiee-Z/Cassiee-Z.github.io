@@ -275,36 +275,39 @@ const projects: Project[] = [
   {
     key: "editorial",
     no: "007",
-    title: "AI 内容实验：短视频与图文",
-    english: "AI EDITORIAL LAB",
-    field: "个人实践 · 持续更新",
-    intro: "从热点判断到脚本、生成、剪辑与发布，验证轻量内容生产链路。",
+    title: "音乐内容研究与 AI 工具实测",
+    english: "MUSIC EDITORIAL & TOOL RESEARCH",
+    field: "方法论写作 · 工具评测",
+    intro: "把创作经验转译为可复核的方法、选型结论与运营动作。",
     metrics: [
-      ["6", "步内容工作流"],
-      ["1", "篇完整图文案例"],
-      ["∞", "持续实验"],
+      ["2", "篇完整研究文章"],
+      ["25", "页原始文档"],
+      ["6", "款 AI 音乐工具"],
     ],
     sections: [
       {
-        label: "01 / SHORT VIDEO",
-        title: "热点不是终点，要转译成适合账号的内容。",
+        label: "01 / CATALOG OPERATIONS",
+        title: "从 16 首歌曲出发，建立可运营的音乐资产。",
         body: [
-          "我负责热点判断、脚本、图像生成、语音与口型、剪辑、标题发布和数据复盘。页面暂不公开粉丝与播放数据，重点展示对生产流程的理解。",
+          "文章《从16首AI歌曲到可运营曲库》将音乐判断拆成 Track、Version、Segment 与 Distribution 四层数据，并用统一 ID、标签、16 维评测和版本证据连接筛选、分发与复盘。",
+          "结论严格区分已完成资产与待采集数据：尚未完成的评分、时间码和平台播放结果不做虚构排名或效果结论。",
         ],
-        items: ["HOTSPOT", "SCRIPT", "GENERATE", "EDIT", "PUBLISH", "REVIEW"],
+        items: ["TRACK / 作品主数据", "VERSION / 版本证据", "SEGMENT / 时间码", "DISTRIBUTION / 分发反馈"],
       },
       {
-        label: "02 / EDITORIAL",
-        title: "把复杂生成过程，写成读者能看完的故事。",
+        label: "02 / TOOL BENCHMARK",
+        title: "六款工具不做万能排名，只回答具体任务怎么选。",
         body: [
-          "公众号案例《小屁屁 Pet 生成记》记录从宠物照片到角色设定、动画表与交互场景的完整过程，验证选题结构、图文叙事与视觉排版能力。",
+          "《六款AI音乐工具实测》基于中文歌曲、英文同输入对照、Jazz 与器乐任务，比较 Suno、Mureka、Udio、SOUNDRAW、AIVA 和 Stable Audio 的人声、编曲、可控性与导出能力。",
+          "文章保留测试范围、不可比项和授权时点说明，把主观体验限定在本人当前样本与工作流内。",
         ],
+        items: ["SUNO", "MUREKA", "UDIO", "SOUNDRAW", "AIVA", "STABLE AUDIO"],
       },
       {
-        label: "03 / NEXT",
-        title: "让创作实验进入持续运营。",
+        label: "03 / EDITORIAL METHOD",
+        title: "把体验写成可查证、可更新的运营判断。",
         body: [
-          "公众号发布终稿、短视频后台数据与小红书代表文章待完成最终审校后公开；现阶段不虚构成果数字。",
+          "两篇文章都采用结论先行、证据分层、表格化比较与边界说明。网页提供快速摘要，招聘方也可下载 DOCX 原稿或字体兼容的 PDF 阅读版检查完整方法与图表。",
         ],
       },
     ],
@@ -1869,7 +1872,7 @@ function ProjectDetail({
         ) : project.key === "event" || project.key === "review" ? (
           <Image unoptimized src="/images/cassie-editorial.jpg" alt="查文鑫个人项目视觉" fill sizes="100vw" />
         ) : project.key === "editorial" ? (
-          <Image unoptimized src="/images/universe/pet-cover.png" alt="AI 内容实验项目视觉" fill sizes="100vw" />
+          <Image unoptimized src="/images/editorial/catalog-operations-article.jpg" alt="《从16首AI歌曲到可运营曲库》文章首页" fill sizes="100vw" />
         ) : (
           <Image unoptimized src="/images/og-cassie-music.jpg" alt="音乐内容作品集视觉" fill sizes="100vw" />
         )}
@@ -1933,6 +1936,63 @@ function ProjectDetail({
 
       {project.key === "scouting" && <ScoutingCase />}
 
+      {project.key === "editorial" && (
+        <section className="article-library" aria-labelledby="article-library-title">
+          <header className="article-library__header">
+            <div>
+              <p>SELECTED WRITING / 完整文章</p>
+              <h2 id="article-library-title">READ THE WORK, NOT JUST THE CLAIM.</h2>
+            </div>
+            <p>网页先呈现方法与结论；DOCX 保留原始排版，PDF 为跨设备阅读版。</p>
+          </header>
+          <div className="article-library__grid">
+            <article className="article-card">
+              <div className="article-card__preview">
+                <Image unoptimized src="/images/editorial/catalog-operations-article.jpg" alt="《从16首AI歌曲到可运营曲库》文章首页预览" fill sizes="(max-width: 760px) 88vw, 36vw" />
+                <span>ARTICLE 01 / 13 PAGES</span>
+              </div>
+              <div className="article-card__body">
+                <p>MUSIC CATALOG OPERATIONS · 2026.07.26</p>
+                <h3>从16首AI歌曲到可运营曲库</h3>
+                <h4>标签、筛选与分发方法</h4>
+                <p>用曲库主数据、16维评测与版本证据，建立可查找、可判断、可分发、可复盘的音乐资产工作流。</p>
+                <ul>
+                  <li>四层数据模型与统一资产 ID</li>
+                  <li>标签、16 维听审与 A/B 版本证据</li>
+                  <li>从生成到分发反馈的七步闭环</li>
+                </ul>
+                <div className="article-card__actions">
+                  <a href="/docs/从16首AI歌曲到可运营曲库_查文鑫.pdf" target="_blank" rel="noreferrer">PDF 阅读版 ↗</a>
+                  <a href="/docs/从16首AI歌曲到可运营曲库_查文鑫.docx" download>DOCX 原稿 ↓</a>
+                </div>
+              </div>
+            </article>
+            <article className="article-card">
+              <div className="article-card__preview">
+                <Image unoptimized src="/images/editorial/ai-tools-article.jpg" alt="《六款AI音乐工具实测》文章首页预览" fill sizes="(max-width: 760px) 88vw, 36vw" />
+                <span>ARTICLE 02 / 12 PAGES</span>
+              </div>
+              <div className="article-card__body">
+                <p>TOOL BENCHMARK · 2026.07.23</p>
+                <h3>六款AI音乐工具实测</h3>
+                <h4>中英文歌词、器乐生成与导出能力</h4>
+                <p>从中文歌曲、英文同输入对照与 Jazz 案例出发，评估“能生成”之外的真实运营价值。</p>
+                <ul>
+                  <li>六平台任务边界与证据范围</li>
+                  <li>人声、编曲、可控性与导出比较</li>
+                  <li>按任务定位工具，不做绝对能力排名</li>
+                </ul>
+                <div className="article-card__actions">
+                  <a href="/docs/六款AI音乐工具实测_查文鑫.pdf" target="_blank" rel="noreferrer">PDF 阅读版 ↗</a>
+                  <a href="/docs/六款AI音乐工具实测_查文鑫.docx" download>DOCX 原稿 ↓</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <p className="article-library__note">PDF 阅读版由系统兼容排版生成，内容与原稿一致；完整原始版式请下载 DOCX。</p>
+        </section>
+      )}
+
       {project.sections.map((section) => (
         <section className="story-section" key={section.label}>
           <p>{section.label}</p>
@@ -1948,7 +2008,7 @@ function ProjectDetail({
         </section>
       ))}
 
-      {(project.key === "event" || project.key === "editorial") && (
+      {project.key === "event" && (
         <aside className="evidence-space">
           <span>EVIDENCE SLOT / 待补证据</span>
           <p>这里保留公开材料、后台截图或发布链接的位置，后续以可核验内容替换。</p>
