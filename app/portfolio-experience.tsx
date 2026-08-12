@@ -2329,7 +2329,7 @@ export default function PortfolioExperience() {
   const [view, setView] = useState<View>("universe");
   const [activeProject, setActiveProject] = useState<ProjectKey | null>(null);
   const [mobileMenu, setMobileMenu] = useState(false);
-  const [trackIndex, setTrackIndex] = useState(17);
+  const [trackIndex, setTrackIndex] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [loadingTrack, setLoadingTrack] = useState(false);
   const [mediaError, setMediaError] = useState<string | null>(null);
@@ -2340,7 +2340,7 @@ export default function PortfolioExperience() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const entryTimerRef = useRef<number | null>(null);
   const entryStartedRef = useRef(false);
-  const trackIndexRef = useRef(17);
+  const trackIndexRef = useRef(0);
   const playerOpenerRef = useRef<HTMLElement | null>(null);
   const filmOpenerRef = useRef<HTMLElement | null>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
@@ -2478,7 +2478,7 @@ export default function PortfolioExperience() {
   const enter = (withSound: boolean) => {
     if (entryStartedRef.current || entryPhase !== "gate") return;
     entryStartedRef.current = true;
-    if (withSound) void startAudio(17, false);
+    if (withSound) void startAudio(0, false);
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduceMotion) {
       finishEntry();
@@ -2514,7 +2514,7 @@ export default function PortfolioExperience() {
       )}
       <audio
         ref={audioRef}
-        src={tracks[17].src}
+        src={tracks[0].src}
         preload="metadata"
         playsInline
         onLoadStart={() => setLoadingTrack(true)}
