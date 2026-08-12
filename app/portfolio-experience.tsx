@@ -925,6 +925,25 @@ function SoundGate({
           </span>
         ))}
       </div>
+      {zooming && (
+        <div className="sound-gate__rush" aria-hidden="true">
+          {universePlanes.slice(0, 8).map((plane, index) => (
+            <span
+              className="rush-cover"
+              key={plane.id}
+              style={{
+                "--rush-order": index,
+                "--rush-birth-x": index % 2 === 0 ? "2vw" : "-2vw",
+                "--rush-mid-x": index % 2 === 0 ? "-15vw" : "15vw",
+                "--rush-exit-x": index % 2 === 0 ? "-66vw" : "66vw",
+                "--rush-tilt": `${index % 2 === 0 ? 16 : -16}deg`,
+              } as CSSProperties}
+            >
+              {plane.src && <Image unoptimized src={plane.src} alt="" fill sizes="18vw" />}
+            </span>
+          ))}
+        </div>
+      )}
       <button
         className="sound-gate__enter"
         onClick={() => { if (!zooming) enter(true); }}
@@ -974,6 +993,7 @@ function MusicUniverse({
 }) {
   const featuredVideoRef = useRef<HTMLVideoElement>(null);
   const [featuredFilmUnavailable, setFeaturedFilmUnavailable] = useState(false);
+  const [featuredFilmHover, setFeaturedFilmHover] = useState(false);
   const { cameraRef, handlers, shouldSuppressClick } = useInertialCamera(interactive);
   const [pointerHoverId, setPointerHoverId] = useState<string | null>(null);
   const [focusId, setFocusId] = useState<string | null>(null);
@@ -1000,8 +1020,17 @@ function MusicUniverse({
     featuredVideoRef.current?.play().catch(() => undefined);
   };
   const openFeaturedFilm = () => {
+    setFeaturedFilmHover(false);
     pauseFeaturedPreview();
     openFilm();
+  };
+  const enterFeaturedFilm = () => {
+    setFeaturedFilmHover(true);
+    playFeaturedPreview();
+  };
+  const leaveFeaturedFilm = () => {
+    setFeaturedFilmHover(false);
+    pauseFeaturedPreview();
   };
 
   useEffect(() => {
@@ -1096,7 +1125,8 @@ function MusicUniverse({
     >
       <span className="sr-only">首推《冬烬之地》原创概念影片，同屏可探索 Cassie 的 18 首音乐作品。</span>
       <article
-        className={`featured-film ${focusedPlane ? "is-background" : ""}`}
+        className={`featured-film ${focusedPlane ? "is-background" : ""} ${featuredFilmHover ? "is-hovered" : ""}`}
+        data-media-kind="video"
         aria-labelledby="featured-film-title"
         aria-hidden={focusedPlane ? true : undefined}
         inert={focusedPlane ? true : undefined}
@@ -1104,10 +1134,10 @@ function MusicUniverse({
         <button
           className="featured-film__visual"
           onClick={openFeaturedFilm}
-          onPointerEnter={playFeaturedPreview}
-          onPointerLeave={pauseFeaturedPreview}
-          onFocus={playFeaturedPreview}
-          onBlur={pauseFeaturedPreview}
+          onPointerEnter={enterFeaturedFilm}
+          onPointerLeave={leaveFeaturedFilm}
+          onFocus={enterFeaturedFilm}
+          onBlur={leaveFeaturedFilm}
           aria-label="观看首推作品《冬烬之地》完整概念影片"
         >
           {featuredFilmUnavailable ? (
@@ -1127,7 +1157,10 @@ function MusicUniverse({
             </video>
           )}
           <span className="featured-film__scrim" aria-hidden="true" />
-          <span className="featured-film__play" aria-hidden="true">PLAY FILM</span>
+          <span className="featured-film__film-frame" aria-hidden="true" />
+          <span className="featured-film__type" aria-hidden="true">VIDEO / 视频 · 点击观看</span>
+          <span className="featured-film__play" aria-hidden="true">▶</span>
+          <span className="featured-film__timeline" aria-hidden="true"><i /><b>01:59</b></span>
         </button>
         <div className="featured-film__copy">
           <span>FEATURED FILM / 首推影片</span>
@@ -1177,6 +1210,7 @@ function MusicUniverse({
                       isHovered ? "is-hovered" : "",
                       isDimmed ? "is-dimmed" : "",
                     ].filter(Boolean).join(" ")}
+                    data-media-kind="song"
                     style={style}
                     key={plane.id}
                     ref={(element) => { planeButtonRefs.current[index] = element; }}
@@ -1215,6 +1249,9 @@ function MusicUniverse({
                     }}
                     aria-label={isTrack ? `播放歌曲：${plane.title}` : `查看曲库项目：${plane.title}`}
                   >
+                    <span className="music-plane__vinyl" aria-hidden="true">
+                      <i style={plane.src ? { backgroundImage: `url(${plane.src})` } : undefined} />
+                    </span>
                     <span className="music-plane__art">
                       {plane.src ? (
                         <Image
@@ -1228,6 +1265,8 @@ function MusicUniverse({
                         <span className="generated-cover" aria-hidden="true"><i /><b>{String(index + 1).padStart(2, "0")}</b></span>
                       )}
                     </span>
+                    <span className="music-plane__type" aria-hidden="true">SONG / 歌曲 · 点击试听</span>
+                    <span className="music-plane__play" aria-hidden="true">▶</span>
                     <span className="music-plane__meta">
                       <strong>{plane.title}</strong>
                       <small>{plane.subtitle} · {isTrack ? "PLAY" : "CATALOG"}</small>
@@ -2545,7 +2584,7 @@ export default function PortfolioExperience() {
       return;
     }
     setEntryPhase("zooming");
-    entryTimerRef.current = window.setTimeout(finishEntry, 3000);
+    entryTimerRef.current = window.setTimeout(finishEntry, 1050);
   };
 
   const toggleAudio = async () => {
