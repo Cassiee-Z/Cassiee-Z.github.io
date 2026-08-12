@@ -1663,6 +1663,14 @@ function ScoutingCase() {
         </div>
         <div>
           <p>DOWNLOAD / 可复核数据</p>
+          <a className="scouting-workbook-download" href="/docs/查文鑫_中文新歌与潜力音乐人数据侦察.xlsx" download>音乐数据侦察分析工作簿 XLSX ↓</a>
+          <div className="scouting-workbook-proof" aria-label="Excel 可复核分析能力">
+            <p>EXCEL WORKFLOW / 可复核分析能力</p>
+            <span><b>数据透视表</b><small>按平台、榜单、艺人及期数聚合</small></span>
+            <span><b>VLOOKUP</b><small>回填榜单口径与候选综合分</small></span>
+            <span><b>条件格式</b><small>突出 Top10、涨跌、风险与缺失</small></span>
+            <span><b>数据校验</b><small>规范状态、场景、版权与人工评分</small></span>
+          </div>
           <a href="/data/scouting/scouting-watchlist.csv" download>5 首候选清单 CSV ↓</a>
           <a href="/data/scouting/tme-yobang-w28-w31.csv" download>四期周榜快照 CSV ↓</a>
           <a href="/data/scouting/scouting-summary.json" download>方法与结果 JSON ↓</a>
@@ -1671,7 +1679,7 @@ function ScoutingCase() {
           <a href="/data/scouting/cross-platform/current-availability.json" download>平台权限与可用性 JSON ↓</a>
           <a href="/data/scouting/cross-platform/current-quality.json" download>数据质量检查 JSON ↓</a>
         </div>
-        <small>公开事实与个人分析假设分开标注 · 腾讯音乐数据快照 2026.08.11 · Apple Music 单日快照 2026.08.12 · 本研究不构成商业、版权或签约建议</small>
+        <small>公开事实与个人分析假设分开标注 · 工作簿含原始数据、字段字典、VLOOKUP、数据透视公式、条件格式与数据校验；可直接检查公式和下拉规则 · 腾讯音乐数据快照 2026.08.11 · Apple Music 单日快照 2026.08.12 · 本研究不构成商业、版权或签约建议</small>
       </footer>
     </section>
   );

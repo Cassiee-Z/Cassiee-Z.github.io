@@ -29,3 +29,10 @@ test("ships a source-bounded cross-platform scouting case", async () => {
     ),
   );
 });
+
+test("ships a downloadable Excel scouting workflow", async () => {
+  const source = await readFile(new URL("../app/portfolio-experience.tsx", import.meta.url), "utf8");
+  for (const phrase of ["数据透视表", "VLOOKUP", "条件格式", "数据校验", "中文新歌与潜力音乐人数据侦察.xlsx"]) {
+    assert.match(source, new RegExp(phrase));
+  }
+});
