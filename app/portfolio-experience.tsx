@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { getTrackLyrics } from "./track-lyrics";
 
@@ -411,7 +412,7 @@ const scoutingPlatforms = [
     platform: "Apple Music 中国",
     access: "公开快照",
     accessTone: "ready",
-    role: "完整播放与经典曲库回流",
+    role: "完整播放与经典曲库结构",
     signal: "中国区 Top 100 的艺人及发行年代结构",
     method: "作为市场结构切片，不推断增长趋势",
     href: "https://music.apple.com/cn/new/top-charts",
@@ -431,7 +432,7 @@ const scoutingPlatforms = [
     accessTone: "ready",
     role: "新人发现与社区传播",
     signal: "飙升、新歌、原创、实时分享、潜力爆款榜",
-    method: "同日公开榜单可复核；历史序列仍需持续采集",
+    method: "同批公开榜单可复核；各榜日期不同，历史序列仍需持续采集",
     href: "https://music.163.com/discover/toplist",
   },
   {
@@ -458,27 +459,61 @@ const appleArtistSnapshot = [
   ["林俊杰", 11],
   ["孙燕姿", 6],
   ["陈奕迅", 6],
-  ["其他艺人", 47],
 ] as const;
 
-const appleEraSnapshot = [
-  ["≤ 2010", 58],
-  ["2011—2020", 28],
-  ["2021—2024", 3],
-  ["2025—2026", 11],
+const appleYearSnapshot = [
+  [1997, 1], [1998, 0], [1999, 3], [2000, 5], [2001, 2], [2002, 3],
+  [2003, 4], [2004, 4], [2005, 7], [2006, 5], [2007, 7], [2008, 6],
+  [2009, 5], [2010, 6], [2011, 1], [2012, 6], [2013, 2], [2014, 5],
+  [2015, 4], [2016, 4], [2017, 1], [2018, 1], [2019, 3], [2020, 1],
+  [2021, 0], [2022, 0], [2023, 1], [2024, 2], [2025, 1], [2026, 10],
 ] as const;
 
 const neteaseChartSnapshot = [
-  ["飙升榜", 100],
-  ["新歌榜", 100],
-  ["原创榜", 100],
-  ["潜力爆款榜", 10],
-  ["实时分享榜", 10],
+  { chart: "飙升榜", returned: 100, reference: 100, cadence: "每日", updated: "2026.08.12", tone: "complete" },
+  { chart: "新歌榜", returned: 100, reference: 100, cadence: "每日", updated: "2026.08.12", tone: "complete" },
+  { chart: "原创榜", returned: 100, reference: 100, cadence: "每周", updated: "2026.08.06", tone: "complete" },
+  { chart: "潜力爆款榜", returned: 10, reference: 200, cadence: "每周", updated: "2026.08.11", tone: "partial" },
+  { chart: "实时分享榜", returned: 10, reference: 100, cadence: "每小时", updated: "2026.08.12", tone: "partial" },
 ] as const;
 
 const neteaseOverlapSnapshot = [
-  ["只命中一个榜单", 238],
-  ["同时命中两个榜单", 41],
+  { label: "只命中一个榜单", value: 238, share: 85.3 },
+  { label: "同时命中两个榜单", value: 41, share: 14.7 },
+] as const;
+
+const neteaseIntersectionSnapshot = [
+  { label: "飙升 × 新歌", value: 22, charts: ["rising", "new"] },
+  { label: "新歌 × 原创", value: 13, charts: ["new", "original"] },
+  { label: "飙升 × 实时分享", value: 5, charts: ["rising", "realtime"] },
+  { label: "原创 × 实时分享", value: 1, charts: ["original", "realtime"] },
+] as const;
+
+const scoutingEvidence = [
+  {
+    src: "/images/scouting/evidence/apple-music-cn-top-charts-20260812.jpg",
+    alt: "Apple Music 中国区热门歌曲排行榜公开页面截图",
+    source: "APPLE MUSIC 中国区",
+    chart: "热门歌曲排行",
+    captured: "截取于 2026.08.12",
+    href: "https://music.apple.com/cn/new/top-charts",
+  },
+  {
+    src: "/images/scouting/evidence/netease-rising-20260812.jpg",
+    alt: "网易云音乐飙升榜公开页面截图",
+    source: "网易云音乐",
+    chart: "飙升榜",
+    captured: "截取于 2026.08.12",
+    href: "https://music.163.com/discover/toplist?id=19723756",
+  },
+  {
+    src: "/images/scouting/evidence/tme-yobang-20260811.jpg",
+    alt: "腾讯音乐由你榜公开页面截图",
+    source: "腾讯音乐榜",
+    chart: "由你榜",
+    captured: "截取于 2026.08.11",
+    href: "https://chart.tencentmusic.com/",
+  },
 ] as const;
 
 const scoutingSignalRoles = [
@@ -1384,39 +1419,67 @@ function ScoutingCase() {
           <header className="scouting-chart__header">
             <div>
               <p>APPLE MUSIC CN / ONE-DAY SNAPSHOT</p>
-              <h4 id="scouting-apple-title">中国区 Top 100 呈现“头部集中 + 经典曲库回流”。</h4>
+              <h4 id="scouting-apple-title">中国区 Top 100 呈现“头部集中 + 经典曲库占比较高”。</h4>
             </div>
             <span>2026.08.12 · 单日结构快照，不代表趋势</span>
           </header>
-          <div className="scouting-chart__grid">
-            <figure className="scouting-chart__figure scouting-bar-chart">
-              <figcaption>榜内作品数最多的艺人</figcaption>
-              <ul aria-label="Apple Music 中国区 Top 100 艺人作品数分布">
-                {appleArtistSnapshot.map(([label, value]) => (
+          <div className="scouting-viz-grid">
+            <figure className="scouting-viz scouting-viz--ranking">
+              <figcaption>
+                <strong>当日 Top 100 艺人作品数</strong>
+                <span>单位：榜内作品数（首）· 按作品数降序</span>
+              </figcaption>
+              <div className="scouting-viz-kpis" aria-label="Apple Music 榜单艺人集中度摘要">
+                <p><strong>29</strong><span>位艺人</span></p>
+                <p><strong>30%</strong><span>TOP 1 占比</span></p>
+                <p><strong>53%</strong><span>TOP 4 占比</span></p>
+              </div>
+              <div className="scouting-viz-axis scouting-viz-axis--horizontal" aria-hidden="true">
+                <span>0</span><span>10</span><span>20</span><span>30 首</span>
+              </div>
+              <ol className="scouting-viz-ranking" aria-label="Apple Music 中国区 Top 100 艺人作品数前四名">
+                {appleArtistSnapshot.map(([label, value], index) => (
                   <li key={label}>
-                    <span>{label}</span>
-                    <progress max="100" value={value} aria-label={`${label} ${value} 首`} />
-                    <strong>{value}</strong>
+                    <span className="scouting-viz-rank">{String(index + 1).padStart(2, "0")}</span>
+                    <span className="scouting-viz-label">{label}</span>
+                    <span className="scouting-viz-track" aria-hidden="true">
+                      <i style={{ "--viz-value": `${(value / 30) * 100}%` } as CSSProperties} />
+                    </span>
+                    <strong>{value} <small>· {value}%</small></strong>
                   </li>
                 ))}
-              </ul>
+              </ol>
+              <p className="scouting-viz-footnote">其余 25 位艺人合计 47 首；“其他”不是一位可与单艺人横比的对象，因此不作为第五根柱。</p>
             </figure>
-            <figure className="scouting-chart__figure scouting-era-chart">
-              <figcaption>作品发行年代结构</figcaption>
-              <ul aria-label="Apple Music 中国区 Top 100 发行年代分布">
-                {appleEraSnapshot.map(([label, value]) => (
-                  <li key={label}>
-                    <span>{label}</span>
-                    <progress max="100" value={value} aria-label={`${label} ${value} 首`} />
-                    <strong>{value}</strong>
-                  </li>
-                ))}
-              </ul>
+            <figure className="scouting-viz scouting-viz--histogram">
+              <figcaption>
+                <strong>榜内作品的发行年份分布</strong>
+                <span>发行年 1997—2026 · 单位：作品数（首）</span>
+              </figcaption>
+              <div className="scouting-viz-histogram" aria-label="Apple Music 中国区 Top 100 作品发行年份分布">
+                <div className="scouting-viz-y-axis" aria-hidden="true"><span>10</span><span>5</span><span>0</span></div>
+                <ol>
+                  {appleYearSnapshot.map(([year, value]) => (
+                    <li key={year} className={year === 2026 ? "is-current" : undefined}>
+                      <span className="scouting-viz-column" style={{ "--viz-value": `${value * 10}%` } as CSSProperties}>
+                        <i />
+                        {value > 0 && <strong>{value}</strong>}
+                      </span>
+                      <small>{year === 1997 || year % 5 === 0 || year === 2026 ? year : ""}</small>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+              <div className="scouting-viz-annotations">
+                <p><strong>58 首</strong><span>发行于 2010 年及以前</span></p>
+                <p><strong>10 首</strong><span>发行于 2026 年（截至快照日）</span></p>
+              </div>
+              <p className="scouting-viz-footnote">横轴是作品发行年份，不是榜单历史走势；空年份按 0 首显示。</p>
             </figure>
           </div>
           <p className="scouting-chart__note">
             周杰伦 30 首、林俊杰 11 首、孙燕姿与陈奕迅各 6 首；2010 年及以前作品占 58 首。
-            这只能说明当日榜单结构，不能据此声称这些作品正在增长。
+            这只能说明当日榜单结构，不能据此声称经典作品正在增长或“回流”。
           </p>
         </section>
 
@@ -1424,40 +1487,107 @@ function ScoutingCase() {
           <header className="scouting-chart__header">
             <div>
               <p>NETEASE CLOUD MUSIC / REPRODUCIBLE SNAPSHOT</p>
-              <h4 id="scouting-netease-title">320 条榜单记录中，41 首作品出现跨榜复现。</h4>
+              <h4 id="scouting-netease-title">279 首去重作品中，41 首（14.7%）命中两榜；无三榜复现。</h4>
             </div>
-            <span>2026.08.12 · 279 首去重作品 · 5 张发现型榜单</span>
+            <span>同批采集 · 各榜更新时间与更新频率不同</span>
           </header>
-          <div className="scouting-chart__grid">
-            <figure className="scouting-chart__figure scouting-bar-chart">
-              <figcaption>本次公开响应中的榜单记录数</figcaption>
-              <ul aria-label="网易云音乐五张榜单本次公开响应记录数">
-                {neteaseChartSnapshot.map(([label, value]) => (
-                  <li key={label}>
-                    <span>{label}</span>
-                    <progress max="100" value={value} aria-label={`${label} ${value} 条记录`} />
-                    <strong>{value}</strong>
+          <div className="scouting-viz-stack">
+            <figure className="scouting-viz scouting-viz--coverage">
+              <figcaption>
+                <strong>本次公开响应覆盖</strong>
+                <span>分子＝实际返回条目；分母＝官方榜单目录标示的曲目数。不是热度、播放量或得分。</span>
+              </figcaption>
+              <div className="scouting-viz-axis scouting-viz-axis--coverage" aria-hidden="true">
+                <span>0</span><span>50</span><span>100</span><span>150</span><span>200 条</span>
+              </div>
+              <ol className="scouting-viz-coverage" aria-label="网易云音乐五张榜单公开响应覆盖情况">
+                {neteaseChartSnapshot.map((item) => (
+                  <li key={item.chart} className={`is-${item.tone}`}>
+                    <div className="scouting-viz-coverage__meta">
+                      <strong>{item.chart}</strong>
+                      <span>{item.cadence}更新 · 榜单日期 {item.updated}</span>
+                    </div>
+                    <span className="scouting-viz-track" aria-hidden="true">
+                      <i style={{ "--viz-value": `${(item.returned / 200) * 100}%` } as CSSProperties} />
+                      <b style={{ "--viz-reference": `${(item.reference / 200) * 100}%` } as CSSProperties} />
+                    </span>
+                    <strong>{item.returned}/{item.reference}</strong>
                   </li>
                 ))}
-              </ul>
+              </ol>
+              <p className="scouting-viz-footnote">官方榜单目录标示潜力爆款榜 200 首、实时分享榜 100 首；本次公开响应均仅取得前 10 条。缺失记录不能解释为未上榜。</p>
             </figure>
-            <figure className="scouting-chart__figure scouting-era-chart">
-              <figcaption>去重作品的跨榜复现结构</figcaption>
-              <ul aria-label="网易云音乐去重作品跨榜复现结构">
-                {neteaseOverlapSnapshot.map(([label, value]) => (
-                  <li key={label}>
-                    <span>{label}</span>
-                    <progress max="279" value={value} aria-label={`${label} ${value} 首`} />
-                    <strong>{value}</strong>
-                  </li>
-                ))}
-              </ul>
-            </figure>
+            <div className="scouting-viz-grid">
+              <figure className="scouting-viz scouting-viz--composition">
+                <figcaption>
+                  <strong>去重作品按命中榜单数分布</strong>
+                  <span>基数：279 首去重作品</span>
+                </figcaption>
+                <div className="scouting-viz-composition" role="img" aria-label="238 首只命中一个榜单，占 85.3%；41 首命中两个榜单，占 14.7%">
+                  {neteaseOverlapSnapshot.map((item) => (
+                    <span key={item.label} className={item.value === 41 ? "is-highlight" : undefined} style={{ "--viz-value": `${item.share}%` } as CSSProperties}>
+                      <i />
+                    </span>
+                  ))}
+                </div>
+                <dl className="scouting-viz-legend">
+                  {neteaseOverlapSnapshot.map((item) => (
+                    <div key={item.label}>
+                      <dt>{item.label}</dt>
+                      <dd><strong>{item.value}</strong> 首 · {item.share}%</dd>
+                    </div>
+                  ))}
+                </dl>
+                <p className="scouting-viz-footnote">没有作品在本批数据中命中三张或更多榜单。</p>
+              </figure>
+              <figure className="scouting-viz scouting-viz--upset">
+                <figcaption>
+                  <strong>两榜交集排名</strong>
+                  <span>单位：重合作品数（首）</span>
+                </figcaption>
+                <ol aria-label="网易云音乐两榜交集作品数排名">
+                  {neteaseIntersectionSnapshot.map((item, index) => (
+                    <li key={item.label}>
+                      <span className="scouting-viz-rank">{String(index + 1).padStart(2, "0")}</span>
+                      <span className="scouting-viz-label">{item.label}</span>
+                      <span className="scouting-viz-track" aria-hidden="true"><i style={{ "--viz-value": `${(item.value / 22) * 100}%` } as CSSProperties} /></span>
+                      <strong>{item.value}</strong>
+                      <span className="scouting-viz-upset-dots" aria-hidden="true">
+                        {["rising", "new", "original", "realtime"].map((chart) => <i key={chart} className={item.charts.includes(chart) ? "is-active" : undefined} />)}
+                      </span>
+                    </li>
+                  ))}
+                </ol>
+                <p className="scouting-viz-footnote">点阵从左至右：飙升、新歌、原创、实时分享。潜力爆款榜本批未与其他榜单复现。</p>
+              </figure>
+            </div>
           </div>
           <p className="scouting-chart__note">
-            跨榜复现用于提示“继续人工听审”，不等于播放规模或商业价值。飙升、新歌、原创榜各返回 100 条；
-            潜力爆款榜与实时分享榜的公开响应本次仅返回前 10 条，因此不能把未返回作品解释为未上榜。
+            同平台各榜不是独立样本，跨榜复现仅用于安排“继续人工听审”的优先级，不等于播放规模、增长趋势或商业价值。
           </p>
+        </section>
+
+        <section className="scouting-evidence" aria-labelledby="scouting-evidence-title">
+          <header className="scouting-evidence__header">
+            <p>EVIDENCE / 官方页面证据</p>
+            <h4 id="scouting-evidence-title">让榜单结论回到可查看的公开页面。</h4>
+            <span>截图用于记录当时页面状态；可复算数据仍以下载区的 CSV / JSON 为准。</span>
+          </header>
+          <div className="scouting-evidence__grid">
+            {scoutingEvidence.map((item) => (
+              <figure className="scouting-evidence__card" key={item.src}>
+                <a href={item.href} target="_blank" rel="noreferrer">
+                  <Image src={item.src} alt={item.alt} width={1200} height={750} sizes="(max-width: 760px) 100vw, 33vw" />
+                </a>
+                <figcaption>
+                  <p>{item.source}</p>
+                  <strong>{item.chart}</strong>
+                  <span>{item.captured}</span>
+                  <a href={item.href} target="_blank" rel="noreferrer">查看公开来源 ↗</a>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </section>
 
         <section className="scouting-cross__signals scouting-signal-map" aria-labelledby="scouting-signal-roles-title">
